@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Container from "./Container";
 import Nav from "./Nav";
 
 type Header = {
@@ -16,9 +17,7 @@ const Hero: React.FC<Header> = ({ bgImage, children }) => {
       </figure>
       <div className="relative bg-gradient-to-r from-black/75 ">
         <Nav />
-        <section className="container px-5 lg:px-8 py-10 mx-auto">
-          {children}
-        </section>
+        <Container className="py-10">{children}</Container>
       </div>
     </header>
   );
