@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["AlbertSans"],
+      },
       colors: {
         "indigo-dye": "#234e70",
         silver: "#BFC0C0",
