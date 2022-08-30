@@ -13,12 +13,12 @@ const Home: NextPage = () => {
       </Head>
 
       <Hero bgImage={heroImage}>
-        <div className="flex flex-col py-12 gap-y-12 text-white">
-          <p className="max-w-md text-6xl text-white capitalize font-bold">
+        <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
+          <p className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
             Give your roof{" "}
             <span className="text-cyber-yellow">Superpowers</span>
           </p>
-          <p className="max-w-prose text-gray-200 font-thin">
+          <p className="max-w-prose text-gray-50 font-light">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
             expedita nemo voluptate at ad. Mollitia eos aut repellat magni nisi
             cum nihil provident, doloribus fuga cupiditate iure illo quibusdam

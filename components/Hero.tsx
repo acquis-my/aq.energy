@@ -10,12 +10,12 @@ type Header = {
 const Hero: React.FC<Header> = ({ bgImage, children }) => {
   return (
     <header className="relative bg-indigo-dye">
-      <figure className="absolute inset-0">
+      <figure className="absolute inset-0 z-0">
         {bgImage && (
           <Image src={bgImage} layout="fill" className="object-cover" />
         )}
       </figure>
-      <div className="relative bg-gradient-to-r from-black/75 ">
+      <div className="relative bg-gradient-to-r from-black/90 lg:from-black/80  to-black/20 ">
         <Nav />
         <Container className="py-10">{children}</Container>
       </div>
