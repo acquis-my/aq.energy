@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Container from "./Container";
 import Nav from "./Nav";
 
 type Header = {
-  bgImage?: StaticImageData;
+  bgImage?: string;
   children: any;
 };
 
@@ -12,7 +12,12 @@ const Hero: React.FC<Header> = ({ bgImage, children }) => {
     <header className="relative bg-indigo-dye">
       <figure className="absolute inset-0 z-0">
         {bgImage && (
-          <Image src={bgImage} layout="fill" className="object-cover" />
+          <ExportedImage
+            src={bgImage}
+            layout="fill"
+            className="object-cover"
+            alt="Hero Image"
+          />
         )}
       </figure>
       <div className="relative bg-gradient-to-r from-black/90 lg:from-black/80  to-black/20 ">

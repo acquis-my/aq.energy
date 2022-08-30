@@ -1,13 +1,17 @@
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../public/aq-logo-primary.png";
+import ExportedImage from "next-image-export-optimizer";
 
 const Logo = () => {
   return (
     <figure className="h-12 w-12">
       <Link href="/">
         <a>
-          <Image src={logo} />
+          <ExportedImage
+            src="images/aq-logo-primary.png"
+            alt="Acquis Logo"
+            height={256}
+            width={256}
+          />
         </a>
       </Link>
     </figure>

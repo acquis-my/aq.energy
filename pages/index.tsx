@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <title>AQ Energy</title>
       </Head>
 
-      <Hero bgImage={heroImage}>
+      <Hero bgImage="images/home-hero.jpg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <p className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
             Give your roof{" "}
@@ -32,16 +32,32 @@ const Home: NextPage = () => {
             <p>Trusted by 100s of clients throughout the peninsula:</p>
             <ul className="flex whitespace-nowrap gap-x-2">
               <li>
-                <img className="h-12" src="/images/placeholder_logo.png" />
+                <img
+                  className="h-12"
+                  src="/images/placeholder_logo.png"
+                  alt="Placeholder Logo"
+                />
               </li>
               <li>
-                <img className="h-12" src="/images/placeholder_logo.png" />
+                <img
+                  className="h-12"
+                  src="/images/placeholder_logo.png"
+                  alt="Placeholder Logo"
+                />
               </li>
               <li>
-                <img className="h-12" src="/images/placeholder_logo.png" />
+                <img
+                  className="h-12"
+                  src="/images/placeholder_logo.png"
+                  alt="Placeholder Logo"
+                />
               </li>
               <li>
-                <img className="h-12" src="/images/placeholder_logo.png" />
+                <img
+                  className="h-12"
+                  src="/images/placeholder_logo.png"
+                  alt="Placeholder Logo"
+                />
               </li>
             </ul>
           </div>
