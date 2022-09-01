@@ -1,11 +1,11 @@
 type Container = {
   className?: string;
-  children?: any;
+  children: React.ReactNode;
 };
 
 const Container: React.FC<Container> = ({ className, children }) => {
   return (
-    <div className={`container px-4 lg:px-8 py-4 mx-auto ${className}`}>
+    <div className={`container px-4 lg:px-8 mx-auto ${className}`}>
       {children}
     </div>
   );
