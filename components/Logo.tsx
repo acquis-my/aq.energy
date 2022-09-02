@@ -3,7 +3,7 @@ import ExportedImage from "next-image-export-optimizer";
 
 const Logo = () => {
   return (
-    <figure className="h-12 w-12">
+    <figure className="h-10 w-10">
       <Link href="/">
         <a>
           <ExportedImage

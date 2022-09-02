@@ -1,0 +1,38 @@
+[
+  {
+    "type": "home",
+    "size": 3.14,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  },
+  {
+    "type": "home",
+    "size": 6.11,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  },
+  {
+    "type": "home",
+    "size": 23.31,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  },
+  {
+    "type": "business",
+    "size": 31.41,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  },
+  {
+    "type": "business",
+    "size": 56.41,
+    "title": "natus nisi omnis corporis facere molestiae rerum in",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  },
+  {
+    "type": "business",
+    "size": 39.1,
+    "title": "accusamus ea aliquid et amet sequi nemo",
+    "thumbnail": "https://via.placeholder.com/600x400"
+  }
+]
