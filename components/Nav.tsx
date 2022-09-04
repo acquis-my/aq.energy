@@ -27,7 +27,7 @@ const Nav = () => {
       <Popover className="">
         {({ open }) => (
           <Container
-            className={`py-4 relative lg:hidden flex whitespace-nowrap justify-between items-center duration-150 ease-in-out ${
+            className={`z-50 py-4 relative lg:hidden flex whitespace-nowrap justify-between items-center duration-150 ease-in-out ${
               open ? "bg-white" : "bg-transparent"
             }`}
           >
