@@ -15,6 +15,16 @@ export const Button: React.FC<Button> = ({ href, children }) => {
   );
 };
 
+export const ButtonVariant: React.FC<Button> = ({ href, children }) => {
+  return (
+    <Link href={href}>
+      <a className="px-6 py-2 font-medium bg-cyber-yellow rounded-md text-black">
+        {children}
+      </a>
+    </Link>
+  );
+};
+
 export const OutlineButton: React.FC<Button> = ({ href, children }) => {
   return (
     <Link href={href}>
