@@ -1,7 +1,6 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Link from "next/link";
-import { ButtonVariant, OutlineButton } from "../components/Button";
 
 const NotFoundPage = () => {
   return (

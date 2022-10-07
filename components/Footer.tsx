@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="w-full lg:w-2/3 flex flex-col lg:flex-row justify-end gap-6 lg:gap-14">
           <div className="flex flex-col gap-2">
             <span className="font-semibold text-white">Solar Energy</span>
-            <ul className="flex flex-col gap-1 text-slate-400 text-sm">
+            <ul className="flex flex-col gap-1 text-slate-300 text-sm">
               <li>
                 <Link href="/homeowners">
                   <a>For Homeowners</a>
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-2">
             <span className="font-semibold text-white">Company</span>
-            <ul className="flex flex-col gap-1 text-slate-400 text-sm">
+            <ul className="flex flex-col gap-1 text-slate-300 text-sm">
               <li>
                 <Link href="/homeowners">
                   <a>About Us</a>
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
       </Container>
-      <Container className="flex justify-between items-center text-sm py-4">
+      <Container className="flex justify-between items-center text-xs py-4">
         <div>Copyright &copy; 2022 Acquis Energy. All rights reserved.</div>
         <div>
           <ul className="flex gap-x-6">
