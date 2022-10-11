@@ -4,7 +4,7 @@ import PrimaryCard from "./PrimaryCard";
 
 const CTA: React.FC<{ caption: string }> = ({ caption }) => {
   return (
-    <section className="pb-16">
+    <section className="">
       <Container className="py-4">
         <PrimaryCard className="relative overflow-hidden">
           <figure className="absolute inset-0 ">

@@ -91,7 +91,7 @@ const Quote = () => {
                       Quote request received
                     </h1>
                     <p className="text-sm md:text-base pt-2 text-gray-600">
-                      We'll get back to you shortly.
+                      We&apos;ll get back to you shortly.
                     </p>
                   </div>
                 ) : (
