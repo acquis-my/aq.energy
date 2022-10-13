@@ -44,3 +44,13 @@ export const OutlineButton: React.FC<Button> = ({ href, children }) => {
     </Link>
   );
 };
+
+export const OutlineButtonDark: React.FC<Button> = ({ href, children }) => {
+  return (
+    <Link href={href}>
+      <a className="px-6 py-2 font-medium text-slate-700 hover:text-cyber-yellow border border-black-coral hover:border-cyber-yellow rounded-md  ">
+        {children}
+      </a>
+    </Link>
+  );
+};

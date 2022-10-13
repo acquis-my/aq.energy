@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Hero from "../components/Hero";
-import { Button, OutlineButton } from "../components/Button";
+import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
@@ -294,6 +294,18 @@ const Home: NextPage<any> = () => {
           {faqs.map((faq, i) => (
             <FAQ key={`faq_${i}`} data={faq} />
           ))}
+        </div>
+
+        {/* <div className="mx-auto mt-12 text-sm text-slate-700">
+          <Link href="/faq">
+            <a className="border border-black-coral px-6 py-3 hover:border-yellow-600 hover:text-yellow-600">
+              View More
+            </a>
+          </Link>
+        </div> */}
+
+        <div className="mx-auto mt-12 text-sm text-slate-700">
+          <OutlineButtonDark href="/faq">View More</OutlineButtonDark>
         </div>
       </Container>
     </Layout>

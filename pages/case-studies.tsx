@@ -68,7 +68,7 @@ const CaseStudiesPage = () => {
             </select>
           </div> */}
         </Container>
-        <Container className="grid grid-cols-3 gap-12">
+        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {studies.map((study, i) => (
             <CaseStudyCardVariant key={"study_" + i} data={study} />
           ))}
