@@ -18,4 +18,21 @@ const Logo = () => {
   );
 };
 
+export const LogoSecondary = () => {
+  return (
+    <figure className="w-40">
+      <Link href="/">
+        <a>
+          <ExportedImage
+            src="images/aq-logo-secondary.png"
+            alt="Acquis Logo"
+            height={151}
+            width={625}
+          />
+        </a>
+      </Link>
+    </figure>
+  );
+};
+
 export default Logo;
