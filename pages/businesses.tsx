@@ -75,7 +75,9 @@ const BusinessesPage = () => {
       </section>
 
       {/* Call to Action */}
-      <CTA caption="Big or small, we do it all." />
+      <section className="mb-16 md:mb-24">
+        <CTA caption="Big or small, we do it all." />
+      </section>
     </Layout>
   );
 };

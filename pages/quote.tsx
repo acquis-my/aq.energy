@@ -175,7 +175,7 @@ const Quote = () => {
                                 setFieldTouched("bill", true);
                               }
                             }}
-                            className="w-full text-right focus:outline-none"
+                            className="w-full text-right border-0 focus:outline-none focus:ring-0 p-0"
                           />
                         </div>
                       </div>

@@ -10,8 +10,8 @@ const CTA: React.FC<{ caption: string }> = ({ caption }) => {
           <figure className="absolute inset-0 ">
             <img src="sun.svg" className="w-full h-96 mx-auto" />
           </figure>
-          <div className="relative flex flex-col items-center mx-auto gap-14 py-14">
-            <p className="text-3xl lg:text-4xl text-white font-bold">
+          <div className="relative flex flex-col items-center mx-auto gap-14 py-12 md:py-14 px-4">
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white font-bold text-center">
               {caption}
             </p>
             <div>
