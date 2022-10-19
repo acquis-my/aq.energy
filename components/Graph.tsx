@@ -42,9 +42,9 @@ const Graph: React.FC<{ data: any }> = ({ data }) => {
           dataKey="year"
           axisLine={false}
           tick={{ fill: "#fff" }}
-          tickFormatter={(v) => `FY ${v}`}
+          tickFormatter={(v) => `Y${v}`}
         />
-        {/* <YAxis axisLine={false} tick={{ fill: "#bfc0c0" }} /> */}
+        <YAxis axisLine={false} tick={{ fill: "#bfc0c0" }} />
         <Tooltip
           content={CustomTooltip}
           cursor={false}

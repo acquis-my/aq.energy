@@ -1,59 +1,12 @@
+import Link from "next/link";
 import React, { useState } from "react";
 import { NumericFormat } from "react-number-format";
+import Estimate from "../lib/SolarEstimate";
 import Graph from "./Graph";
-
-type Bill = number;
-type Usage<Bill> = (bill: Bill) => number;
-type Tariff = {
-  price: number;
-  usage: number;
-  totalUsage: number;
-  totalCost: number;
-};
-
-const TARIFFS: Array<Tariff> = [
-  { price: 0.218, usage: 200 },
-  { price: 0.334, usage: 100 },
-  { price: 0.516, usage: 300 },
-  { price: 0.546, usage: 300 },
-  { price: 0.571, usage: Infinity },
-].reduce(
-  (acc, curr, i) => {
-    const { price, usage } = curr;
-    const totalUsage = acc[i].totalUsage + usage;
-    const totalCost = price * usage + acc[i].totalCost;
-    return [...acc, { ...curr, totalUsage, totalCost }];
-  },
-  [{ price: 0, usage: 0, totalUsage: 0, totalCost: 0 }]
-);
 
 export default function SolarCalculator() {
   const [bill, setBill] = useState(250);
-  const billIsMin = bill >= 250;
-
-  const elecUsage: Usage<Bill> = () => {
-    const tariffIdx: number = TARIFFS.findIndex((t) => bill < t.totalCost);
-
-    // Usage at current tariff
-    const usageCents: number = bill - TARIFFS[tariffIdx - 1].totalCost;
-    const usage: number = usageCents / TARIFFS[tariffIdx].price;
-
-    // Total electric usage
-    const totalUsage: number = TARIFFS[tariffIdx - 1].totalUsage + usage;
-
-    return Number(totalUsage.toFixed(0));
-  };
-
-  const yearlySavings = (bill: number) => {
-    let costs: any = [];
-    for (let i = 1; i <= 6; i++) {
-      costs = [
-        ...costs,
-        { year: i, savings: bill * i * 10, cost: bill * i * 12 },
-      ];
-    }
-    return costs;
-  };
+  const estimate = new Estimate(bill);
 
   return (
     <div className="flex flex-col lg:flex-row mt-12 p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
@@ -85,37 +38,60 @@ export default function SolarCalculator() {
             />
           </div>
         </div>
-        {!billIsMin && (
-          <div className="bg-blue-100 px-6 py-4">
-            <h2 className="text-blue-500 font-semibold">Advisory</h2>
+
+        {/* <div className="">
+          <h2 className="text-lg font-semibold">Cost Breakdown</h2>
+          <pre>Usage: {estimate.getUsage()} kWh</pre>
+          <pre>Savings: RM {estimate.getSavings()}/mo</pre>
+          <pre>Size: {estimate.getSystemSize()}kWp</pre>
+        </div> */}
+
+        {!estimate.meetBillReq && (
+          <div className="block bg-blue-100 px-6 py-4">
+            <h2 className="text-blue-500 font-semibold">Note</h2>
             <p className="text-blue-900 text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              placeat incidunt veniam minima rem, reiciendis quam maiores
-              voluptas illum sint.
+              We are unable to provide an estimate if your electric bill is less
+              than RM 250/mo or more than RM 900/mo.
+            </p>
+            <p className="text-blue-900 text-sm pt-2">
+              Please{" "}
+              <Link href="/about#contact">
+                <a className="italic">contact us</a>
+              </Link>{" "}
+              for more information.
             </p>
           </div>
         )}
-        <div className="">
-          <h2 className="text-lg font-semibold">Cost Breakdown</h2>
-        </div>
       </section>
       <section className="w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md">
         <div className="hidden sm:flex sm:flex-row py-8 xl:py-12 justify-between sm:divide-x-4 divide-slate-500 text-white">
           <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
             <h2 className="text-sm">Monthly Savings</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">RM 380</span>
+            <span className="text-3xl xl:text-4xl font-semibold">
+              {estimate.meetBillReq
+                ? `RM ${estimate.getSavings().toFixed(0)}`
+                : "-"}
+            </span>
           </div>
           <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
             <h2 className="text-sm">System Size</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">18.5 kWp</span>
+            <span className="text-3xl xl:text-4xl font-semibold">
+              {estimate.meetBillReq
+                ? `${estimate.getSystemSize().toFixed(2)} kWp`
+                : "-"}
+            </span>
           </div>
           <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
             <h2 className="text-sm">Breakeven Time</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">4.5 yrs</span>
+            <span className="text-3xl xl:text-4xl font-semibold">
+              {estimate.meetBillReq
+                ? `${estimate.getROI().toFixed(1)} yrs`
+                : "-"}
+            </span>
           </div>
         </div>
         <div className="w-full aspect-[4/3] sm:aspect-[2/1] px-4 pb-6 xl:px-16 md:pb-12 overflow-hidden">
-          <Graph data={yearlySavings(bill)} />
+          <Graph data={estimate.generateGraphData()} />
         </div>
       </section>
     </div>
