@@ -28,7 +28,7 @@ const AboutPage = () => {
             With rising energy demand and accelerating climate change,
             sustainable and renewable energy has become ever so important. We
             take pride in playing a part in that transformation and supporting
-            Malaysia's goal of achieving net-zero carbon by 2050.
+            Malaysia&apos;s goal of achieving net-zero carbon by 2050.
           </p>
           <div className="flex flex-row gap-14">
             <div className="flex flex-col gap-4">
@@ -123,8 +123,8 @@ const AboutPage = () => {
               </figure>
               <span className="text-lg font-semibold">Vision</span>
               <p className="max-w-sm text-sm text-gray-500">
-                To accelerate Malaysia's transformation into a net-zero carbon
-                economy.
+                To accelerate Malaysia&apos;s transformation into a net-zero
+                carbon economy.
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-4">
@@ -225,7 +225,7 @@ const AboutPage = () => {
               <p className="text-gray-600">
                 Solar energy is clean, quiet, and does not require significant
                 maintenance. With more people and companies signing up each day,
-                don't miss out on greater electricity savings!
+                don&apos;t miss out on greater electricity savings!
               </p>
               <p className="text-gray-600">
                 Get a free quote from us. No commitments.

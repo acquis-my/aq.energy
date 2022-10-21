@@ -109,7 +109,7 @@ const HomeownersPage: NextPage = () => {
         <Container className="py-24">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <h1 className="w-full lg:w-1/3 text-center lg:text-left text-4xl font-bold">
-              It's never been easier to save!
+              It&apos;s never been easier to save!
             </h1>
             <p className="w-full lg:w-1/2 text-center lg:text-left text-gray-500">
               With our flexible payment options, you can choose between maximum
