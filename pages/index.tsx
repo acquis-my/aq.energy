@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Hero from "../components/Hero";
 import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 import Layout from "../components/Layout";
@@ -11,44 +10,36 @@ import ExportedImage from "next-image-export-optimizer";
 import FAQ from "../components/FAQ";
 import CaseStudyCard from "../components/CaseStudyCard";
 
-import caseStudies from "../fakedata/studies.json";
-import testimonials from "../fakedata/testimonials.json";
+import caseStudies from "../_content/studies.json";
+import testimonials from "../_content/testimonials.json";
+import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import { NextSeo } from "next-seo";
 
-const faqs = [
-  {
-    question: "This is one long question?",
-    answer:
-      "We provide solar energy solutions for both homeowners and business to supercharge their roofs.",
-  },
-  { question: "How about this??", answer: "Nope tha tis not correct." },
-];
-
 const stats = [
   {
-    title: "Installed Capacity",
-    value: 1200,
-    unit: "kWp",
-    caption: "Velit officia consequat duis mollit. Exercitation.",
-  },
-  {
     title: "Clients",
+    value: "300+",
+    unit: null,
+    caption: "Empowering roofs since 2013",
+  },
+  {
+    title: "CO2 Reduced",
     value: 228,
-    unit: null,
-    caption: "Velit officia consequat duis mollit. Exercitation.",
+    unit: "kg",
+    caption: "",
   },
   {
-    title: "CO2 Reduced (tonnes)",
-    value: 1199,
-    unit: null,
-    caption: "Velit officia consequat duis mollit. Exercitation.",
+    title: "Customer Satisfaction",
+    value: 100,
+    unit: "%",
+    caption: "5-star reviews on Google",
   },
   {
-    title: "Average ROI",
-    value: 24,
-    unit: "Months",
-    caption: "Velit officia consequat duis mollit. Exercitation.",
+    title: "Accumulated Savings",
+    value: "RM 240k",
+    unit: null,
+    caption: "Across all clients",
   },
 ];
 
@@ -71,17 +62,17 @@ const Home: NextPage<any> = () => {
             <span className="text-cyber-yellow">Superpowers</span>
           </p>
           <p className="max-w-prose text-gray-50 font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-            expedita nemo voluptate at ad. Mollitia eos aut repellat magni nisi
-            cum nihil provident, doloribus fuga cupiditate iure illo quibusdam
-            quas!
+            Generate clean solar energy to fulfill your electricity needs. From
+            small-scale residential, to large-scale commercial solutions, we
+            have a dedicated team to help you achieve lower electricity costs
+            with a solar PV system.
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
             <OutlineButton href="/about#contact">Contact Us</OutlineButton>
           </div>
           <div className="flex flex-col gap-y-2">
-            <p>Trusted by 100s of clients throughout the peninsula:</p>
+            <p>With support from the best of the Solar industry:</p>
             <ul className="flex whitespace-nowrap gap-x-2">
               <li>
                 <img
@@ -127,7 +118,7 @@ const Home: NextPage<any> = () => {
           </p>
           <p className="text-gray-500">
             We provide solar energy solutions for both homeowners and business
-            to supercharge their roofs.
+            to supercharge their roofs. *Solar financing available
           </p>
         </div>
 
@@ -144,9 +135,8 @@ const Home: NextPage<any> = () => {
 
             <Container className="relative flex flex-col pt-14 text-center gap-6 text-white">
               <h2 className="text-3xl font-semibold">For Homeowners</h2>
-              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-400">
-                Eos dolore explicabo ex, incidunt repellendus accusantium modi
-                quae corrupti voluptates nobis.
+              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
+                Build your own sun generator and save up to RM 850 per month.
               </div>
               <div>
                 <Button href="/homeowners">Learn More</Button>
@@ -166,12 +156,12 @@ const Home: NextPage<any> = () => {
 
             <Container className="relative flex flex-col pt-14 text-center gap-6 text-white">
               <h2 className="text-3xl font-semibold">For Businessess</h2>
-              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-400">
-                Eos dolore explicabo ex, incidunt repellendus accusantium modi
-                quae corrupti voluptates nobis.
+              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
+                With large roofs, come greater savings and stronger
+                environmental responsibility.
               </div>
               <div>
-                <Button href="/homeowners">Learn More</Button>
+                <Button href="/businesses">Learn More</Button>
               </div>
             </Container>
           </div>
@@ -205,8 +195,7 @@ const Home: NextPage<any> = () => {
               See how others have gained from Solar Energy
             </p>
             <p className="text-gray-500">
-              We provide solar energy solutions for both homeowners and business
-              to supercharge their roofs.
+              Verified by our customers, and monitoring data.
             </p>
           </div>
 
@@ -266,16 +255,17 @@ const Home: NextPage<any> = () => {
             <div className="flex flex-col gap-6 p-12">
               <div>
                 <h1 className="font-semibold text-3xl">
-                  Empower your roof now
+                  We take care of everything
                 </h1>
               </div>
               <p className="text-gray-600 text-sm">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-                saepe animi maxime ullam, quis explicabo sapiente voluptas non
-                tempora cum. Rem dolore voluptates, officia beatae aut iusto
-                aperiam quidem blanditiis.
+                From SEDA submission, installation, and post-installation
+                services, we do it all.
               </p>
-              <div>FORM GOES HERE</div>
+              <p className="text-gray-600 text-sm">
+                With no hidden fees and all-inclusive pricing, feel safe with
+                our <strong>SEDA certified service provider</strong> status.
+              </p>
             </div>
           </div>
         </Container>
@@ -286,12 +276,12 @@ const Home: NextPage<any> = () => {
         <div className="max-w-xl mx-auto mb-12 text-center">
           <h1 className="text-4xl font-semibold mb-4 capitalize">FAQ</h1>
           <p className="text-gray-500">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Some of the most common questions from our clients.
           </p>
         </div>
 
         <div className="flex flex-col gap-3">
-          {faqs.map((faq, i) => (
+          {faqs.slice(0, 5).map((faq, i) => (
             <FAQ key={`faq_${i}`} data={faq} />
           ))}
         </div>

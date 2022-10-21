@@ -1,6 +1,6 @@
 interface Statistic {
   title: string;
-  value: number;
+  value: number | string;
   unit?: string | null;
   caption?: string;
 }

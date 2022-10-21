@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import { Button, OutlineButton } from "../components/Button";
 import BusinessSectionRow from "../components/BusinessSectionRow";
 
-import caseStudies from "../fakedata/studies.json";
+import caseStudies from "../_content/studies.json";
 import CTA from "../components/CTA";
 import CaseStudiesSection from "../components/CaseStudiesSection";
 import { NextSeo } from "next-seo";
@@ -20,21 +20,21 @@ const BusinessesPage = () => {
   return (
     <Layout>
       <NextSeo
-        title="Empower your business with clean solar energy"
+        title="Energize your business with clean solar"
         description="Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint."
       />
 
       <Hero bgImage="images/business-hero.png">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-xl text-4xl lg:text-5xl text-white font-bold">
-            Power your business with{" "}
-            <span className="text-cyber-yellow">Reliable</span> Solar Energy.
+            Energize your business with{" "}
+            <span className="text-cyber-yellow">Great</span> Solar Energy.
           </h1>
           <p className="max-w-prose text-gray-50 font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-            expedita nemo voluptate at ad. Mollitia eos aut repellat magni nisi
-            cum nihil provident, doloribus fuga cupiditate iure illo quibusdam
-            quas!
+            Secure your energy bills against rising operational costs. Put your
+            rooftops to work by transforming them into productive solar
+            generators. All with hassle-free systems monitoring and solid
+            workmanship.
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
@@ -45,32 +45,48 @@ const BusinessesPage = () => {
 
       {/* Features row */}
       <section className="bg-slate-100">
-        {rows.map((row, i) => {
-          const isOdd = i % 2 !== 0;
-          return (
-            <BusinessSectionRow
-              key={"sectionRow_" + i}
-              reversed={isOdd}
-              badgeText={"+2 Years"}
-            >
-              <h1 className="text-3xl md:text-4xl font-bold">{row}</h1>
-              <p className="text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <span>&mdash; Karen Tan</span>
-            </BusinessSectionRow>
-          );
-        })}
+        <BusinessSectionRow reversed={false} badgeText={"+2 Years"}>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            5-Year Extended Workmanship Guarantee
+          </h1>
+          <p className="text-gray-500">
+            Big investments deserve greater care. We provide an additional 2
+            years to ensure your system performs at its maximum for longer.
+          </p>
+        </BusinessSectionRow>
+      </section>
+
+      <section className="bg-slate-100">
+        <BusinessSectionRow reversed={true} badgeText={"+2 Years"}>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Professional Site Research
+          </h1>
+          <p className="text-gray-500">
+            From satellite-based imagery, software simulations, to on-site power
+            data-logging, we use the best tools in the industry.
+          </p>
+        </BusinessSectionRow>
+      </section>
+
+      <section className="bg-slate-100">
+        <BusinessSectionRow reversed={false} badgeText={"+2 Years"}>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Post-Installation Monitoring and Service
+          </h1>
+          <p className="text-gray-500">
+            With great power, comes great responsibility. We ensure fast online
+            troubleshooting of system issues and responsive servicing that
+            require on-site rectification.
+          </p>
+        </BusinessSectionRow>
       </section>
 
       {/* Case Studies  */}
       <section className="relative bg-white">
         <CaseStudiesSection
           studies={studies}
-          header={"How other Businesses benefitted from Solar Energy"}
-          subheader={
-            "We've helped many business reduce their carbon footprint significantly using solar energy."
-          }
+          header="It's cheaper going Green."
+          subheader="Explore how we've helped commercial and industrial entities reduce their electricity costs and transform into more environmentally responsible businesses."
         />
       </section>
 

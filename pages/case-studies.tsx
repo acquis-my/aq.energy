@@ -1,11 +1,11 @@
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import { NextSeo } from "next-seo";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
 import Container from "../components/Container";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 
-import caseStudies from "../fakedata/studies.json";
+import caseStudies from "../_content/studies.json";
 import CTA from "../components/CTA";
 import { ButtonVariant2 } from "../components/Button";
 import ExportedImage from "next-image-export-optimizer";
@@ -31,10 +31,8 @@ const CaseStudiesPage = () => {
             Success Stories
           </h1>
           <p className="max-w-prose text-gray-400 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-            expedita nemo voluptate at ad. Mollitia eos aut repellat magni nisi
-            cum nihil provident, doloribus fuga cupiditate iure illo quibusdam
-            quas!
+            From the smallest to largest, residential to industrial, explore
+            some of our previous installations across Malaysia since 2013.
           </p>
         </section>
       </Hero>
@@ -55,18 +53,6 @@ const CaseStudiesPage = () => {
               <option value="business">Business</option>
             </select>
           </div>
-          {/* <div className="col-span-2 flex flex-col">
-            <label htmlFor="supply_phases" className="font-semibold">
-              Supply Type
-            </label>
-            <select
-              name="supply_phases"
-              className="p-3 border border-slate-200 text-gray-700 tracking-wide"
-            >
-              <option value={1}>Single Phase</option>
-              <option value={3}>Three Phase</option>
-            </select>
-          </div> */}
         </Container>
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {studies.map((study, i) => (
@@ -84,10 +70,14 @@ const CaseStudiesPage = () => {
             <div className="flex flex-col mx-auto max-w-prose items-center text-center gap-10">
               <h1 className="text-4xl font-bold">Feeling inspired?</h1>
               <p className="text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                sapiente quia quae neque doloremque autem odio cumque inventore
-                praesentium et, porro quos fugiat sint repellendus cupiditate
-                corrupti, recusandae voluptatibus laboriosam.
+                Like any electrical appliance or machinery, we know that solar
+                energy is a significant investment. We work with the best in the
+                solar industry to give you a system that is reliable and
+                long-lasting.
+              </p>
+              <p className="text-gray-600">
+                Contact us now to have any of your questions or worries
+                answered.
               </p>
               <div>
                 <ButtonVariant2 href="/about#contact">
@@ -95,7 +85,7 @@ const CaseStudiesPage = () => {
                 </ButtonVariant2>
               </div>
             </div>
-            <div className="pt-16 text-center">[LOGOS] GO Here</div>
+            <div className="pt-16 text-center">Supplier logos here</div>
           </Container>
           <CTA caption="Big or small, we do it all." />
         </div>

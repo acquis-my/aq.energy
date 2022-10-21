@@ -4,15 +4,7 @@ import Container from "../components/Container";
 import FAQ from "../components/FAQ";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-
-const faqs = [
-  {
-    question: "This is one long question?",
-    answer:
-      "We provide solar energy solutions for both homeowners and business to supercharge their roofs.",
-  },
-  { question: "How about this??", answer: "Nope tha tis not correct." },
-];
+import faqs from "../_content/faqs.json";
 
 const FAQPage = () => {
   const [list, setList] = useState(faqs);

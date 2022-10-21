@@ -7,32 +7,36 @@ import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
 import Step from "../components/Step";
 import Testimonial from "../components/Testimonial";
-import testimonials from "../fakedata/testimonials.json";
+import testimonials from "../_content/testimonials.json";
 import CTA from "../components/CTA";
-import ExportedImage from "next-image-export-optimizer";
 import SolarCalculator from "../components/SolarCalculator";
 
 const HomeownersPage: NextPage = () => {
   const steps = [
     {
-      title: "Site Survey & Quotation",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      title: "E-Survey & Quotation",
+      description:
+        "An online survey is done to determine installation suitability, with a quotation issued to you.",
     },
     {
       title: "SEDA Application",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      description:
+        "After the quotation is signed and deposit paid, we will submit your system's application to SEDA on your behalf.",
     },
     {
-      title: "Down-payment and Settle Outstanding Bill",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      title: "Down-payment and Scheduling",
+      description:
+        "Upon SEDA approval, a down payment is requested along with the scheduling of the installation date.",
     },
     {
       title: "Installation",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      description:
+        "Our technical team installs the solar system at your home within 1-3 days.",
     },
     {
-      title: "Final Payment",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      title: "TNB Meter Change",
+      description:
+        "TNB conducts a meter change, after which the system can be turned on following the final payment of the system.",
     },
   ];
 
@@ -41,20 +45,21 @@ const HomeownersPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Affordable Solar Energy for your Home - AQ Energy</title>
+        <title>
+          Affordable and Reliable Solar Energy for your Home - AQ Energy
+        </title>
       </Head>
 
       <Hero bgImage="images/homeowners-hero.png">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
-            <span className="text-cyber-yellow">Affordable</span> Solar Energy
-            for your Home.
+            <span className="text-cyber-yellow">Affordable</span> and{" "}
+            <span className="text-cyber-yellow">Reliable</span> Home Solar
           </h1>
           <p className="max-w-prose text-gray-50 font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-            expedita nemo voluptate at ad. Mollitia eos aut repellat magni nisi
-            cum nihil provident, doloribus fuga cupiditate iure illo quibusdam
-            quas!
+            Clean electricity does not need to be expensive. Superpower your
+            roof with solar panels and generate your own clean energy. Good for
+            your wallet, and our environment.
           </p>
           <div className="flex gap-x-2 pb-24">
             <Button href="/quote">Get Quote</Button>
@@ -104,11 +109,11 @@ const HomeownersPage: NextPage = () => {
         <Container className="py-24">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <h1 className="w-full lg:w-1/3 text-center lg:text-left text-4xl font-bold">
-              How much could you save?
+              It's never been easier to save!
             </h1>
             <p className="w-full lg:w-1/2 text-center lg:text-left text-gray-500">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-              reiciendis autem natus veritatis ipsum quasi dolores accusantium.
+              With our flexible payment options, you can choose between maximum
+              return of investment, or lower capital commitments.
             </p>
           </div>
 
@@ -130,10 +135,11 @@ const HomeownersPage: NextPage = () => {
               How it works
             </h1>
             <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
-              5 Steps to Installation
+              5 Steps to Super-Roofs
             </p>
             <p className="text-sm md:text-base text-gray-500">
-              A solar PV system can be installed in as little as 5 easy steps.
+              A complete solar PV system can be installed in as little as 5 easy
+              steps.
             </p>
           </div>
 
@@ -162,8 +168,8 @@ const HomeownersPage: NextPage = () => {
             Reliable + Cost Effective
           </p>
           <p className="text-sm md:text-base text-gray-500">
-            We only use the best components to ensure a your system reliably
-            generates returns.
+            We only use the best components to ensure your system reliably
+            generates returns for longer.
           </p>
         </div>
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
