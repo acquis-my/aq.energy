@@ -8,13 +8,16 @@ import Statistic from "../components/Statistic";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
 import FAQ from "../components/FAQ";
-import CaseStudyCard from "../components/CaseStudyCard";
+import CaseStudyCard, {
+  CaseStudyCardVariant,
+} from "../components/CaseStudyCard";
 
 import caseStudies from "../_content/studies.json";
 import testimonials from "../_content/testimonials.json";
 import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import { NextSeo } from "next-seo";
+import AnimatedImage from "../components/AnimatedImage";
 
 const stats = [
   {
@@ -73,31 +76,39 @@ const Home: NextPage<any> = () => {
           </div>
           <div className="flex flex-col gap-y-2">
             <p>With support from the best of the Solar industry:</p>
-            <ul className="flex whitespace-nowrap gap-x-2">
+            <ul className="flex gap-x-2 overflow-auto">
               <li>
-                <img
-                  className="h-12"
+                <ExportedImage
+                  height={48}
+                  width={"100%"}
+                  className="h-12 w-full"
                   src="/images/placeholder_logo.png"
                   alt="Placeholder Logo"
                 />
               </li>
               <li>
-                <img
-                  className="h-12"
+                <ExportedImage
+                  height={48}
+                  width={"100%"}
+                  className="h-12 w-full"
                   src="/images/placeholder_logo.png"
                   alt="Placeholder Logo"
                 />
               </li>
               <li>
-                <img
-                  className="h-12"
+                <ExportedImage
+                  height={48}
+                  width={"100%"}
+                  className="h-12 w-full"
                   src="/images/placeholder_logo.png"
                   alt="Placeholder Logo"
                 />
               </li>
               <li>
-                <img
-                  className="h-12"
+                <ExportedImage
+                  height={48}
+                  width={"100%"}
+                  className="h-12 w-full"
                   src="/images/placeholder_logo.png"
                   alt="Placeholder Logo"
                 />
@@ -122,8 +133,8 @@ const Home: NextPage<any> = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-x-12 gap-y-8 ">
-          <div className="relative w-full lg:w-1/2 bg-slate-100 rounded-lg aspect-[1.2/1]">
+        <div className="flex flex-col md:flex-row gap-x-12 gap-y-8 ">
+          <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] md:aspect-[3/3] lg:aspect-[1.2/1] min-h-fit">
             <figure className="absolute inset-0 ">
               <ExportedImage
                 src="images/soln-home.jpg"
@@ -133,8 +144,10 @@ const Home: NextPage<any> = () => {
               />
             </figure>
 
-            <Container className="relative flex flex-col pt-14 text-center gap-6 text-white">
-              <h2 className="text-3xl font-semibold">For Homeowners</h2>
+            <Container className="relative flex flex-col py-14 text-center gap-6 text-white">
+              <h2 className="text-2xl lg:text-3xl font-semibold">
+                For Homeowners
+              </h2>
               <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
                 Build your own sun generator and save up to RM 850 per month.
               </div>
@@ -144,18 +157,21 @@ const Home: NextPage<any> = () => {
             </Container>
           </div>
 
-          <div className="relative w-full lg:w-1/2 bg-slate-100 rounded-lg aspect-[1.2/1]">
+          <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] lg:aspect-[1.2/1] min-h-fit">
             <figure className="absolute inset-0">
-              <ExportedImage
+              <AnimatedImage
                 src="images/soln-business.jpg"
                 layout="fill"
+                loading="eager"
                 className="object-cover rounded-lg"
                 alt="Array of solar panels."
               />
             </figure>
 
-            <Container className="relative flex flex-col pt-14 text-center gap-6 text-white">
-              <h2 className="text-3xl font-semibold">For Businessess</h2>
+            <Container className="relative flex flex-col py-14 text-center gap-6 text-white">
+              <h2 className="text-2xl lg:text-3xl font-semibold">
+                For Businessess
+              </h2>
               <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
                 With large roofs, come greater savings and stronger
                 environmental responsibility.
@@ -173,7 +189,12 @@ const Home: NextPage<any> = () => {
         <Container className="py-4">
           <PrimaryCard className="relative -mt-32 overflow-hidden">
             <figure className="absolute inset-0 ">
-              <img src="sun.svg" className="h-full mx-auto" />
+              <AnimatedImage
+                src="sun.svg"
+                className="h-full mx-auto"
+                alt=""
+                layout="fill"
+              />
             </figure>
             <Container className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-10">
               {stats.map((stat, i) => (
@@ -194,14 +215,14 @@ const Home: NextPage<any> = () => {
             <p className="text-4xl font-semibold mb-4 capitalize">
               See how others have gained from Solar Energy
             </p>
-            <p className="text-gray-500">
+            <p className="text-gray-600">
               Verified by our customers, and monitoring data.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {studies.map((study, i) => (
-              <CaseStudyCard key={"study_" + i} data={study} />
+              <CaseStudyCardVariant key={"study_" + i} data={study} />
             ))}
           </div>
 
@@ -238,9 +259,11 @@ const Home: NextPage<any> = () => {
       {/* Quick Quote Form  */}
       <section className="relative">
         <figure className="aboslute inset-0">
-          <ExportedImage
-            src="images/home-quote.png"
+          <AnimatedImage
+            alt=""
             layout="fill"
+            loading="eager"
+            src="images/home-quote.png"
             className="object-cover"
           />
         </figure>

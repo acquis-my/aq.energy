@@ -63,7 +63,12 @@ const CaseStudiesPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <img src="/Pattern.svg" className="object-cover mx-auto h-full" />
+          <ExportedImage
+            alt=""
+            layout="fill"
+            src="images/Pattern.svg"
+            className="object-cover mx-auto h-full"
+          />
         </figure>
         <div className="relative flex flex-col gap-12">
           <Container>

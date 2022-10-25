@@ -7,6 +7,7 @@ const PortraitCard: React.FC<Portrait> = ({ name, title, image }) => {
     <div className="relative bg-slate-200 rounded aspect-[1/1.25] overflow-hidden">
       <figure className="absolute inset-0">
         <ExportedImage
+          alt=""
           src={image}
           layout="fill"
           className="object-cover w-full aspect-[4/3]"

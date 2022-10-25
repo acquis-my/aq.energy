@@ -1,29 +1,23 @@
-import ExportedImage from "next-image-export-optimizer";
-import { useState } from "react";
+import AnimatedImage from "./AnimatedImage";
 import Container from "./Container";
 import Nav from "./Nav";
 
 type Header = {
   bgImage?: string;
-  children: any;
+  children: React.ReactNode;
 };
 
 const Hero: React.FC<Header> = ({ bgImage, children }) => {
-  const [imageHasLoaded, setImageHasLoaded] = useState(false);
-
   return (
     <header className="relative bg-indigo-dye">
       <figure className="absolute inset-0 z-0">
         {bgImage && (
-          <ExportedImage
+          <AnimatedImage
             src={bgImage}
-            onLoad={() => setImageHasLoaded(true)}
-            layout="fill"
-            className={`object-cover transition duration-1000 ${
-              imageHasLoaded ? "opacity-100" : "opacity-0 "
-            }`}
+            alt=""
             loading="eager"
-            alt="Hero Image"
+            layout="fill"
+            className="object-cover"
           />
         )}
       </figure>

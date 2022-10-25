@@ -54,7 +54,7 @@ const AboutPage = () => {
       </Hero>
 
       <Container className="flex flex-col md:flex-row justify-between py-20 gap-8">
-        <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center lg:text-left">
+        <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center md:text-left">
           <h1 className="font-bold text-4xl text-gray-800">Our Story</h1>
           <p>
             Max Bell Sdn. Bhd. was established in 2013 to play a positive role
@@ -219,7 +219,12 @@ const AboutPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <img src="/Pattern.svg" className="object-cover mx-auto h-full" />
+          <ExportedImage
+            alt=""
+            layout="fill"
+            src="images/Pattern.svg"
+            className="object-cover mx-auto h-full"
+          />
         </figure>
         <div className="relative flex flex-col gap-12">
           <Container>

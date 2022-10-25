@@ -32,7 +32,7 @@ const Nav = () => {
             }`}
           >
             <Logo />
-            <Popover.Button className="">
+            <Popover.Button className="" aria-label="Navigation Menu">
               <Bars3Icon
                 className={`${
                   open ? "text-black" : "text-white"

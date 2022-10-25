@@ -10,6 +10,7 @@ import Testimonial from "../components/Testimonial";
 import testimonials from "../_content/testimonials.json";
 import CTA from "../components/CTA";
 import SolarCalculator from "../components/SolarCalculator";
+import ExportedImage from "next-image-export-optimizer";
 
 const HomeownersPage: NextPage = () => {
   const steps = [
@@ -173,25 +174,30 @@ const HomeownersPage: NextPage = () => {
           </p>
         </div>
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-          <figure>
-            <img
+          <figure className="relative aspect-[3/2]">
+            <ExportedImage
               src="https://via.placeholder.com/600x400"
+              layout="fill"
               alt="Solar panels"
               className="object-cover h-full w-full rounded-lg"
             />
           </figure>
-          <figure className="md:row-span-2 lg:col-span-2 ">
-            <img
+          <figure className="relative aspect-[3/2] md:aspect-auto md:row-span-2 lg:col-span-2 ">
+            <ExportedImage
               src="https://via.placeholder.com/600x400"
+              layout="fill"
               alt="Roof"
-              className="object-cover h-full w-full rounded-lg"
+              className="object-cover aspect-[3/2] h-full w-full rounded-lg"
             />
           </figure>
-          <figure className=" ">
-            <img
+          <figure className="relative aspect-[3/2]">
+            <ExportedImage
               src="https://via.placeholder.com/600x400"
+              height={400}
+              width={600}
+              layout="fill"
               alt="Inverter"
-              className="object-cover h-full w-full rounded-lg"
+              className="h-full w-full object-cover rounded-lg"
             />
           </figure>
         </Container>
