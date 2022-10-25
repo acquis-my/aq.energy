@@ -169,11 +169,16 @@ const AboutPage = () => {
             </h1>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Portrait />
-            <Portrait />
-            <Portrait />
-            <Portrait />
-            <Portrait />
+            <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
+            <Portrait
+              name="Albert Lee"
+              title="Bossette"
+              image="images/AB.JPG"
+            />
+            <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
+            <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
+            <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
+            <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
           </div>
           <div
             id="contact"
