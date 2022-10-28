@@ -81,7 +81,7 @@ const AboutPage = () => {
         </figure>
       </Container>
 
-      <section className="relative bg-slate-200">
+      <section id="careers" className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
           <div className="max-w-xl mx-auto mb-12 text-center">
             <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">

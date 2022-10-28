@@ -190,7 +190,7 @@ const Home: NextPage<any> = () => {
           <PrimaryCard className="relative -mt-32 overflow-hidden">
             <figure className="absolute inset-0 ">
               <AnimatedImage
-                src="sun.svg"
+                src="images/sun.svg"
                 className="h-full mx-auto"
                 alt=""
                 layout="fill"
