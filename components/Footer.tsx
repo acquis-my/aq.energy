@@ -43,7 +43,7 @@ const Footer = () => {
                   Company
                 </span>
                 <FooterNavItem href="/about">About Us</FooterNavItem>
-                <FooterNavItem href="#">Careers</FooterNavItem>
+                <FooterNavItem href="/about#careers">Careers</FooterNavItem>
                 <FooterNavItem href="/case-studies">Case Studies</FooterNavItem>
               </div>
             </div>

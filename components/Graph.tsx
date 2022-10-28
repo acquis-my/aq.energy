@@ -59,8 +59,20 @@ const Graph: React.FC<{ data: any }> = ({ data }) => {
           stroke="#FFF"
           strokeOpacity={0.25}
         />
-        <Bar maxBarSize={24} dataKey="cost" stackId={"a"} fill="#bfc0c0" />
-        <Bar maxBarSize={24} dataKey="savings" stackId={"a"} fill="#FFCE00" />
+        <Bar
+          maxBarSize={24}
+          name="Paid to TNB"
+          dataKey="cost"
+          stackId={"a"}
+          fill="#6E7E97"
+        />
+        <Bar
+          maxBarSize={24}
+          name="Savings"
+          dataKey="savings"
+          stackId={"a"}
+          fill="#FFCE00"
+        />
       </BarChart>
     </ResponsiveContainer>
   );
