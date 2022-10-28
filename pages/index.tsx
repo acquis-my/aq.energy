@@ -8,9 +8,7 @@ import Statistic from "../components/Statistic";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
 import FAQ from "../components/FAQ";
-import CaseStudyCard, {
-  CaseStudyCardVariant,
-} from "../components/CaseStudyCard";
+import { CaseStudyCardVariant } from "../components/CaseStudyCard";
 
 import caseStudies from "../_content/studies.json";
 import testimonials from "../_content/testimonials.json";
@@ -18,6 +16,7 @@ import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import { NextSeo } from "next-seo";
 import AnimatedImage from "../components/AnimatedImage";
+import CompanyLogo from "../components/CompanyLogo";
 
 const stats = [
   {
@@ -78,40 +77,16 @@ const Home: NextPage<any> = () => {
             <p>With support from the best of the Solar industry:</p>
             <ul className="flex gap-x-2 overflow-auto">
               <li>
-                <ExportedImage
-                  height={48}
-                  width={"100%"}
-                  className="h-12 w-full"
-                  src="/images/placeholder_logo.png"
-                  alt="Placeholder Logo"
-                />
+                <CompanyLogo alt="Placeholder Logo" />
               </li>
               <li>
-                <ExportedImage
-                  height={48}
-                  width={"100%"}
-                  className="h-12 w-full"
-                  src="/images/placeholder_logo.png"
-                  alt="Placeholder Logo"
-                />
+                <CompanyLogo alt="Placeholder Logo" />
               </li>
               <li>
-                <ExportedImage
-                  height={48}
-                  width={"100%"}
-                  className="h-12 w-full"
-                  src="/images/placeholder_logo.png"
-                  alt="Placeholder Logo"
-                />
+                <CompanyLogo alt="Placeholder Logo" />
               </li>
               <li>
-                <ExportedImage
-                  height={48}
-                  width={"100%"}
-                  className="h-12 w-full"
-                  src="/images/placeholder_logo.png"
-                  alt="Placeholder Logo"
-                />
+                <CompanyLogo alt="Placeholder Logo" />
               </li>
             </ul>
           </div>
