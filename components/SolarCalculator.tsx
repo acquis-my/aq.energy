@@ -64,26 +64,26 @@ export default function SolarCalculator() {
         )}
       </section>
       <section className="w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md">
-        <div className="hidden sm:flex sm:flex-row py-8 xl:py-12 justify-between sm:divide-x-4 divide-slate-500 text-white">
+        <div className="flex flex-row py-8 xl:py-12 justify-between sm:divide-x-4 divide-slate-500 text-white">
           <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
-            <h2 className="text-sm">Monthly Savings</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">
+            <h2 className="text-xs sm:text-sm">Monthly Savings</h2>
+            <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
               {estimate.meetBillReq
                 ? `RM ${estimate.getSavings().toFixed(0)}`
                 : "-"}
             </span>
           </div>
-          <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
-            <h2 className="text-sm">System Size</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">
+          <div className="w-full sm:w-1/3 sm:pl-8 xl:pl-16">
+            <h2 className="text-xs sm:text-sm">System Size</h2>
+            <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
               {estimate.meetBillReq
                 ? `${estimate.getSystemSize().toFixed(2)} kWp`
                 : "-"}
             </span>
           </div>
-          <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
-            <h2 className="text-sm">Breakeven Time</h2>
-            <span className="text-3xl xl:text-4xl font-semibold">
+          <div className="w-full sm:w-1/3 sm:pl-8 xl:pl-16">
+            <h2 className="text-xs sm:text-sm">Breakeven Time</h2>
+            <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
               {estimate.meetBillReq
                 ? `${estimate.getROI().toFixed(1)} yrs`
                 : "-"}
