@@ -24,8 +24,22 @@ const LeadSchema = Yup.object().shape({
 });
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
+const CT = [
+  { label: "Fuse 32A", value: 32 },
+  { label: "Fuse 63A", value: 63 },
+  { label: "CT 150/5", value: 150 },
+  { label: "CT 200/5", value: 200 },
+  { label: "CT 300/5", value: 300 },
+  { label: "CT 400/5", value: 400 },
+  { label: "CT 500/5", value: 500 },
+  { label: "CT 600/5", value: 600 },
+  { label: "CT 800/5", value: 800 },
+  { label: "CT 1000/5", value: 1000 },
+  { label: "CT 1200/5", value: 1200 },
+  { label: "CT 1600/5", value: 1600 },
+];
 
-const Quote = () => {
+const Quote: React.FC<{}> = () => {
   const [verifyUser, setVerifyUser] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -67,7 +81,7 @@ const Quote = () => {
             lead_type: "res",
             lang: "en",
             bill: "",
-            breaker_rating: 1000,
+            breaker_rating: 32,
             supply_phases: 1,
             name: "",
             phone: "",
@@ -186,16 +200,21 @@ const Quote = () => {
                             htmlFor="breaker_rating"
                             className="font-semibold"
                           >
-                            Breaker Rating
+                            Fuse Rating / CT Ratio
                           </label>
                           <Field
                             name="breaker_rating"
                             component="select"
                             className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                           >
-                            <option value={1000}>1/1000</option>
-                            <option value={1500}>1/1500</option>
-                            <option value={2000}>1/2000</option>
+                            {CT.map((o) => (
+                              <option
+                                key={`ct_option-${o.value}`}
+                                value={o.value}
+                              >
+                                {o.label}
+                              </option>
+                            ))}
                           </Field>
                         </div>
                       )}
