@@ -21,7 +21,7 @@ const Hero: React.FC<Header> = ({ bgImage, children }) => {
           />
         )}
       </figure>
-      <div className="relative bg-gradient-to-r from-black/90 lg:from-black/80  to-black/20 ">
+      <div className="relative bg-gradient-to-r from-black/70 to-black/30 md:from-black/60 md:via-black/40 lg:to-transparent">
         <Nav />
         <Container className={`relative z-0 py-10 animate-fade-in-up `}>
           {children}

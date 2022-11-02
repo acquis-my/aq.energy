@@ -24,14 +24,14 @@ const BusinessesPage = () => {
         description="Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint."
       />
 
-      <Hero bgImage="images/business-hero.png">
+      <Hero bgImage="images/work_hero.jpeg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-xl text-4xl lg:text-5xl text-white font-bold">
             Energize your business with{" "}
             <span className="text-cyber-yellow">Great</span> Solar Energy.
           </h1>
           <p className="max-w-prose text-gray-50 font-light">
-            Secure your energy bills against rising operational costs. Put your
+            Protect your energy bills against rising operational costs. Put your
             rooftops to work by transforming them into productive solar
             generators. All with hassle-free systems monitoring and solid
             workmanship.
@@ -44,20 +44,12 @@ const BusinessesPage = () => {
       </Hero>
 
       {/* Features row */}
-      <section className="bg-slate-100">
-        <BusinessSectionRow reversed={false} badgeText={"+2 Years"}>
-          <h1 className="text-3xl md:text-4xl font-bold">
-            5-Year Extended Workmanship Guarantee
-          </h1>
-          <p className="text-gray-500">
-            Big investments deserve greater care. We provide an additional 2
-            years to ensure your system performs at its maximum for longer.
-          </p>
-        </BusinessSectionRow>
-      </section>
-
-      <section className="bg-slate-100">
-        <BusinessSectionRow reversed={true} badgeText={"+2 Years"}>
+      <section className="bg-slate-100 py-12">
+        <BusinessSectionRow
+          reversed={false}
+          badgeText={"+2 Years"}
+          imgURL={"images/site-research.png"}
+        >
           <h1 className="text-3xl md:text-4xl font-bold">
             Professional Site Research
           </h1>
@@ -66,10 +58,26 @@ const BusinessesPage = () => {
             data-logging, we use the best tools in the industry.
           </p>
         </BusinessSectionRow>
-      </section>
 
-      <section className="bg-slate-100">
-        <BusinessSectionRow reversed={false} badgeText={"+2 Years"}>
+        <BusinessSectionRow
+          reversed={true}
+          badgeText={"+2 Years"}
+          imgURL={"images/workmanship-guarantee.png"}
+        >
+          <h1 className="text-3xl md:text-4xl font-bold">
+            5-Year Extended Workmanship Guarantee
+          </h1>
+          <p className="text-gray-500">
+            Big investments deserve greater care. We provide an additional 2
+            years to ensure your system performs at its maximum for longer.
+          </p>
+        </BusinessSectionRow>
+
+        <BusinessSectionRow
+          reversed={false}
+          badgeText={"+2 Years"}
+          imgURL={"images/monitoring.jpg"}
+        >
           <h1 className="text-3xl md:text-4xl font-bold">
             Post-Installation Monitoring and Service
           </h1>
