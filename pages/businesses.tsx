@@ -53,7 +53,7 @@ const BusinessesPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold">
             Professional Site Research
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-600">
             From satellite-based imagery, software simulations, to on-site power
             data-logging, we use the best tools in the industry.
           </p>
@@ -67,7 +67,7 @@ const BusinessesPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold">
             5-Year Extended Workmanship Guarantee
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-600">
             Big investments deserve greater care. We provide an additional 2
             years to ensure your system performs at its maximum for longer.
           </p>
@@ -81,7 +81,7 @@ const BusinessesPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold">
             Post-Installation Monitoring and Service
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-600">
             With great power, comes great responsibility. We ensure fast online
             troubleshooting of system issues and responsive servicing that
             require on-site rectification.

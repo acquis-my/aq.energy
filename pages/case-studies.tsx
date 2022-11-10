@@ -25,12 +25,12 @@ const CaseStudiesPage = () => {
         description="Case studies from clients who've worked with us."
       />
 
-      <Hero bgImage="images/case-studies-hero.png">
-        <section className="flex flex-col items-center py-16 gap-y-10 text-white text-center">
+      <Hero bgImage="images/case-studies-hero.jpg">
+        <section className="flex flex-col items-center py-16 lg:py-22 gap-y-10 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             Success Stories
           </h1>
-          <p className="max-w-prose text-gray-400 text-sm">
+          <p className="max-w-prose text-gray-300 text-sm">
             From the smallest to largest, residential to industrial, explore
             some of our previous installations across Malaysia since 2013.
           </p>

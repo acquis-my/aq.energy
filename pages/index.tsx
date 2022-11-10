@@ -57,7 +57,7 @@ const Home: NextPage<any> = () => {
         description="We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power."
       />
 
-      <Hero bgImage="images/home-hero.jpg">
+      <Hero bgImage="images/main-hero.jpg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <p className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
             Give your roof{" "}
@@ -115,11 +115,11 @@ const Home: NextPage<any> = () => {
                 src="images/soln-home.jpg"
                 layout="fill"
                 className="object-cover rounded-lg"
-                alt="House with solar panels on da roof."
+                alt=""
               />
             </figure>
 
-            <Container className="relative flex flex-col py-14 text-center gap-6 text-white">
+            <Container className="relative flex flex-col py-14 text-center gap-6 rounded-lg text-white bg-gradient-to-b from-black/70">
               <h2 className="text-2xl lg:text-3xl font-semibold">
                 For Homeowners
               </h2>
@@ -233,40 +233,51 @@ const Home: NextPage<any> = () => {
 
       {/* Quick Quote Form  */}
       <section className="relative">
-        <figure className="aboslute inset-0">
+        <figure className="aboslute lg:hidden inset-0">
           <AnimatedImage
             alt=""
             layout="fill"
             loading="eager"
-            src="images/home-quote.png"
+            src="images/seda_hero-mobile.png"
+            className="object-cover"
+          />
+        </figure>
+        <figure className="aboslute hidden lg:block inset-0">
+          <AnimatedImage
+            alt=""
+            layout="fill"
+            loading="eager"
+            src="images/seda_hero.png"
             className="object-cover"
           />
         </figure>
 
-        <Container className="p-20 flex justify-center lg:justify-end ">
-          <div className="relative max-w-2xl bg-white rounded-b-md">
-            <div className="flex flex-row -mt-1">
-              <div className="w-3/6 h-1 bg-indigo-dye rounded-tl-md"></div>
-              <div className="w-2/6 h-1 bg-cyber-yellow"></div>
-              <div className="w-1/6 h-1 bg-silver rounded-tr-md"></div>
-            </div>
-            <div className="flex flex-col gap-6 p-12">
-              <div>
-                <h1 className="font-semibold text-3xl">
-                  We take care of everything
-                </h1>
+        <div className="relative bg-gradient-to-r from-indigo-dye/30 to-indigo-dye/20 px-8 lg:px-36 py-36 xl:py-48 flex justify-center lg:justify-end">
+          <div className="container">
+            <div className="ml-auto mr-auto lg:mr-0 max-w-xl bg-white rounded-md">
+              <div className="flex flex-row -mt-1">
+                <div className="w-3/6 h-1 bg-indigo-dye rounded-tl-md"></div>
+                <div className="w-2/6 h-1 bg-cyber-yellow"></div>
+                <div className="w-1/6 h-1 bg-silver rounded-tr-md"></div>
               </div>
-              <p className="text-gray-600 text-sm">
-                From SEDA submission, installation, and post-installation
-                services, we do it all.
-              </p>
-              <p className="text-gray-600 text-sm">
-                With no hidden fees and all-inclusive pricing, feel safe with
-                our <strong>SEDA certified service provider</strong> status.
-              </p>
+              <div className="flex flex-col gap-6 p-12">
+                <div>
+                  <h1 className="font-semibold text-3xl">
+                    We take care of everything
+                  </h1>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  From SEDA submission, installation, and post-installation
+                  services, we do it all.
+                </p>
+                <p className="text-gray-600 text-sm">
+                  With no hidden fees and all-inclusive pricing, feel safe with
+                  our <strong>SEDA certified service provider</strong> status.
+                </p>
+              </div>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* FAQ  */}

@@ -51,7 +51,7 @@ const HomeownersPage: NextPage = () => {
         </title>
       </Head>
 
-      <Hero bgImage="images/homeowners-hero.png">
+      <Hero bgImage="images/home-hero.jpg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             <span className="text-cyber-yellow">Affordable</span> and{" "}
@@ -163,7 +163,7 @@ const HomeownersPage: NextPage = () => {
          mx-auto mb-12 text-center"
         >
           <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
-            System Components
+            Gallery
           </h1>
           <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
             Reliable + Cost Effective
@@ -176,7 +176,7 @@ const HomeownersPage: NextPage = () => {
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <figure className="relative aspect-[3/2]">
             <ExportedImage
-              src="https://via.placeholder.com/600x400"
+              src="images/gallery-1.jpg"
               layout="fill"
               alt="Solar panels"
               className="object-cover h-full w-full rounded-lg"
@@ -184,7 +184,9 @@ const HomeownersPage: NextPage = () => {
           </figure>
           <figure className="relative aspect-[3/2] md:aspect-auto md:row-span-2 lg:col-span-2 ">
             <ExportedImage
-              src="https://via.placeholder.com/600x400"
+              src="images/panels.jpg"
+              height={800}
+              width={1200}
               layout="fill"
               alt="Roof"
               className="object-cover aspect-[3/2] h-full w-full rounded-lg"
@@ -192,7 +194,7 @@ const HomeownersPage: NextPage = () => {
           </figure>
           <figure className="relative aspect-[3/2]">
             <ExportedImage
-              src="https://via.placeholder.com/600x400"
+              src="images/inverter.jpg"
               height={400}
               width={600}
               layout="fill"
