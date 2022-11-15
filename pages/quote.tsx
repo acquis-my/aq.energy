@@ -9,6 +9,7 @@ import Turnstile from "react-turnstile";
 import * as Yup from "yup";
 import FieldError from "../components/FieldError";
 import { NumericFormat, PatternFormat } from "react-number-format";
+import SupplierLogos from "../components/SupplierLogos";
 
 const LeadSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,6 +26,7 @@ const LeadSchema = Yup.object().shape({
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
 const CT = [
+  { label: "I don't know", value: 0 },
   { label: "Fuse 32A", value: 32 },
   { label: "Fuse 63A", value: 63 },
   { label: "CT 150/5", value: 150 },
@@ -112,10 +114,11 @@ const Quote: React.FC<{}> = () => {
                   <>
                     <div>
                       <h1 className="text-2xl md:text-3xl font-bold">
-                        Begin your journey here.
+                        Begin your solar journey here.
                       </h1>
                       <p className="text-sm md:text-base pt-2 text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        We just need some information and will get back to you
+                        with your personalised quote.
                       </p>
                     </div>
                     <div className="grid grid-cols-6 gap-6 md:gap-8">
@@ -340,23 +343,9 @@ const Quote: React.FC<{}> = () => {
           </p>
           <ButtonVariant2 href={"/about#contact"}>Contact Us</ButtonVariant2>
         </div>
-        <ul className="w-full flex justify-between mt-14 overflow-hidden">
-          <li>
-            <div className="h-10 w-48 bg-gray-300"></div>
-          </li>
-          <li>
-            <div className="h-10 w-48 bg-gray-300"></div>
-          </li>
-          <li>
-            <div className="h-10 w-48 bg-gray-300"></div>
-          </li>
-          <li>
-            <div className="h-10 w-48 bg-gray-300"></div>
-          </li>
-          <li>
-            <div className="h-10 w-48 bg-gray-300"></div>
-          </li>
-        </ul>
+        <div className="max-w-3xl mx-auto pt-16 text-center w-auto invert opacity-40">
+          <SupplierLogos />
+        </div>
       </Container>
     </Layout>
   );

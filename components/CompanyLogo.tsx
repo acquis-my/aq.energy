@@ -2,21 +2,23 @@ import ExportedImage from "next-image-export-optimizer";
 
 interface CompanyLogo {
   src?: string;
-  alt: string;
+  alt?: string;
 }
 
 const CompanyLogo: React.FC<CompanyLogo> = ({
   src = "images/placeholder_logo.png",
-  alt,
+  alt = "",
 }) => {
+  // return <img src={src} className="object-contain w-28" />;
   return (
-    <ExportedImage
-      height={48}
-      width={"100%"}
-      className="h-12 w-full"
-      src={src}
-      alt={alt}
-    />
+    <li className="relative h-8 w-24 pointer-events-none select-none">
+      <ExportedImage
+        className="object-contain"
+        layout="fill"
+        src={src}
+        alt={alt}
+      />
+    </li>
   );
 };
 

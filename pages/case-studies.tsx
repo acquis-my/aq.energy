@@ -9,6 +9,7 @@ import caseStudies from "../_content/studies.json";
 import CTA from "../components/CTA";
 import { ButtonVariant2 } from "../components/Button";
 import ExportedImage from "next-image-export-optimizer";
+import SupplierLogos from "../components/SupplierLogos";
 
 const CaseStudiesPage = () => {
   const [type, setType] = useState("all");
@@ -90,7 +91,9 @@ const CaseStudiesPage = () => {
                 </ButtonVariant2>
               </div>
             </div>
-            <div className="pt-16 text-center">Supplier logos here</div>
+            <div className="max-w-3xl mx-auto pt-16 text-center w-auto invert opacity-40">
+              <SupplierLogos />
+            </div>
           </Container>
           <CTA caption="Big or small, we do it all." />
         </div>

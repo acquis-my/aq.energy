@@ -24,7 +24,7 @@ const BusinessesPage = () => {
         description="Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint."
       />
 
-      <Hero bgImage="images/work_hero.jpeg">
+      <Hero bgImage="images/for-work/work_hero.jpeg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-xl text-4xl lg:text-5xl text-white font-bold">
             Energize your business with{" "}
@@ -48,21 +48,7 @@ const BusinessesPage = () => {
         <BusinessSectionRow
           reversed={false}
           badgeText={"+2 Years"}
-          imgURL={"images/site-research.png"}
-        >
-          <h1 className="text-3xl md:text-4xl font-bold">
-            Professional Site Research
-          </h1>
-          <p className="text-gray-600">
-            From satellite-based imagery, software simulations, to on-site power
-            data-logging, we use the best tools in the industry.
-          </p>
-        </BusinessSectionRow>
-
-        <BusinessSectionRow
-          reversed={true}
-          badgeText={"+2 Years"}
-          imgURL={"images/workmanship-guarantee.png"}
+          imgURL={"images/for-work/workmanship.png"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
             5-Year Extended Workmanship Guarantee
@@ -70,6 +56,20 @@ const BusinessesPage = () => {
           <p className="text-gray-600">
             Big investments deserve greater care. We provide an additional 2
             years to ensure your system performs at its maximum for longer.
+          </p>
+        </BusinessSectionRow>
+
+        <BusinessSectionRow
+          reversed={true}
+          badgeText={"+2 Years"}
+          imgURL={"images/for-work/site-research.jpg"}
+        >
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Professional Site Research
+          </h1>
+          <p className="text-gray-600">
+            From satellite-based imagery, software simulations, to on-site power
+            data-logging, we use the best tools in the industry.
           </p>
         </BusinessSectionRow>
 

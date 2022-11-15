@@ -3,13 +3,15 @@ import { NextSeo } from "next-seo";
 import Container from "../components/Container";
 import Hero from "../components/Hero";
 import { Icon } from "../components/Icon";
-import JobPost from "../components/JobPost";
 import Layout from "../components/Layout";
 import Portrait from "../components/Portrait";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import { ButtonVariant2 } from "../components/Button";
 import Link from "next/link";
+import JobPost from "../components/JobPost";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import SupplierLogos from "../components/SupplierLogos";
+import NoJobs from "../components/NoJobs";
 
 const AboutPage = () => {
   return (
@@ -96,7 +98,9 @@ const AboutPage = () => {
           </div>
 
           <div className="flex flex-col gap-4 overflow-hidden items-center">
-            <JobPost />
+            <NoJobs />
+
+            {/* <JobPost />
             <JobPost />
             <JobPost />
 
@@ -104,7 +108,7 @@ const AboutPage = () => {
               <a className="mt-8 text-indigo-dye rounded border border-indigo-dye px-6 py-2 text-sm md:text-base">
                 View All Openings
               </a>
-            </Link>
+            </Link> */}
           </div>
         </Container>
       </section>
@@ -157,7 +161,9 @@ const AboutPage = () => {
               Trusted by 100+ of homeowners and businesses throughout Malaysia
             </h1>
           </div>
-          <div>[Logos go Here]</div>
+          <div className="w-full max-w-3xl mx-auto text-center">
+            <SupplierLogos />
+          </div>
         </Container>
       </section>
 
@@ -246,7 +252,6 @@ const AboutPage = () => {
                 </ButtonVariant2>
               </div>
             </div>
-            <div className="pt-16 text-center">[LOGOS] GO Here</div>
           </Container>
         </div>
       </section>

@@ -16,7 +16,7 @@ import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import { NextSeo } from "next-seo";
 import AnimatedImage from "../components/AnimatedImage";
-import CompanyLogo from "../components/CompanyLogo";
+import SupplierLogos from "../components/SupplierLogos";
 
 const stats = [
   {
@@ -75,20 +75,9 @@ const Home: NextPage<any> = () => {
           </div>
           <div className="flex flex-col gap-y-2">
             <p>With support from the best of the Solar industry:</p>
-            <ul className="flex gap-x-2 overflow-auto">
-              <li>
-                <CompanyLogo alt="Placeholder Logo" />
-              </li>
-              <li>
-                <CompanyLogo alt="Placeholder Logo" />
-              </li>
-              <li>
-                <CompanyLogo alt="Placeholder Logo" />
-              </li>
-              <li>
-                <CompanyLogo alt="Placeholder Logo" />
-              </li>
-            </ul>
+            <div className="max-w-lg">
+              <SupplierLogos />
+            </div>
           </div>
         </div>
       </Hero>
@@ -272,7 +261,15 @@ const Home: NextPage<any> = () => {
                 </p>
                 <p className="text-gray-600 text-sm">
                   With no hidden fees and all-inclusive pricing, feel safe with
-                  our <strong>SEDA certified service provider</strong> status.
+                  our{" "}
+                  <a
+                    href="https://www.seda.gov.my/directory/registered-pv-service-provider-directory/"
+                    target="_BLANK"
+                    rel="noreferrer"
+                  >
+                    <strong>SEDA certified service provider</strong>
+                  </a>{" "}
+                  status under Max Bell Sdn. Bhd.
                 </p>
               </div>
             </div>
@@ -294,14 +291,6 @@ const Home: NextPage<any> = () => {
             <FAQ key={`faq_${i}`} data={faq} />
           ))}
         </div>
-
-        {/* <div className="mx-auto mt-12 text-sm text-slate-700">
-          <Link href="/faq">
-            <a className="border border-black-coral px-6 py-3 hover:border-yellow-600 hover:text-yellow-600">
-              View More
-            </a>
-          </Link>
-        </div> */}
 
         <div className="mx-auto mt-12 text-sm text-slate-700">
           <OutlineButtonDark href="/faq">View More</OutlineButtonDark>

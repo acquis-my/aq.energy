@@ -70,22 +70,22 @@ const HomeownersPage: NextPage = () => {
       </Hero>
 
       <Container>
-        <PrimaryCard className="-mt-28">
+        <PrimaryCard className="-mt-24">
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10">
             <div>
               <div className="h-14 w-14 bg-gray-400 rounded-full"></div>
             </div>
-            <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
+            <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
               <h1 className="font-semibold text-xl">Net Energy Metering</h1>
               <p>
                 Complement your energy usage with clean solar power and sell
                 excess energy to the grid.
               </p>
-              <div>
+              <p>
                 <a className="underline" href="">
                   Watch how NEM works &rarr;
                 </a>
-              </div>
+              </p>
             </div>
           </div>
 
@@ -96,11 +96,6 @@ const HomeownersPage: NextPage = () => {
             <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
               <h1 className="font-semibold text-xl">Self Consumption</h1>
               <p>Save on bills by reducing your reliance on grid power.</p>
-              <div>
-                <a className="underline" href="">
-                  Watch how SelCo works &rarr;
-                </a>
-              </div>
             </div>
           </div>
         </PrimaryCard>
