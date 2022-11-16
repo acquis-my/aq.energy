@@ -1,10 +1,10 @@
 import CompanyLogo from "./CompanyLogo";
 
 const logos = [
-  { src: "images/logos/solis.png" },
-  { src: "images/logos/helukabel.png" },
   { src: "images/logos/jasolar.png" },
+  { src: "images/logos/solis.png" },
   { src: "images/logos/zjbeny.png" },
+  { src: "images/logos/helukabel.png" },
 ];
 
 const SupplierLogos = () => {
