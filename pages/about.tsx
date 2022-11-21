@@ -26,7 +26,7 @@ const AboutPage = () => {
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             About Us
           </h1>
-          <p className="max-w-prose text-gray-400 text-sm">
+          <p className="max-w-prose text-gray-300 text-sm">
             With rising energy demand and accelerating climate change,
             sustainable and renewable energy has become ever so important. We
             take pride in playing a part in that transformation and supporting

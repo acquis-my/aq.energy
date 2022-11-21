@@ -31,7 +31,7 @@ const CaseStudiesPage = () => {
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             Success Stories
           </h1>
-          <p className="max-w-prose text-gray-300 text-sm">
+          <p className="max-w-prose text-gray-200 text-sm">
             From the smallest to largest, residential to industrial, explore
             some of our previous installations across Malaysia since 2013.
           </p>
