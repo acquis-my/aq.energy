@@ -17,14 +17,24 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethods }> = ({
 }) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart width={500} height={300} data={data} margin={{ top: 10 }}>
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{ top: 10, left: 1 }}
+      >
         <XAxis
           dataKey="year"
           axisLine={false}
           tick={{ fill: "#fff" }}
           tickFormatter={(v) => `Y${v}`}
         />
-        <YAxis axisLine={false} tick={{ fill: "#bfc0c0" }} scale="linear" />
+        <YAxis
+          axisLine={false}
+          tick={{ fill: "#bfc0c0" }}
+          scale="linear"
+          tickFormatter={(tick) => tick.toLocaleString()}
+        />
         <Tooltip
           content={CustomTooltip}
           cursor={false}

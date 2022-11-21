@@ -46,8 +46,14 @@ class Estimate {
     const loanInterest = 0.065;
 
     if (this.paymentType === PaymentMethods.LOAN)
-      return this.price.price * (1.05 + 10 * loanInterest);
+      return (this.price.price - 500) * (1.05 + 10 * loanInterest);
     return this.paymentType == PaymentMethods.CASH ? this.price.price : cost;
+  }
+
+  getLoanAnnualSavings(): number {
+    const annualCost = this.getCost() / 10;
+    const annualSavings = this.getSavings() * 12;
+    return annualSavings - annualCost;
   }
 
   generateGraphData() {
