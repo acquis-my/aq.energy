@@ -75,7 +75,7 @@ const AboutPage = () => {
         </div>
         <figure className="relative w-full lg:w-2/5 h-96 my-auto">
           <ExportedImage
-            src="images/case-studies-hero.png"
+            src="images/about/mb.jpeg"
             alt="Acquis Logo"
             className="object-cover rounded-xl"
             layout="fill"
@@ -169,7 +169,7 @@ const AboutPage = () => {
 
       <section>
         <Container className="flex flex-col py-16 md:py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
+          {/* <div className="max-w-xl mx-auto mb-12 text-center">
             <h1 className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
               Our People
             </h1>
@@ -185,10 +185,10 @@ const AboutPage = () => {
             <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
             <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
             <Portrait name="Albert Lee" title="Bossman" image="images/AB.JPG" />
-          </div>
+          </div> */}
           <div
             id="contact"
-            className="mt-10 md:mt-16 flex flex-col bg-gray-100 rounded px-8 py-12 lg:px-12 md:py-14 lg:py-16"
+            // className="mt-10 md:mt-16 flex flex-col bg-gray-100 rounded px-8 py-12 lg:px-12 md:py-14 lg:py-16"
           >
             <div className="max-w-xl mx-auto mb-8 lg:mb-12 text-center">
               <h1 className="text-3xl lg:text-4xl font-semibold mb-4 capitalize">

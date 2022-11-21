@@ -43,6 +43,7 @@ const Footer = () => {
                 </span>
                 <FooterNavItem href="/homeowners">For Homeowners</FooterNavItem>
                 <FooterNavItem href="/businesses">For Businesses</FooterNavItem>
+                <FooterNavItem href="/faq">FAQ</FooterNavItem>
                 <FooterNavItem href="/quote">Get Quote</FooterNavItem>
               </div>
             </div>
@@ -64,9 +65,10 @@ const Footer = () => {
           </div>
           <div>
             <ul className="flex gap-6">
+              {/* Not needed for now
               <FooterNavItem href="/faq">FAQ</FooterNavItem>
               <FooterNavItem href="/terms">Terms</FooterNavItem>
-              <FooterNavItem href="/privacy">Privacy</FooterNavItem>
+              <FooterNavItem href="/privacy">Privacy</FooterNavItem> */}
             </ul>
           </div>
         </section>

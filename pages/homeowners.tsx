@@ -81,11 +81,11 @@ const HomeownersPage: NextPage = () => {
                 Complement your energy usage with clean solar power and sell
                 excess energy to the grid.
               </p>
-              <p>
+              {/* <p>
                 <a className="underline" href="">
                   Watch how NEM works &rarr;
                 </a>
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -174,7 +174,7 @@ const HomeownersPage: NextPage = () => {
               src="images/gallery-1.jpg"
               layout="fill"
               alt="Solar panels"
-              className="object-cover h-full w-full rounded-lg"
+              className="object-cover h-full w-full rounded-lg bg-slate-100"
             />
           </figure>
           <figure className="relative aspect-[3/2] md:aspect-auto md:row-span-2 lg:col-span-2 ">
@@ -184,7 +184,7 @@ const HomeownersPage: NextPage = () => {
               width={1200}
               layout="fill"
               alt="Roof"
-              className="object-cover aspect-[3/2] h-full w-full rounded-lg"
+              className="object-cover aspect-[3/2] h-full w-full rounded-lg bg-slate-100"
             />
           </figure>
           <figure className="relative aspect-[3/2]">
@@ -194,7 +194,7 @@ const HomeownersPage: NextPage = () => {
               width={600}
               layout="fill"
               alt="Inverter"
-              className="h-full w-full object-cover rounded-lg"
+              className="h-full w-full object-cover rounded-lg bg-slate-100"
             />
           </figure>
         </Container>
