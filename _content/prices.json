@@ -1,0 +1,122 @@
+[
+  {
+    "bill": 260,
+    "size": 3.22,
+    "price": 14550,
+    "savings": 179.969121
+  },
+  {
+    "bill": 290,
+    "size": 3.68,
+    "price": 16600,
+    "savings": 208.266
+  },
+  {
+    "bill": 315,
+    "size": 4.14,
+    "price": 18450,
+    "savings": 236.574
+  },
+  {
+    "bill": 340,
+    "size": 4.6,
+    "price": 20150,
+    "savings": 264.882
+  },
+  {
+    "bill": 370,
+    "size": 5.06,
+    "price": 20900,
+    "savings": 293.19
+  },
+  {
+    "bill": 400,
+    "size": 5.52,
+    "price": 22700,
+    "savings": 323.52
+  },
+  {
+    "bill": 430,
+    "size": 5.98,
+    "price": 24400,
+    "savings": 350.817
+  },
+  {
+    "bill": 460,
+    "size": 6.44,
+    "price": 26000,
+    "savings": 380.136
+  },
+  {
+    "bill": 480,
+    "size": 6.9,
+    "price": 27750,
+    "savings": 409.455
+  },
+  {
+    "bill": 517,
+    "size": 7.36,
+    "price": 29200,
+    "savings": 434.73
+  },
+  {
+    "bill": 546,
+    "size": 7.82,
+    "price": 30950,
+    "savings": 465.06
+  },
+  {
+    "bill": 576,
+    "size": 8.28,
+    "price": 32700,
+    "savings": 495.39
+  },
+  {
+    "bill": 605,
+    "size": 8.74,
+    "price": 34300,
+    "savings": 524.709
+  },
+  {
+    "bill": 636,
+    "size": 9.2,
+    "price": 35500,
+    "savings": 554.028
+  },
+  {
+    "bill": 700,
+    "size": 10.12,
+    "price": 38150,
+    "savings": 611.655
+  },
+  {
+    "bill": 755,
+    "size": 11.04,
+    "price": 41300,
+    "savings": 669.282
+  },
+  {
+    "bill": 814,
+    "size": 11.96,
+    "price": 44500,
+    "savings": 726.909
+  },
+  {
+    "bill": 845,
+    "size": 12.42,
+    "price": 45350,
+    "savings": 756.228
+  },
+  {
+    "bill": 873,
+    "size": 12.88,
+    "price": 47000,
+    "savings": 784.536
+  },
+  {
+    "bill": 901,
+    "size": 13.34,
+    "price": 48100,
+    "savings": 810
+  }
+]

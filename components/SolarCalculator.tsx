@@ -1,12 +1,17 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { NumericFormat } from "react-number-format";
-import Estimate from "../lib/SolarEstimate";
+import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
 import Graph from "./Graph";
 
 export default function SolarCalculator() {
   const [bill, setBill] = useState(250);
-  const estimate = new Estimate(bill);
+  const [tenure, setTenure] = useState(1);
+  const [payType, setPayType] = useState<PaymentMethods | string>(
+    PaymentMethods.CASH
+  );
+
+  const estimate = new Estimate(bill, { paymentType: payType, tenure: tenure });
 
   return (
     <div className="flex flex-col lg:flex-row mt-12 p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
@@ -21,7 +26,7 @@ export default function SolarCalculator() {
           </p>
         </div>
         <div className="">
-          <label className="text-black-coral">Current electric bill</label>
+          <label className="text-slate-700">Current electric bill</label>
           <div className="flex flex-row items-center border border-grey-900 px-3">
             <span className="font-semibold">RM</span>
             <NumericFormat
@@ -38,6 +43,45 @@ export default function SolarCalculator() {
             />
           </div>
         </div>
+        <div className="">
+          <label className="text-slate-700">Payment Method</label>
+          <select
+            className="w-full px-3 focus:ring-0 border border-slate-200"
+            value={payType}
+            onChange={(e) => {
+              return setPayType(e.target.value);
+            }}
+          >
+            <option value={PaymentMethods.CASH}>Upfront Payment</option>
+            <option value={PaymentMethods.CREDIT}>
+              Easy Payment Plan - 0% interest p.a.
+            </option>
+            {bill >= 370 && (
+              <option value={PaymentMethods.LOAN}>Solar Loan - 10 years</option>
+            )}
+          </select>
+          {payType == PaymentMethods.LOAN ? (
+            <div className="text-xs pt-1">
+              This option is only available through Affin Bank.
+            </div>
+          ) : null}
+        </div>
+
+        {payType == PaymentMethods.CREDIT ? (
+          <div className="">
+            <label className="text-slate-700">Installment Duration</label>
+            <select
+              className="w-full px-3 focus:ring-0 border border-slate-200"
+              value={tenure}
+              onChange={(e) => setTenure(Number(e.target.value))}
+            >
+              <option value={1}>1 year</option>
+              <option value={2}>2 years</option>
+              <option value={3}>3 years</option>
+              <option value={5}>5 years (Affin bank only)</option>
+            </select>
+          </div>
+        ) : null}
 
         {/* <div className="">
           <h2 className="text-lg font-semibold">Cost Breakdown</h2>
@@ -63,7 +107,7 @@ export default function SolarCalculator() {
           </div>
         )}
       </section>
-      <section className="w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md">
+      <section className="w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md flex flex-col justify-between">
         <div className="flex flex-row py-8 xl:py-12 justify-between sm:divide-x-4 divide-slate-500 text-white">
           <div className="w-full sm:w-1/3 pl-8 xl:pl-16">
             <h2 className="text-xs sm:text-sm">Monthly Savings</h2>
@@ -91,7 +135,13 @@ export default function SolarCalculator() {
           </div>
         </div>
         <div className="w-full aspect-[4/3] sm:aspect-[2/1] px-4 pb-6 xl:px-16 md:pb-12 overflow-hidden">
-          <Graph data={estimate.generateGraphData()} />
+          {estimate.meetBillReq && (
+            <Graph
+              data={estimate.generateGraphData()}
+              paymentMethod={payType as PaymentMethods}
+            />
+          )}
+          {/* {JSON.stringify(estimate.generateGraphData())} */}
         </div>
       </section>
     </div>
