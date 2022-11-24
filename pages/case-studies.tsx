@@ -86,8 +86,8 @@ const CaseStudiesPage = () => {
                 answered.
               </p>
               <div>
-                <ButtonVariant2 href="/about#contact">
-                  Contact Us
+                <ButtonVariant2 href="https://wa.me/60377339939">
+                  WhatsApp Us
                 </ButtonVariant2>
               </div>
             </div>

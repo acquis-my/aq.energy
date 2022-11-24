@@ -38,10 +38,10 @@ const stats = [
     caption: "5-star reviews on Google",
   },
   {
-    title: "Accumulated Savings",
-    value: "RM 240k",
+    title: "Achieved yearly savings",
+    value: "RM 3.5M",
     unit: null,
-    caption: "Across all clients",
+    caption: "Across all clients based on existing installations",
   },
 ];
 
@@ -71,7 +71,9 @@ const Home: NextPage<any> = () => {
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="/about#contact">Contact Us</OutlineButton>
+            <OutlineButton href="https://wa.me/60377339939">
+              WhatsApp Us
+            </OutlineButton>
           </div>
           <div className="flex flex-col gap-y-2">
             <p>With support from the best of the Solar industry:</p>

@@ -4,7 +4,7 @@ import { NavItem, MobileNavItem } from "./NavItem";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { Button } from "./Button";
 import Container from "./Container";
-import Logo from "./Logo";
+import Logo, { LogoSecondary } from "./Logo";
 import Link from "next/link";
 
 import links from "../nav";
@@ -13,7 +13,7 @@ const Nav = () => {
   return (
     <>
       <nav className="container px-8 py-4 mx-auto hidden lg:flex whitespace-nowrap justify-between items-center">
-        <Logo />
+        <LogoSecondary />
         <ul className="flex gap-x-8 font-medium">
           {links &&
             links.map((link) => <NavItem key={link.dest} link={link} />)}
@@ -31,7 +31,7 @@ const Nav = () => {
               open ? "bg-white" : "bg-transparent"
             }`}
           >
-            <Logo />
+            <LogoSecondary />
             <Popover.Button className="" aria-label="Navigation Menu">
               <Bars3Icon
                 className={`${

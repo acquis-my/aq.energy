@@ -64,7 +64,9 @@ const HomeownersPage: NextPage = () => {
           </p>
           <div className="flex gap-x-2 pb-24">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="/about#contact">Contact Us</OutlineButton>
+            <OutlineButton href="https://wa.me/60377339939">
+              WhatsApp Us
+            </OutlineButton>
           </div>
         </div>
       </Hero>
@@ -72,8 +74,10 @@ const HomeownersPage: NextPage = () => {
       <Container>
         <PrimaryCard className="-mt-24">
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10">
-            <div>
-              <div className="h-14 w-14 bg-gray-400 rounded-full"></div>
+            <div className="pt-1">
+              <div className="h-14 w-14 rounded-full">
+                <ExportedImage src="images/nem.svg" height={128} width={128} />
+              </div>
             </div>
             <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
               <h1 className="font-semibold text-xl">Net Energy Metering</h1>
@@ -90,8 +94,14 @@ const HomeownersPage: NextPage = () => {
           </div>
 
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10 border-gray-500 border-t lg:border-l lg:border-t-0 ">
-            <div>
-              <div className="h-14 w-14 bg-gray-400 rounded-full"></div>
+            <div className="pt-1">
+              <div className="h-14 w-14 rounded-full">
+                <ExportedImage
+                  src="images/selco.svg"
+                  height={128}
+                  width={128}
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
               <h1 className="font-semibold text-xl">Self Consumption</h1>

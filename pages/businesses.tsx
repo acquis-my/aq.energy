@@ -38,7 +38,9 @@ const BusinessesPage = () => {
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="/about#contact">Contact Us</OutlineButton>
+            <OutlineButton href="https://wa.me/60377339939">
+              WhatsApp Us
+            </OutlineButton>
           </div>
         </div>
       </Hero>
@@ -47,11 +49,11 @@ const BusinessesPage = () => {
       <section className="bg-slate-100 py-12">
         <BusinessSectionRow
           reversed={false}
-          badgeText={"+2 Years"}
+          badgeText={"5 Years"}
           imgURL={"images/for-work/workmanship.png"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
-            5-Year Extended Workmanship Guarantee
+            Extended Workmanship Guarantee
           </h1>
           <p className="text-gray-600">
             Big investments deserve greater care. We provide an additional 2
@@ -61,7 +63,7 @@ const BusinessesPage = () => {
 
         <BusinessSectionRow
           reversed={true}
-          badgeText={"+2 Years"}
+          // badgeText={"2 Years"}
           imgURL={"images/for-work/site-research.jpg"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -75,8 +77,8 @@ const BusinessesPage = () => {
 
         <BusinessSectionRow
           reversed={false}
-          badgeText={"+2 Years"}
-          imgURL={"images/monitoring.jpg"}
+          badgeText={"System Inclusive"}
+          imgURL={"images/for-work/monitoring.jpg"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
             Post-Installation Monitoring and Service

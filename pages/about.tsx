@@ -32,14 +32,14 @@ const AboutPage = () => {
             take pride in playing a part in that transformation and supporting
             Malaysia&apos;s goal of achieving net-zero carbon by 2050.
           </p>
-          <div className="flex flex-row gap-14">
-            <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-3 divide-x divide-dashed divide-gray-600">
+            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
               <span className="uppercase text-xs text-gray-200">
                 Operating Since
               </span>
               <span className="text-4xl font-bold text-cyber-yellow">2013</span>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
               <span className="uppercase text-xs text-gray-200">
                 Mitigated CO2 Emissions
               </span>
@@ -47,7 +47,7 @@ const AboutPage = () => {
                 2.1 kT
               </span>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
               <span className="uppercase text-xs text-gray-200">Clients</span>
               <span className="text-4xl font-bold text-cyber-yellow">300+</span>
             </div>
@@ -59,8 +59,9 @@ const AboutPage = () => {
         <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center md:text-left">
           <h1 className="font-bold text-4xl text-gray-800">Our Story</h1>
           <p>
-            Max Bell Sdn. Bhd. was established in 2013 to play a positive role
-            in developing solar PV infrastructure across Malaysia. Starting with
+            <strong>Building Sustainability, One Panel at a Time.</strong> Max
+            Bell Sdn. Bhd. was established in 2013 to play a positive role in
+            developing solar PV infrastructure across Malaysia. Starting with
             the installations of residential Feed-in-Tariff (FiT) customers, Max
             Bell began catering to commercial clients in 2016 against a backdrop
             of climate change and greater focus on Environmental and Social
@@ -199,25 +200,36 @@ const AboutPage = () => {
               </p>
             </div>
             <div className="flex flex-col md:flex-row lg:justify-center md:items-baseline mx-auto divide-y md:divide-y-0 md:divide-x divide-slate-300 overflow-hidden text-sm font-semibold text-black-coral">
-              <p className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap">
+              <a
+                href="https://wa.me/60377339939"
+                className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap"
+              >
                 <Icon>
-                  <PhoneIcon className="h-4 w-4" />
+                  <svg className="h-6 w-6" viewBox="0 0 50 50">
+                    <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
+                  </svg>
                 </Icon>
-                +6012 345 6789
-              </p>
-              <p className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap">
+                +603 7733 9939
+              </a>
+              <a
+                href="mailto:hello@aq.energy"
+                className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap"
+              >
                 <Icon>
-                  <EnvelopeIcon className="h-4 w-4" />
+                  <EnvelopeIcon className="h-6 w-6" />
                 </Icon>
                 hello@aq.energy
-              </p>
-              <p className="flex items-start xl:items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0">
+              </a>
+              <a
+                href="https://g.page/MaxBellSolar"
+                className="flex items-start xl:items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0"
+              >
                 <Icon>
-                  <MapPinIcon className="h-4 w-4" />
+                  <MapPinIcon className="h-6 w-6" />
                 </Icon>
                 51, Jalan SS 22/23, Damansara Jaya, 47400 Petaling Jaya,
                 Selangor
-              </p>
+              </a>
             </div>
           </div>
         </Container>
@@ -247,9 +259,7 @@ const AboutPage = () => {
                 Get a free quote from us. No commitments.
               </p>
               <div>
-                <ButtonVariant2 href="/about#contact">
-                  Get a Quote
-                </ButtonVariant2>
+                <ButtonVariant2 href="/quote">Get a Quote</ButtonVariant2>
               </div>
             </div>
           </Container>

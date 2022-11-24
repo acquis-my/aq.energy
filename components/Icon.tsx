@@ -6,7 +6,7 @@ interface Icon {
 export const Icon: React.FC<Icon> = ({ className, children: icon }) => {
   return (
     <figure
-      className={`bg-cyber-yellow fill-white text-white p-1 rounded select-none`}
+      className={`bg-cyber-yellow fill-white text-white p-1.5 rounded select-none`}
     >
       {icon}
     </figure>
