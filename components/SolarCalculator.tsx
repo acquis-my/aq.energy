@@ -16,8 +16,8 @@ export default function SolarCalculator() {
   const estimate = new Estimate(bill, { paymentType: payType, tenure: tenure });
 
   return (
-    <div className="flex flex-col lg:flex-row mt-12 p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
-      <section className="w-full lg:w-1/3 flex flex-col gap-2 gap-y-6 lg:gap-8 lg:p-4">
+    <div className="flex flex-col lg:flex-row mt-12 pt-4 md:p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
+      <section className="w-full lg:w-1/3 flex flex-col gap-2 gap-y-6 lg:gap-8 p-4">
         <div className="">
           <h2 className="text-2xl md:text-3xl font-semibold">
             Savings Estimate
@@ -110,28 +110,12 @@ export default function SolarCalculator() {
         )}
       </section>
       <section className="relative w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md flex flex-col justify-between">
-        <div className="flex flex-row py-8 xl:py-12 justify-between sm:divide-x-4 divide-slate-500 text-white">
-          <div className="w-full sm:w-1/3 pl-4 sm:pl-6 xl:pl-16">
-            <h2 className="text-xs sm:text-sm">Monthly Savings</h2>
-            <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
-              {estimate.meetBillReq
-                ? `RM ${estimate.getSavings().toFixed(0)}`
-                : "-"}
-            </span>
-          </div>
-          <div className="w-full sm:w-1/3 pl-4 sm:pl-6 xl:pl-16">
-            <h2 className="text-xs sm:text-sm">System Size</h2>
-            <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
-              {estimate.meetBillReq
-                ? `${estimate.getSystemSize().toFixed(2)} kWp`
-                : "-"}
-            </span>
-          </div>
-          <div className="w-full sm:w-1/3 pl-4 sm:pl-6 xl:pl-16">
+        <div className="flex flex-col sm:flex-row px-4 sm:px-0 py-2 sm:py-6 xl:py-10 justify-between divide-y-4 sm:divide-y-0 sm:divide-x-4 divide-slate-500 text-white">
+          <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
             {payType === PaymentMethods.LOAN ? (
               <>
                 <h2 className="text-xs sm:text-sm">Annual Savings</h2>
-                <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
+                <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
                   {estimate.meetBillReq
                     ? `RM ${estimate.getLoanAnnualSavings().toFixed(0)}`
                     : "-"}
@@ -139,8 +123,37 @@ export default function SolarCalculator() {
               </>
             ) : (
               <>
+                <h2 className="text-xs sm:text-sm">Monthly Savings</h2>
+                <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
+                  {estimate.meetBillReq
+                    ? `RM ${estimate.getSavings().toFixed(0)}`
+                    : "-"}
+                </span>
+              </>
+            )}
+          </div>
+          <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
+            <h2 className="text-xs sm:text-sm">System Size</h2>
+            <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
+              {estimate.meetBillReq
+                ? `${estimate.getSystemSize().toFixed(2)} kWp`
+                : "-"}
+            </span>
+          </div>
+          <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
+            {payType === PaymentMethods.LOAN ? (
+              <>
+                <h2 className="text-xs sm:text-sm">Annual Installment</h2>
+                <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
+                  {estimate.meetBillReq
+                    ? `RM ${estimate.getCost().toFixed(0)}`
+                    : "-"}
+                </span>
+              </>
+            ) : (
+              <>
                 <h2 className="text-xs sm:text-sm">Breakeven Time</h2>
-                <span className="text-xl sm:text-3xl xl:text-4xl font-semibold">
+                <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
                   {estimate.meetBillReq
                     ? `${estimate.getROI().toFixed(1)} yrs`
                     : "-"}
@@ -149,7 +162,7 @@ export default function SolarCalculator() {
             )}
           </div>
         </div>
-        <div className="w-full aspect-[4/3] sm:aspect-[2/1] px-4 pb-6 xl:px-16 md:pb-12 overflow-hidden">
+        <div className="w-full aspect-[4/3] sm:aspect-[2/1] px-4 pb-6 xl:px-14 2xl:pl-16 md:px-6 md:pb-12 overflow-hidden">
           {estimate.meetBillReq && (
             <Graph
               data={estimate.generateGraphData()}
@@ -159,7 +172,7 @@ export default function SolarCalculator() {
           {/* {JSON.stringify(estimate.generateGraphData())} */}
         </div>
 
-        <figure className="relative md:absolute md:bottom-0 md:right-8 mx-auto -mt-4 pb-4 w-28 md:w-32 pointer-events-none">
+        <figure className="hidden sm:block relative md:absolute md:bottom-0 md:right-8 mx-auto pb-4 w-28 md:w-32 pointer-events-none">
           <ExportedImage
             src="images/aq-logo-secondary.png"
             alt="Acquis Logo"

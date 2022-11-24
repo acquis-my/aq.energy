@@ -21,7 +21,7 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethods }> = ({
         width={500}
         height={300}
         data={data}
-        margin={{ top: 10, left: 1 }}
+        margin={{ top: 10, left: 4 }}
       >
         <XAxis
           dataKey="year"
@@ -31,9 +31,24 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethods }> = ({
         />
         <YAxis
           axisLine={false}
-          tick={{ fill: "#bfc0c0" }}
+          // tick={{ fill: "#bfc0c0" }}
+          tick={({ x, y, stroke, payload }) => (
+            <g transform={`translate(${x},${y})`}>
+              <text
+                className=""
+                x={0}
+                y={0}
+                dy={4}
+                textAnchor="end"
+                fill="#bfc0c0"
+              >
+                RM {payload.value / 1000}k
+              </text>
+            </g>
+          )}
           scale="linear"
           tickFormatter={(tick) => tick.toLocaleString()}
+          allowDecimals={false}
         />
         <Tooltip
           content={CustomTooltip}
