@@ -1,38 +1,86 @@
 [
   {
     "type": "home",
-    "size": 3.14,
-    "title": "accusamus beatae ad facilis cum similique qui sunt",
-    "thumbnail": "https://via.placeholder.com/600x400"
+    "size": 5.005,
+    "year": 2022,
+    "title": "Small system installation for a bungalow in Termerloh, Pahang",
+    "thumbnail": "/images/studies/res/ms_2022.jpeg"
+  },
+
+  {
+    "type": "home",
+    "size": 13.8,
+    "year": 2022,
+    "title": "Corner lot terrace house installation in Klang, Selangor",
+    "thumbnail": "/images/studies/res/ltw_2022.jpeg"
   },
   {
     "type": "home",
-    "size": 6.11,
-    "title": "reprehenderit est deserunt velit ipsam",
-    "thumbnail": "https://via.placeholder.com/600x400"
+    "size": 12.285,
+    "year": 2022,
+    "title": "Installation for semi-detached house in Melaka",
+    "thumbnail": "/images/studies/res/ccfm_2022.jpeg"
   },
   {
     "type": "home",
-    "size": 23.31,
-    "title": "officia porro iure quia iusto qui ipsa ut modi",
-    "thumbnail": "https://via.placeholder.com/600x400"
+    "size": 10.01,
+    "year": 2022,
+    "title": "Terrace house installation in Shah Alam, Selangor",
+    "thumbnail": "/images/studies/res/aa_2022.jfif"
+  },
+  {
+    "type": "home",
+    "size": 3.185,
+    "year": 2022,
+    "title": "Small scale residential PV in Perlis completed in 2022",
+    "thumbnail": "/images/studies/res/ar_2022.jpeg"
+  },
+
+  {
+    "type": "home",
+    "size": 11.83,
+    "year": 2022,
+    "title": "Large system installation for a bungalow in Johor Bahru, Johor",
+    "thumbnail": "/images/studies/res/mz_2022.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 7.04,
+    "year": 2021,
+    "title": "Medium system installation for terraced house in TTDI, Kuala Lumpur",
+    "thumbnail": "/images/studies/res/shsz_2021.jpg"
+  },
+  {
+    "type": "home",
+    "size": 12.74,
+    "year": 2021,
+    "title": "System installation for a bungalow in Petaling Jaya, Selangor",
+    "thumbnail": "/images/studies/res/sabs_2021.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 6.16,
+    "year": 2021,
+    "title": "Solar PV installation for a terrace house in Seremban, Negeri Sembilan",
+    "thumbnail": "/images/studies/res/arbd_2021.jpg"
+  },
+
+  {
+    "type": "business",
+    "size": 71.04,
+    "title": "99 Speedmart sees a reduction of RM36k/year in operational costs with a solar PV system installed on their distribution center in Hutan Melintang, Perak",
+    "thumbnail": "/images/studies/com/99sm.jpg"
   },
   {
     "type": "business",
-    "size": 31.41,
-    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
-    "thumbnail": "https://via.placeholder.com/600x400"
+    "size": 154.7,
+    "title": "Commercial Solar PV System installed for Konsortium Peka on their manufacturing facility in Pahang",
+    "thumbnail": "/images/studies/com/peka.jpeg"
   },
   {
     "type": "business",
-    "size": 56.41,
-    "title": "natus nisi omnis corporis facere molestiae rerum in",
-    "thumbnail": "https://via.placeholder.com/600x400"
-  },
-  {
-    "type": "business",
-    "size": 39.1,
-    "title": "accusamus ea aliquid et amet sequi nemo",
-    "thumbnail": "https://via.placeholder.com/600x400"
+    "size": 50.16,
+    "title": "JPC Intan saves RM240k/year in energy bills after installing a hybrid solar PV system with battery storage in Kluang, Johor",
+    "thumbnail": "/images/studies/com/jpc-intan.jpg"
   }
 ]
