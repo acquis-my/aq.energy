@@ -17,11 +17,11 @@ const LeadSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
-  phone: Yup.string()
+  mobile: Yup.string()
     .matches(/^0[0-9]{9,10}$/g, "Invalid number")
     .required("Required"),
   address: Yup.string().min(10, "Too short").required("Required"),
-  bill: Yup.number().required("Required"),
+  avg_bill: Yup.number().required("Required"),
 });
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
@@ -47,10 +47,10 @@ const Quote: React.FC<{}> = () => {
 
   const handleSubmit = async (values: any) => {
     const data = { token: verifyUser, ...values };
-    const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://zen_quotes";
+    const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
 
     try {
-      const result = await fetch(API_HOST + "/new", {
+      const result = await fetch(`${API_HOST}/leads`, {
         method: "POST",
         headers: [["Content-Type", "application/json"]],
         body: JSON.stringify(data),
@@ -80,13 +80,13 @@ const Quote: React.FC<{}> = () => {
           onSubmit={handleSubmit}
           validationSchema={LeadSchema}
           initialValues={{
-            lead_type: "res",
-            lang: "en",
-            bill: "",
-            breaker_rating: 32,
-            supply_phases: 1,
+            is_commercial: 0,
+            language: "en",
+            avg_bill: "",
+            fuse_rating: 0,
+            phases: 1,
             name: "",
-            phone: "",
+            mobile: "",
             email: "",
             address: "",
           }}
@@ -123,24 +123,27 @@ const Quote: React.FC<{}> = () => {
                     </div>
                     <div className="grid grid-cols-6 gap-6 md:gap-8">
                       <div className="flex flex-col col-span-6 md:col-span-3">
-                        <label htmlFor="lead_type" className="font-semibold">
+                        <label
+                          htmlFor="is_commercial"
+                          className="font-semibold"
+                        >
                           Installation type
                         </label>
                         <Field
-                          name="lead_type"
+                          name="is_commercial"
                           component="select"
                           className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                         >
-                          <option value="res">Residential</option>
-                          <option value="com">Commercial</option>
+                          <option value={0}>Residential</option>
+                          <option value={1}>Commercial</option>
                         </Field>
                       </div>
                       <div className="flex flex-col col-span-6 md:col-span-3">
-                        <label htmlFor="lang" className="font-semibold">
+                        <label htmlFor="language" className="font-semibold">
                           Language
                         </label>
                         <Field
-                          name="lang"
+                          name="language"
                           component="select"
                           className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                         >
@@ -151,14 +154,11 @@ const Quote: React.FC<{}> = () => {
                       </div>
 
                       <div className="col-span-6 md:col-span-3 flex flex-col col-start-1">
-                        <label
-                          htmlFor="supply_phases"
-                          className="font-semibold"
-                        >
+                        <label htmlFor="phases" className="font-semibold">
                           Supply Type
                         </label>
                         <Field
-                          name="supply_phases"
+                          name="phases"
                           component="select"
                           className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                         >
@@ -169,27 +169,28 @@ const Quote: React.FC<{}> = () => {
 
                       <div className="col-span-6 md:col-span-3 w-full flex flex-col">
                         <div className="flex justify-between items-center">
-                          <label htmlFor="phone" className="font-semibold">
+                          <label htmlFor="mobile" className="font-semibold">
                             Average TNB Bill
                           </label>
-                          {errors.bill && touched.bill ? (
-                            <FieldError>{errors.bill}</FieldError>
+                          {errors.avg_bill && touched.avg_bill ? (
+                            <FieldError>{errors.avg_bill}</FieldError>
                           ) : null}
                         </div>
                         <div className="flex p-3 gap-2 border border-slate-200 text-gray-700 tracking-wide">
                           <span className="font-semibold">RM</span>
                           <NumericFormat
-                            name="bill"
-                            value={values.bill}
-                            decimalScale={2}
+                            name="avg_bill"
+                            value={values.avg_bill}
+                            decimalScale={0}
                             thousandSeparator={","}
-                            placeholder="0.00"
+                            placeholder="0"
+                            allowNegative={false}
                             onValueChange={(v) => {
-                              setFieldValue("bill", v.floatValue);
+                              setFieldValue("avg_bill", v.floatValue);
                             }}
                             onBlur={() => {
-                              if (!values.bill) {
-                                setFieldTouched("bill", true);
+                              if (!values.avg_bill) {
+                                setFieldTouched("avg_bill", true);
                               }
                             }}
                             className="w-full text-right border-0 focus:outline-none focus:ring-0 p-0"
@@ -197,16 +198,16 @@ const Quote: React.FC<{}> = () => {
                         </div>
                       </div>
 
-                      {values.lead_type === "com" && (
+                      {values.is_commercial == 1 ? (
                         <div className="col-span-6 flex flex-col col-start-1">
                           <label
-                            htmlFor="breaker_rating"
+                            htmlFor="fuse_rating"
                             className="font-semibold"
                           >
                             Fuse Rating / CT Ratio
                           </label>
                           <Field
-                            name="breaker_rating"
+                            name="fuse_rating"
                             component="select"
                             className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                           >
@@ -220,7 +221,7 @@ const Quote: React.FC<{}> = () => {
                             ))}
                           </Field>
                         </div>
-                      )}
+                      ) : null}
 
                       <div className="w-full flex flex-col col-span-6 md:col-span-2">
                         <div className="flex justify-between items-center">
@@ -240,27 +241,27 @@ const Quote: React.FC<{}> = () => {
 
                       <div className="w-full flex flex-col col-span-6 md:col-span-2">
                         <div className="flex justify-between items-center">
-                          <label htmlFor="phone" className="font-semibold">
+                          <label htmlFor="mobile" className="font-semibold">
                             Mobile
                           </label>
-                          {errors.phone && touched.phone ? (
-                            <FieldError>{errors.phone}</FieldError>
+                          {errors.mobile && touched.mobile ? (
+                            <FieldError>{errors.mobile}</FieldError>
                           ) : null}
                         </div>
                         <PatternFormat
-                          name="phone"
+                          name="mobile"
                           valueIsNumericString
                           format="###-### #####"
-                          value={values.phone}
+                          value={values.mobile}
                           placeholder="012-345 6789"
                           className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                           onBlur={() => {
-                            if (!values.phone) {
-                              setFieldTouched("phone", true);
+                            if (!values.mobile) {
+                              setFieldTouched("mobile", true);
                             }
                           }}
                           onValueChange={(vals) => {
-                            setFieldValue("phone", vals.value);
+                            setFieldValue("mobile", vals.value);
                           }}
                         />
                       </div>
@@ -338,10 +339,16 @@ const Quote: React.FC<{}> = () => {
             Have something specific in mind?
           </h1>
           <p className="max-w-prose text-gray-700">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            saepe, quo error explicabo.
+            We work with the best in the solar industry to give you a system
+            that is reliable and long-lasting.
           </p>
-          <ButtonVariant2 href={"/about#contact"}>Contact Us</ButtonVariant2>
+
+          <p className="text-gray-600">
+            Contact us now to have any of your questions or worries answered.
+          </p>
+          <ButtonVariant2 href={"https://wa.me/60377339939"}>
+            WhatsApp Us
+          </ButtonVariant2>
         </div>
         <div className="max-w-3xl mx-auto pt-16 text-center w-auto invert opacity-40">
           <SupplierLogos />
