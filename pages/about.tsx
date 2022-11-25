@@ -21,7 +21,7 @@ const AboutPage = () => {
         description="Case studies from clients who've worked with us."
       />
 
-      <Hero bgImage="images/case-studies-hero.png">
+      <Hero bgImage="images/about/about-hero.png">
         <section className="max-w-lg mx-auto flex flex-col items-center py-12 gap-y-12 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             About Us
