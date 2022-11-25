@@ -18,7 +18,7 @@ const Step: React.FC<{ data: Step }> = ({ data }) => {
         <span className="text-4xl text-white font-bold">{step}</span>
       </div>
       <h2 className="font-semibold text-center text-lg">{title}</h2>
-      <p className="text-sm text-gray-500">{description}</p>
+      <p className="text-sm text-gray-600">{description}</p>
     </div>
   );
 };

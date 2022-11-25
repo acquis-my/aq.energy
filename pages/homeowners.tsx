@@ -9,8 +9,16 @@ import Step from "../components/Step";
 import Testimonial from "../components/Testimonial";
 import testimonials from "../_content/testimonials.json";
 import CTA from "../components/CTA";
-import SolarCalculator from "../components/SolarCalculator";
 import ExportedImage from "next-image-export-optimizer";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import { NextSeo } from "next-seo";
+
+// import SolarCalculator from "../components/SolarCalculator";
+
+const SolarCalculator = dynamic(() => import("../components/SolarCalculator"), {
+  suspense: true,
+});
 
 const HomeownersPage: NextPage = () => {
   const steps = [
@@ -45,11 +53,10 @@ const HomeownersPage: NextPage = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>
-          Affordable and Reliable Solar Energy for your Home - AQ Energy
-        </title>
-      </Head>
+      <NextSeo
+        title="Affordable and Reliable Solar Energy for your Home"
+        description="Give your roof superpowers with our reliable and affordable solar PV system."
+      />
 
       <Hero bgImage="images/home-hero.jpg">
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
@@ -76,7 +83,12 @@ const HomeownersPage: NextPage = () => {
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10">
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
-                <ExportedImage src="images/nem.svg" height={128} width={128} />
+                <ExportedImage
+                  src="images/nem.svg"
+                  height={128}
+                  width={128}
+                  alt=""
+                />
               </div>
             </div>
             <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
@@ -100,6 +112,7 @@ const HomeownersPage: NextPage = () => {
                   src="images/selco.svg"
                   height={128}
                   width={128}
+                  alt=""
                 />
               </div>
             </div>
@@ -123,7 +136,9 @@ const HomeownersPage: NextPage = () => {
             </p>
           </div>
 
-          <SolarCalculator />
+          <Suspense fallback={<div>Loading....</div>}>
+            <SolarCalculator />
+          </Suspense>
 
           <p className="pt-2 text-xs text-gray-500">
             Disclaimer: The figures shown above are for illustrative purposes

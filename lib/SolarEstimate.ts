@@ -36,7 +36,7 @@ class Estimate {
   }
 
   getROI(): number {
-    return this.price.price / this.getSavings() / 12;
+    return this.getCost() / this.getSavings() / 12;
   }
 
   getCost(): number {

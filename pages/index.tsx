@@ -27,9 +27,9 @@ const stats = [
   },
   {
     title: "CO2 Reduced",
-    value: 228,
-    unit: "kg",
-    caption: "",
+    value: "250",
+    unit: "",
+    caption: "Tonnes Yearly",
   },
   {
     title: "Customer Satisfaction",

@@ -106,13 +106,13 @@ const CustomTooltip: React.FC<any> = ({ active, payload, label }) => {
           <div className="flex flex-col">
             <span className="text-xs text-gray-600">Total Savings</span>
             <span className="text-sm font-semibold">
-              RM {payload[1].value.toFixed(0)}
+              RM {payload[0].value.toFixed(0)}
             </span>
           </div>
           <div className="flex flex-col">
             <span className="text-xs text-gray-600">Paid to TNB</span>
             <span className="text-sm font-semibold">
-              RM {payload[0].value.toFixed(0)}
+              RM {payload[1].value.toFixed(0)}
             </span>
           </div>
         </div>

@@ -60,7 +60,7 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
           {type}
         </span>
         <div className="flex gap-1 items-center font-semibold text-gray-600">
-          <span>{size.toFixed(2)} kWp</span>
+          <span>{size.toFixed(1)} kWp</span>
           {year ? (
             <>
               <span>|</span>

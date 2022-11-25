@@ -1,10 +1,9 @@
-import ExportedImage from "next-image-export-optimizer";
-import Link from "next/link";
 import React, { useState } from "react";
+import Link from "next/link";
 import { NumericFormat } from "react-number-format";
 import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
+import ExportedImage from "next-image-export-optimizer";
 import Graph from "./Graph";
-import { LogoSecondary } from "./Logo";
 
 export default function SolarCalculator() {
   const [bill, setBill] = useState(250);
@@ -114,10 +113,10 @@ export default function SolarCalculator() {
           <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
             {payType === PaymentMethods.LOAN ? (
               <>
-                <h2 className="text-xs sm:text-sm">Annual Savings</h2>
+                <h2 className="text-xs sm:text-sm">Monthly Bill Savings</h2>
                 <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
                   {estimate.meetBillReq
-                    ? `RM ${estimate.getLoanAnnualSavings().toFixed(0)}`
+                    ? `RM ${estimate.getSavings().toFixed(0)}`
                     : "-"}
                 </span>
               </>
@@ -143,10 +142,13 @@ export default function SolarCalculator() {
           <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
             {payType === PaymentMethods.LOAN ? (
               <>
-                <h2 className="text-xs sm:text-sm">Annual Installment</h2>
+                <h2 className="text-xs sm:text-sm">Net Yearly Savings</h2>
                 <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
                   {estimate.meetBillReq
-                    ? `RM ${estimate.getCost().toFixed(0)}`
+                    ? `RM ${(
+                        estimate.getSavings() * 12 -
+                        estimate.getCost() / 10
+                      ).toFixed(0)}`
                     : "-"}
                 </span>
               </>
