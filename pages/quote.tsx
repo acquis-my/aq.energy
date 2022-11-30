@@ -1,69 +1,16 @@
 import Header from "../components/Header";
 import Container from "../components/Container";
 import Layout from "../components/Layout";
-import { useState } from "react";
 import { NextSeo } from "next-seo";
 import { ButtonVariant2 } from "../components/Button";
-import { Field, Form, Formik } from "formik";
-import Turnstile from "react-turnstile";
-import * as Yup from "yup";
-import FieldError from "../components/FieldError";
-import { NumericFormat, PatternFormat } from "react-number-format";
 import SupplierLogos from "../components/SupplierLogos";
+import dynamic from "next/dynamic";
 
-const LeadSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "Too short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  mobile: Yup.string()
-    .matches(/^0[0-9]{9,10}$/g, "Invalid number")
-    .required("Required"),
-  address: Yup.string().min(10, "Too short").required("Required"),
-  avg_bill: Yup.number().required("Required"),
-});
+// import QuoteForm from "../components/QuoteForm";
 
-const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
-const CT = [
-  { label: "I don't know", value: 0 },
-  { label: "Fuse 32A", value: 32 },
-  { label: "Fuse 63A", value: 63 },
-  { label: "CT 150/5", value: 150 },
-  { label: "CT 200/5", value: 200 },
-  { label: "CT 300/5", value: 300 },
-  { label: "CT 400/5", value: 400 },
-  { label: "CT 500/5", value: 500 },
-  { label: "CT 600/5", value: 600 },
-  { label: "CT 800/5", value: 800 },
-  { label: "CT 1000/5", value: 1000 },
-  { label: "CT 1200/5", value: 1200 },
-  { label: "CT 1600/5", value: 1600 },
-];
+const QuoteForm = dynamic(() => import("../components/QuoteForm"));
 
 const Quote: React.FC<{}> = () => {
-  const [verifyUser, setVerifyUser] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (values: any) => {
-    const data = { token: verifyUser, ...values };
-    const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
-
-    try {
-      const result = await fetch(`${API_HOST}/leads`, {
-        method: "POST",
-        headers: [["Content-Type", "application/json"]],
-        body: JSON.stringify(data),
-      });
-
-      if (!result.ok) throw result.status;
-      setIsSubmitted(true);
-    } catch (error) {
-      alert("Something went wrong! Please try again.");
-      console.log(error);
-    }
-  };
-
   return (
     <Layout>
       <NextSeo
@@ -76,7 +23,8 @@ const Quote: React.FC<{}> = () => {
       </Header>
 
       <div className="px-2">
-        <Formik
+        <QuoteForm />
+        {/* <Formik
           onSubmit={handleSubmit}
           validationSchema={LeadSchema}
           initialValues={{
@@ -306,6 +254,7 @@ const Quote: React.FC<{}> = () => {
                           onVerify={(token) => setVerifyUser(token)}
                         />
                       </div>
+                      <Field name="referrer" as="hidden" />
                       <div className="w-full flex justify-center sm:justify-end items-end col-span-6 sm:col-span-2">
                         <button
                           type="submit"
@@ -330,7 +279,7 @@ const Quote: React.FC<{}> = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </Formik> */}
       </div>
 
       <Container className="relative py-24 max-w-7xl">
