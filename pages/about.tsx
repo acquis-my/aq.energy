@@ -59,9 +59,11 @@ const AboutPage = () => {
         <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center md:text-left">
           <h1 className="font-bold text-4xl text-gray-800">Our Story</h1>
           <p>
-            <strong>Building Sustainability, One Panel at a Time.</strong> Max
-            Bell Sdn. Bhd. was established in 2013 to play a positive role in
-            developing solar PV infrastructure across Malaysia. Starting with
+            <strong>Building Sustainability, One Panel at a Time.</strong>
+          </p>
+          <p>
+            Max Bell Sdn. Bhd. was established in 2013 to play a positive role
+            in developing solar PV infrastructure across Malaysia. Starting with
             the installations of residential Feed-in-Tariff (FiT) customers, Max
             Bell began catering to commercial clients in 2016 against a backdrop
             of climate change and greater focus on Environmental and Social

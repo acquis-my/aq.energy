@@ -16,9 +16,7 @@ import { NextSeo } from "next-seo";
 
 // import SolarCalculator from "../components/SolarCalculator";
 
-const SolarCalculator = dynamic(() => import("../components/SolarCalculator"), {
-  suspense: true,
-});
+const SolarCalculator = dynamic(() => import("../components/SolarCalculator"));
 
 const HomeownersPage: NextPage = () => {
   const steps = [
@@ -136,9 +134,7 @@ const HomeownersPage: NextPage = () => {
             </p>
           </div>
 
-          <Suspense fallback={<div>Loading....</div>}>
-            <SolarCalculator />
-          </Suspense>
+          <SolarCalculator />
 
           <p className="pt-2 text-xs text-gray-500">
             Disclaimer: The figures shown above are for illustrative purposes

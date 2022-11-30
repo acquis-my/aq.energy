@@ -27,7 +27,7 @@ export default function SolarCalculator() {
           </p>
         </div>
         <div className="">
-          <label className="text-slate-700">Current electric bill</label>
+          <label className="text-slate-700">Current electricity bill</label>
           <div className="flex flex-row items-center border border-grey-900 px-3">
             <span className="font-semibold">RM</span>
             <NumericFormat
@@ -55,7 +55,7 @@ export default function SolarCalculator() {
           >
             <option value={PaymentMethods.CASH}>Upfront Payment</option>
             <option value={PaymentMethods.CREDIT}>
-              Easy Payment Plan - 0% interest p.a.
+              Easy Payment Plan - 2% interest p.a.
             </option>
             {bill >= 370 && (
               <option value={PaymentMethods.LOAN}>Solar Loan - 10 years</option>
