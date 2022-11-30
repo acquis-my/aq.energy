@@ -84,19 +84,12 @@ export default function SolarCalculator() {
           </div>
         ) : null}
 
-        {/* <div className="">
-          <h2 className="text-lg font-semibold">Cost Breakdown</h2>
-          <pre>Usage: {estimate.getUsage()} kWh</pre>
-          <pre>Savings: RM {estimate.getSavings()}/mo</pre>
-          <pre>Size: {estimate.getSystemSize()}kWp</pre>
-        </div> */}
-
         {!estimate.meetBillReq && (
           <div className="block bg-blue-100 px-6 py-4">
             <h2 className="text-blue-500 font-semibold">Note</h2>
             <p className="text-blue-900 text-sm">
               We are unable to provide an estimate if your electric bill is less
-              than RM 250/mo or more than RM 900/mo.
+              than RM 250/mo or more than RM 1,200/mo.
             </p>
             <p className="text-blue-900 text-sm pt-2">
               Please{" "}
@@ -171,7 +164,6 @@ export default function SolarCalculator() {
               paymentMethod={payType as PaymentMethods}
             />
           )}
-          {/* {JSON.stringify(estimate.generateGraphData())} */}
         </div>
 
         <figure className="hidden sm:block relative md:absolute md:bottom-0 md:right-8 mx-auto pb-4 w-28 md:w-32 pointer-events-none">

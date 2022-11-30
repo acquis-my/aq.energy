@@ -19,16 +19,22 @@ class Estimate {
 
   constructor(bill: Bill, { paymentType, tenure = 0, interest = 0.02 }: any) {
     this.electricBill = bill;
-    this.meetBillReq = bill >= 250 && bill <= 900;
+
+    this.meetBillReq = bill >= 250 && bill <= 1200;
     this.tenure = paymentType == PaymentMethods.CASH ? 0 : tenure;
-    this.paymentType = paymentType;
-    this.price =
-      prices.filter((p) => p.bill >= Number(this.electricBill))[0] ?? {};
+
     this.interest = interest;
+    this.paymentType = paymentType;
+
+    this.price =
+      this.electricBill > prices[prices.length - 1].bill
+        ? prices[prices.length - 1]
+        : prices.filter((p) => p.bill >= Number(this.electricBill))[0];
   }
 
   getSavings(): number {
-    return this.price.savings;
+    const savings = this.price.savings;
+    return Math.ceil(savings / 5) * 5;
   }
 
   getSystemSize(): number {
