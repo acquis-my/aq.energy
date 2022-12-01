@@ -47,7 +47,6 @@ const QuoteForm = () => {
 
   const handleSubmit = async (values: any) => {
     const data = { token: verifyUser, referrer: ref, ...values };
-    alert(JSON.stringify(data, null, 2));
     const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
 
     try {
