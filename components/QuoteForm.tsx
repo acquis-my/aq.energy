@@ -1,28 +1,24 @@
-import Header from "../components/Header";
-import Container from "../components/Container";
-import Layout from "../components/Layout";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
-import { ButtonVariant2 } from "../components/Button";
 import { Field, Form, Formik } from "formik";
 import Turnstile from "react-turnstile";
 import * as Yup from "yup";
 import FieldError from "../components/FieldError";
 import { NumericFormat, PatternFormat } from "react-number-format";
-import SupplierLogos from "../components/SupplierLogos";
+import states from "../lib/states";
+import fmtString from "../lib/fmt_string";
 
 const LeadSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "Too short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+  name: Yup.string().min(3, "Too short!").required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
   mobile: Yup.string()
     .matches(/^0[0-9]{9,10}$/g, "Invalid number")
     .required("Required"),
-  address: Yup.string().min(10, "Too short").required("Required"),
   avg_bill: Yup.number().required("Required"),
+  city: Yup.string().min(3, "Too short!").required("Required"),
+  state: Yup.string()
+    .oneOf([...states])
+    .required("Required"),
 });
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
@@ -52,21 +48,21 @@ const QuoteForm = () => {
   const handleSubmit = async (values: any) => {
     const data = { token: verifyUser, referrer: ref, ...values };
     alert(JSON.stringify(data, null, 2));
-    // const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
+    const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
 
-    // try {
-    //   const result = await fetch(`${API_HOST}/leads`, {
-    //     method: "POST",
-    //     headers: [["Content-Type", "application/json"]],
-    //     body: JSON.stringify(data),
-    //   });
+    try {
+      const result = await fetch(`${API_HOST}/leads`, {
+        method: "POST",
+        headers: [["Content-Type", "application/json"]],
+        body: JSON.stringify(data),
+      });
 
-    //   if (!result.ok) throw result.status;
-    //   setIsSubmitted(true);
-    // } catch (error) {
-    //   alert("Something went wrong! Please try again.");
-    //   console.log(error);
-    // }
+      if (!result.ok) throw result.status;
+      setIsSubmitted(true);
+    } catch (error) {
+      alert("Something went wrong! Please try again.");
+      console.log(error);
+    }
   };
 
   return (
@@ -82,7 +78,8 @@ const QuoteForm = () => {
         name: "",
         mobile: "",
         email: "",
-        address: "",
+        city: "",
+        state: "",
       }}
     >
       {({
@@ -129,6 +126,7 @@ const QuoteForm = () => {
                       <option value={1}>Commercial</option>
                     </Field>
                   </div>
+
                   <div className="flex flex-col col-span-6 md:col-span-3">
                     <label htmlFor="language" className="font-semibold">
                       Language
@@ -267,21 +265,44 @@ const QuoteForm = () => {
                       className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                     />
                   </div>
-                  <div className="col-span-6 md:col-span-6 w-full flex flex-col">
+
+                  <div className="w-full flex flex-col col-span-6 md:col-span-3">
                     <div className="flex justify-between items-center">
-                      <label htmlFor="email" className="font-semibold">
-                        Address
+                      <label htmlFor="city" className="font-semibold">
+                        City
                       </label>
-                      {errors.address && touched.address ? (
-                        <FieldError>{errors.address}</FieldError>
+                      {errors.city && touched.city ? (
+                        <FieldError>{errors.city}</FieldError>
                       ) : null}
                     </div>
                     <Field
-                      as="textarea"
-                      name="address"
-                      rows={5}
-                      className="p-3 border border-slate-200 text-gray-700 tracking-wide resize-none"
+                      name="city"
+                      placeholder="Subang Jaya"
+                      className="p-3 border border-slate-200 text-gray-700 tracking-wide"
                     />
+                  </div>
+
+                  <div className="col-span-6 md:col-span-3 flex flex-col col-start-1">
+                    <div className="flex justify-between items-center">
+                      <label htmlFor="state" className="font-semibold">
+                        State
+                      </label>
+                      {errors.state && touched.state ? (
+                        <FieldError>{errors.state}</FieldError>
+                      ) : null}
+                    </div>
+                    <Field
+                      name="state"
+                      component="select"
+                      className="p-3 border border-slate-200 text-gray-700 tracking-wide"
+                    >
+                      <option value={""}>- Select State -</option>
+                      {states.map((state) => (
+                        <option key={state} value={state}>
+                          {fmtString(state, "_")}
+                        </option>
+                      ))}
+                    </Field>
                   </div>
 
                   <div className="col-span-6 sm:col-span-4 w-full overflow-x-auto">
@@ -291,6 +312,7 @@ const QuoteForm = () => {
                       onVerify={(token) => setVerifyUser(token)}
                     />
                   </div>
+
                   <div className="w-full flex justify-center sm:justify-end items-end col-span-6 sm:col-span-2">
                     <button
                       type="submit"
