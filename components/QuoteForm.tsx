@@ -8,19 +8,6 @@ import { NumericFormat, PatternFormat } from "react-number-format";
 import states from "../lib/states";
 import fmtString from "../lib/fmt_string";
 
-const LeadSchema = Yup.object().shape({
-  name: Yup.string().min(3, "Too short!").required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  mobile: Yup.string()
-    .matches(/^0[0-9]{9,10}$/g, "Invalid number")
-    .required("Required"),
-  avg_bill: Yup.number().required("Required"),
-  city: Yup.string().min(3, "Too short!").required("Required"),
-  state: Yup.string()
-    .oneOf([...states])
-    .required("Required"),
-});
-
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
 const CT = [
   { label: "I don't know", value: 0 },
@@ -37,6 +24,22 @@ const CT = [
   { label: "CT 1200/5", value: 1200 },
   { label: "CT 1600/5", value: 1600 },
 ];
+
+const LeadSchema = Yup.object().shape({
+  name: Yup.string().min(3, "Too short!").required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  mobile: Yup.string()
+    .matches(/^0[0-9]{9,10}$/g, "Invalid number")
+    .required("Required"),
+  avg_bill: Yup.number().required("Required"),
+  city: Yup.string().min(3, "Too short!").required("Required"),
+  state: Yup.string()
+    .oneOf([...states])
+    .required("Required"),
+  financing_type: Yup.string()
+    .oneOf(["cash", "epp", "loan", "ppa"])
+    .required("Required"),
+});
 
 const QuoteForm = () => {
   const router = useRouter();
@@ -79,6 +82,7 @@ const QuoteForm = () => {
         email: "",
         city: "",
         state: "",
+        financing_type: "",
       }}
     >
       {({
@@ -111,8 +115,8 @@ const QuoteForm = () => {
                     your personalised quote.
                   </p>
                 </div>
-                <div className="grid grid-cols-6 gap-6 md:gap-8">
-                  <div className="flex flex-col col-span-6 md:col-span-3">
+                <div className="grid grid-cols-6 gap-6 ">
+                  <div className="flex flex-col col-span-6 md:col-span-2">
                     <label htmlFor="is_commercial" className="font-semibold">
                       Installation type
                     </label>
@@ -126,7 +130,7 @@ const QuoteForm = () => {
                     </Field>
                   </div>
 
-                  <div className="flex flex-col col-span-6 md:col-span-3">
+                  <div className="flex flex-col col-span-6 md:col-span-2">
                     <label htmlFor="language" className="font-semibold">
                       Language
                     </label>
@@ -141,7 +145,7 @@ const QuoteForm = () => {
                     </Field>
                   </div>
 
-                  <div className="col-span-6 md:col-span-3 flex flex-col col-start-1">
+                  <div className="col-span-6 md:col-span-2 flex flex-col">
                     <label htmlFor="phases" className="font-semibold">
                       Supply Type
                     </label>
@@ -186,6 +190,34 @@ const QuoteForm = () => {
                     </div>
                   </div>
 
+                  <div className="col-span-6 md:col-span-3 flex flex-col col-start-1">
+                    <div className="flex justify-between items-center">
+                      <label htmlFor="financing_type" className="font-semibold">
+                        Financing Type{" "}
+                      </label>
+                      {errors.financing_type && touched.financing_type ? (
+                        <FieldError>{errors.financing_type}</FieldError>
+                      ) : null}
+                    </div>
+                    <Field
+                      name="financing_type"
+                      component="select"
+                      className="p-3 border border-slate-200 text-gray-700 tracking-wide"
+                    >
+                      <option value={""}>- Select -</option>
+                      <option value={"cash"}>Upfront Payment</option>
+                      {values.is_commercial == 0 ? (
+                        <option value={"epp"}>Easy Payment Plan</option>
+                      ) : null}
+                      <option value={"loan"}>Solar Loan</option>
+                      {values.is_commercial == 1 ? (
+                        <option value={"ppa"}>
+                          Power Purchase Agreement (PPA)
+                        </option>
+                      ) : null}
+                    </Field>
+                  </div>
+
                   {values.is_commercial == 1 ? (
                     <div className="col-span-6 flex flex-col col-start-1">
                       <label htmlFor="fuse_rating" className="font-semibold">
@@ -205,7 +237,7 @@ const QuoteForm = () => {
                     </div>
                   ) : null}
 
-                  <div className="w-full flex flex-col col-span-6 md:col-span-2">
+                  <div className="w-full flex flex-col col-span-6 ">
                     <div className="flex justify-between items-center">
                       <label htmlFor="name" className="font-semibold">
                         Name
@@ -221,7 +253,7 @@ const QuoteForm = () => {
                     />
                   </div>
 
-                  <div className="w-full flex flex-col col-span-6 md:col-span-2">
+                  <div className="w-full flex flex-col col-span-6">
                     <div className="flex justify-between items-center">
                       <label htmlFor="mobile" className="font-semibold">
                         Mobile
@@ -248,7 +280,7 @@ const QuoteForm = () => {
                     />
                   </div>
 
-                  <div className="w-full flex flex-col col-span-6 md:col-span-2">
+                  <div className="w-full flex flex-col col-span-6 ">
                     <div className="flex justify-between items-center">
                       <label htmlFor="email" className="font-semibold">
                         Email
@@ -281,7 +313,7 @@ const QuoteForm = () => {
                     />
                   </div>
 
-                  <div className="col-span-6 md:col-span-3 flex flex-col col-start-1">
+                  <div className="col-span-6 md:col-span-3 flex flex-col">
                     <div className="flex justify-between items-center">
                       <label htmlFor="state" className="font-semibold">
                         State
