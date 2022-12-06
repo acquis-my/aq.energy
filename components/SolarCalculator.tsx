@@ -5,6 +5,9 @@ import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
 import ExportedImage from "next-image-export-optimizer";
 import Graph from "./Graph";
 
+const MIN_BILL: number = 200;
+const MAX_BILL: number = 1000;
+
 export default function SolarCalculator() {
   const [bill, setBill] = useState(250);
   const [tenure, setTenure] = useState(1);
@@ -12,7 +15,13 @@ export default function SolarCalculator() {
     PaymentMethods.CASH
   );
 
-  const estimate = new Estimate(bill, { paymentType: payType, tenure: tenure });
+  const estimate = new Estimate(bill, {
+    paymentType: payType,
+    tenure: tenure,
+    interest: 0.02,
+    minBill: MIN_BILL,
+    maxBill: MAX_BILL,
+  });
 
   return (
     <div className="flex flex-col lg:flex-row mt-12 pt-4 md:p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
@@ -89,7 +98,7 @@ export default function SolarCalculator() {
             <h2 className="text-blue-500 font-semibold">Note</h2>
             <p className="text-blue-900 text-sm">
               We are unable to provide an estimate if your electric bill is less
-              than RM 250/mo or more than RM 1,200/mo.
+              than RM {MIN_BILL}/mo or more than RM {MAX_BILL}/mo.
             </p>
             <p className="text-blue-900 text-sm pt-2">
               Please{" "}

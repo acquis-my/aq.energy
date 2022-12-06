@@ -1,6 +1,13 @@
 import prices from "../_content/prices.json";
 
 type Bill = number;
+interface CalculatorArgs {
+  paymentType: PaymentMethods | string;
+  tenure: number;
+  interest: number;
+  minBill: number;
+  maxBill: number;
+}
 
 export enum PaymentMethods {
   CASH = "cash",
@@ -11,16 +18,18 @@ export enum PaymentMethods {
 class Estimate {
   private electricBill;
   private tenure: number;
-  private paymentType: PaymentMethods;
+  private paymentType: PaymentMethods | string;
   private interest: number;
-
-  public price;
+  private price;
   public meetBillReq;
 
-  constructor(bill: Bill, { paymentType, tenure = 0, interest = 0.02 }: any) {
+  constructor(
+    bill: Bill,
+    { paymentType, tenure = 0, interest, minBill, maxBill }: CalculatorArgs
+  ) {
     this.electricBill = bill;
 
-    this.meetBillReq = bill >= 250 && bill <= 1200;
+    this.meetBillReq = bill >= minBill && bill <= maxBill;
     this.tenure = paymentType == PaymentMethods.CASH ? 0 : tenure;
 
     this.interest = interest;
