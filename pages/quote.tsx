@@ -6,7 +6,7 @@ import { ButtonVariant2 } from "../components/Button";
 import SupplierLogos from "../components/SupplierLogos";
 import dynamic from "next/dynamic";
 
-const QuoteForm = dynamic(() => import("../components/QuoteForm"));
+const QuoteForm = dynamic(() => import("../components/Quote/QuoteForm"));
 
 const Quote: React.FC<{}> = () => {
   return (
