@@ -1,0 +1,15 @@
+export const CT = [
+  { label: "I don't know", value: 0 },
+  { label: "Fuse 32A", value: 32 },
+  { label: "Fuse 63A", value: 63 },
+  { label: "CT 150/5", value: 150 },
+  { label: "CT 200/5", value: 200 },
+  { label: "CT 300/5", value: 300 },
+  { label: "CT 400/5", value: 400 },
+  { label: "CT 500/5", value: 500 },
+  { label: "CT 600/5", value: 600 },
+  { label: "CT 800/5", value: 800 },
+  { label: "CT 1000/5", value: 1000 },
+  { label: "CT 1200/5", value: 1200 },
+  { label: "CT 1600/5", value: 1600 },
+];
