@@ -15,7 +15,9 @@ const BusinessesPage = () => {
     "After Sales Monitoring and Service",
   ];
 
-  const studies = caseStudies.filter((study) => study.type === "business");
+  const studies = caseStudies
+    .filter((study) => study.type === "business")
+    .slice(0, 3);
 
   return (
     <Layout>

@@ -1,5 +1,88 @@
 [
   {
+    "type": "business",
+    "size": 25.3,
+    "title": "NEM Rakyat Commercial Installation in Kapar, Selangor",
+    "thumbnail": "/images/studies/com/kapar_dec2022.png"
+  },
+  {
+    "type": "home",
+    "size": 12.74,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Shah Alam, Selangor",
+    "thumbnail": "/images/studies/res/shah_sep2022.png"
+  },
+  {
+    "type": "home",
+    "size": 3.68,
+    "year": 2022,
+    "title": "Small-scale NEM Rakyat Residential Installation in Johor Bahru, Johor",
+    "thumbnail": "/images/studies/res/jb_nov2022.png"
+  },
+  {
+    "type": "home",
+    "size": 7.36,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Petaling Jaya, Selangor",
+    "thumbnail": "/images/studies/res/pj_may2022.png"
+  },
+  {
+    "type": "home",
+    "size": 5.005,
+    "year": 2022,
+    "title": "Small-scale NEM Rakyat Residential Installation in Lendu, Melaka",
+    "thumbnail": "/images/studies/res/lendu_sep2022.png"
+  },
+  {
+    "type": "home",
+    "size": 10.12,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Kluang, Johor",
+    "thumbnail": "/images/studies/res/kluang_nov2022.png"
+  },
+  {
+    "type": "home",
+    "size": 3.185,
+    "year": 2022,
+    "title": "Small-scale NEM Rakyat Residential Installation in Hulu Langat, Selangor",
+    "thumbnail": "/images/studies/res/hulu-aug2022.png"
+  },
+  {
+    "type": "home",
+    "size": 6.37,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Shah Alam, Selangor",
+    "thumbnail": "/images/studies/res/shah_oct2022.png"
+  },
+  {
+    "type": "home",
+    "size": 4.095,
+    "year": 2022,
+    "title": "Small-scale NEM Rakyat Residential Installation in Seremban, Negeri Sembilan",
+    "thumbnail": "/images/studies/res/seremban_aug2022.png"
+  },
+  {
+    "type": "home",
+    "size": 8.74,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Klang, Selangor",
+    "thumbnail": "/images/studies/res/klang_dec2022.png"
+  },
+  {
+    "type": "home",
+    "size": 5.06,
+    "year": 2022,
+    "title": "Small-scale NEM Rakyat Residential Installation in Lendu, Melaka",
+    "thumbnail": "/images/studies/res/banting_oct2022.png"
+  },
+  {
+    "type": "home",
+    "size": 12.74,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Kuala Lumpur",
+    "thumbnail": "/images/studies/res/kl_jul2022.png"
+  },
+  {
     "type": "home",
     "size": 5.005,
     "year": 2022,
