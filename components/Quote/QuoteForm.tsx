@@ -26,9 +26,11 @@ const QuoteForm = () => {
     state: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
 
   const handleSubmit = async (formData: QuoteData) => {
+    setIsSubmitting(true);
     const data = { referrer: ref, ...formData };
     const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
 
@@ -44,6 +46,8 @@ const QuoteForm = () => {
     } catch (error) {
       alert("Something went wrong! Please try again.");
       console.log(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -70,6 +74,7 @@ const QuoteForm = () => {
       next={handleNextStep}
       prev={handlePreviousStep}
       data={data}
+      isSubmitting={isSubmitting}
     />,
   ];
 
