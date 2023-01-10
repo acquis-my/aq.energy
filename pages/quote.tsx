@@ -13,7 +13,7 @@ const Quote: React.FC<{}> = () => {
     <Layout>
       <NextSeo
         title="Begin your journey of clean solar energy here"
-        description="Get a presonalised quote for your solar energy solution. Big or small, we do it all."
+        description="Get a personalised quote for your solar energy solution. Big or small, we do it all."
       />
 
       <Header title="Quote" subtitle="Get started on supercharging your roof">
