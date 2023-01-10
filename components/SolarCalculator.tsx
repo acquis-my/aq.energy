@@ -4,11 +4,13 @@ import { NumericFormat } from "react-number-format";
 import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
 import ExportedImage from "next-image-export-optimizer";
 import Graph from "./Graph";
+import { useRouter } from "next/router";
 
 const MIN_BILL: number = 200;
 const MAX_BILL: number = 1000;
 
 export default function SolarCalculator() {
+  const router = useRouter();
   const [bill, setBill] = useState(250);
   const [tenure, setTenure] = useState(1);
   const [payType, setPayType] = useState<PaymentMethods | string>(
@@ -22,6 +24,10 @@ export default function SolarCalculator() {
     minBill: MIN_BILL,
     maxBill: MAX_BILL,
   });
+
+  function getQuote() {
+    router.push({ pathname: "/quote", query: { bill: bill } });
+  }
 
   return (
     <div className="flex flex-col lg:flex-row mt-12 pt-4 md:p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
@@ -109,6 +115,13 @@ export default function SolarCalculator() {
             </p>
           </div>
         )}
+
+        <button
+          className="bg-indigo-dye text-white p-3 rounded-md"
+          onClick={getQuote}
+        >
+          Get Quote
+        </button>
       </section>
       <section className="relative w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row px-4 sm:px-0 py-2 sm:py-6 xl:py-10 justify-between divide-y-4 sm:divide-y-0 sm:divide-x-4 divide-slate-500 text-white">

@@ -15,12 +15,12 @@ interface QuoteData {
 
 const QuoteForm = () => {
   const router = useRouter();
-  const { ref = "" } = router.query;
+  const { ref = "", bill = 0 } = router.query;
 
   const [data, setData] = useState({
     token: "",
     is_commercial: 0,
-    avg_bill: "",
+    avg_bill: bill ?? 0,
     name: "",
     mobile: "",
     state: "",
