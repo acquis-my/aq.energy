@@ -4,6 +4,9 @@ import { NumericFormat } from "react-number-format";
 import states from "../../lib/states";
 import fmtString from "../../lib/fmt_string";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
 const Step1Schema = Yup.object().shape({
   avg_bill: Yup.number().required("Required"),
@@ -13,6 +16,11 @@ const Step1Schema = Yup.object().shape({
 });
 
 const Step1 = ({ data, next }: any) => {
+  const router = useRouter();
+  const { bill } = router.query;
+
+  const [prefilled, setPrefilled] = useState(!!bill);
+
   return (
     <Formik
       validationSchema={Step1Schema}
@@ -86,6 +94,7 @@ const Step1 = ({ data, next }: any) => {
                 placeholder="0"
                 allowNegative={false}
                 onValueChange={(v) => {
+                  setPrefilled(false);
                   setFieldValue("avg_bill", v.floatValue);
                 }}
                 onBlur={() => {
@@ -96,6 +105,12 @@ const Step1 = ({ data, next }: any) => {
                 className="w-full text-right border-0 focus:outline-none focus:ring-0 p-0"
               />
             </div>
+            {prefilled ? (
+              <div className="text-sm text-slate-600 mt-1">
+                This field has been pre-filled using information you&apos;ve
+                entered from our calculator.
+              </div>
+            ) : null}
           </div>
 
           <div className="col-span-6 flex flex-col">
