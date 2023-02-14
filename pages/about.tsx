@@ -1,16 +1,18 @@
-import ExportedImage from "next-image-export-optimizer";
+import Link from "next/link";
 import { NextSeo } from "next-seo";
+import ExportedImage from "next-image-export-optimizer";
+
+import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Hero from "../components/Hero";
 import { Icon } from "../components/Icon";
-import Layout from "../components/Layout";
-import Portrait from "../components/Portrait";
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/20/solid";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { ButtonVariant2 } from "../components/Button";
-import Link from "next/link";
-import JobPost from "../components/JobPost";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import SupplierLogos from "../components/SupplierLogos";
+
+import Portrait from "../components/Portrait";
+import JobPost from "../components/JobPost";
 import NoJobs from "../components/NoJobs";
 
 const AboutPage = () => {
@@ -49,7 +51,7 @@ const AboutPage = () => {
             </div>
             <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
               <span className="uppercase text-xs text-gray-200">Clients</span>
-              <span className="text-4xl font-bold text-cyber-yellow">300+</span>
+              <span className="text-4xl font-bold text-cyber-yellow">400+</span>
             </div>
           </div>
         </section>
@@ -161,7 +163,7 @@ const AboutPage = () => {
         <Container className="flex flex-col py-24">
           <div className="max-w-xl mx-auto mb-12 text-center">
             <h1 className="text-2xl text-white mb-4">
-              Trusted by 100+ of homeowners and businesses throughout Malaysia
+              Trusted by 400+ of homeowners and businesses throughout Malaysia
             </h1>
           </div>
           <div className="w-full max-w-3xl mx-auto text-center">
