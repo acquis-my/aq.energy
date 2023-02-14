@@ -1,6 +1,7 @@
 import CompanyLogo from "./CompanyLogo";
 
 const logos = [
+  { src: "images/logos/trina.png" },
   { src: "images/logos/jasolar.png" },
   { src: "images/logos/solis.png" },
   { src: "images/logos/zjbeny.png" },
