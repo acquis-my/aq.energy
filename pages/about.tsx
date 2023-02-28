@@ -231,8 +231,7 @@ const AboutPage = () => {
                 <Icon>
                   <MapPinIcon className="h-6 w-6" />
                 </Icon>
-                51, Jalan SS 22/23, Damansara Jaya, 47400 Petaling Jaya,
-                Selangor
+                10, Jalan Delta U6/19, Sunway Subang Business Park, 40150 Shah Alam, Selangor
               </a>
             </div>
           </div>
