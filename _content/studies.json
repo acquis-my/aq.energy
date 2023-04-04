@@ -1,7 +1,71 @@
 [
   {
+    "type": "home",
+    "size": 6.9,
+    "year": 2023,
+    "title": "NEM Rakyat Residential Installation in Klang, Selangor",
+    "thumbnail": "/images/studies/res/85625.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 15.845,
+    "year": 2023,
+    "title": "NEM Commercial Installation in Morib, Selangor",
+    "thumbnail": "/images/studies/res/9ea39.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 5.52,
+    "year": 2023,
+    "title": "NEM Rakyat Residential Installation in Klang, Selangor",
+    "thumbnail": "/images/studies/res/8b65f.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 6.9,
+    "year": 2023,
+    "title": "NEM Rakyat Residential Installation in Johor Bahru, Selangor",
+    "thumbnail": "/images/studies/res/21c38.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 5.06,
+    "year": 2023,
+    "title": "NEM Rakyat Residential Installation in Kuantan, Pahang",
+    "thumbnail": "/images/studies/res/cde22.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 12.88,
+    "year": 2023,
+    "title": "NEM Rakyat Residential Installation in Subang Jaya, Selangor",
+    "thumbnail": "/images/studies/res/34019.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 3.22,
+    "year": 2023,
+    "title": "Small Scale NEM Rakyat Residential Installation in Puchong, Selangor",
+    "thumbnail": "/images/studies/res/34138.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 12.88,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation in Bukit Tunku, Kuala Lumpur",
+    "thumbnail": "/images/studies/res/34210.jpeg"
+  },
+  {
+    "type": "home",
+    "size": 4.14,
+    "year": 2022,
+    "title": "NEM Rakyat Residential Installation at Petaling Jaya, Selangor",
+    "thumbnail": "/images/studies/res/34232.jpeg"
+  },
+  {
     "type": "business",
     "size": 25.3,
+    "year": 2022,
     "title": "NEM Commercial Installation in Kapar, Selangor",
     "thumbnail": "/images/studies/com/kapar_dec2022.png"
   },
