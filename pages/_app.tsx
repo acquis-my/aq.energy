@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function Website({ Component, pageProps }: AppProps) {
   return (
@@ -10,6 +11,7 @@ function Website({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
       </Head>
+      <GoogleAnalytics trackPageViews />
       <Component {...pageProps} />
     </>
   );
