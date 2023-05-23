@@ -67,10 +67,12 @@ const FAQ: React.FC<{}> = () => {
                 </div>
               </section>
               <aside className="w-full mt-5 py-2 flex justify-end text-sm md:text-base">
-                <Link href={""}>
-                  <a className="px-7 py-2 rounded-lg bg-indigo-dye text-white font-medium">
+                <Link
+                  href={""}
+                  className="px-7 py-2 rounded-lg bg-indigo-dye text-white font-medium">
+                  
                     Apply for this Job
-                  </a>
+                  
                 </Link>
               </aside>
             </Disclosure.Panel>

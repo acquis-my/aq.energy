@@ -108,8 +108,8 @@ export default function SolarCalculator() {
             </p>
             <p className="text-blue-900 text-sm pt-2">
               Please{" "}
-              <Link href="/about#contact">
-                <a className="italic">contact us</a>
+              <Link href="/about#contact" className="italic">
+                contact us
               </Link>{" "}
               for more information.
             </p>

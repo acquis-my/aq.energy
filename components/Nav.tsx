@@ -56,10 +56,11 @@ const Nav = () => {
                       <MobileNavItem key={link.dest} link={link} />
                     ))}
 
-                  <Link href="/quote">
-                    <a className="bg-indigo-dye text-white px-6 py-3 rounded-md font-semibold text-center">
-                      Get A Quote
-                    </a>
+                  <Link
+                    href="/quote"
+                    className="bg-indigo-dye text-white px-6 py-3 rounded-md font-semibold text-center"
+                  >
+                    Get A Quote
                   </Link>
                 </div>
               </Popover.Panel>

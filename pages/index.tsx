@@ -1,22 +1,29 @@
-import type { NextPage } from "next";
 import Hero from "../components/Hero";
-import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
 import Statistic from "../components/Statistic";
 import Link from "next/link";
-import ExportedImage from "next-image-export-optimizer";
 import FAQ from "../components/FAQ";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
+import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
+
+import { NextSeo } from "next-seo";
+import type { NextPage } from "next";
 
 import caseStudies from "../_content/studies.json";
 import testimonials from "../_content/testimonials.json";
 import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
-import { NextSeo } from "next-seo";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";
+
+import SunPattern from "../public/images/sun.svg";
+import homepageHero from "../public/images/main-hero.jpg";
+import homeSolutionsImage from "../public/images/soln-home.jpg";
+import businessSolutionsImage from "../public/images/soln-business.jpg";
+import SedaHeroImage from "../public/images/seda_hero.png";
+import SedaMobileHeroImage from "../public/images/seda_hero-mobile.png";
 
 const stats = [
   {
@@ -57,7 +64,7 @@ const Home: NextPage<any> = () => {
         description="We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power."
       />
 
-      <Hero bgImage="images/main-hero.jpg">
+      <Hero bgImage={homepageHero}>
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <p className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
             Give your roof{" "}
@@ -102,11 +109,11 @@ const Home: NextPage<any> = () => {
         <div className="flex flex-col md:flex-row gap-x-12 gap-y-8 ">
           <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] md:aspect-[3/3] lg:aspect-[1.2/1] min-h-fit">
             <figure className="absolute inset-0 ">
-              <ExportedImage
-                src="images/soln-home.jpg"
-                layout="fill"
+              <AnimatedImage
+                src={homeSolutionsImage}
                 className="object-cover rounded-lg"
-                alt=""
+                alt="Home solar PV system on a roof."
+                fill
               />
             </figure>
 
@@ -126,11 +133,10 @@ const Home: NextPage<any> = () => {
           <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] lg:aspect-[1.2/1] min-h-fit">
             <figure className="absolute inset-0">
               <AnimatedImage
-                src="images/soln-business.jpg"
-                layout="fill"
-                loading="eager"
+                fill
+                src={businessSolutionsImage}
                 className="object-cover rounded-lg"
-                alt="Array of solar panels."
+                alt="Array of solar panels on a grassy field."
               />
             </figure>
 
@@ -156,10 +162,10 @@ const Home: NextPage<any> = () => {
           <PrimaryCard className="relative -mt-32 overflow-hidden">
             <figure className="absolute inset-0 ">
               <AnimatedImage
-                src="images/sun.svg"
+                src={SunPattern}
                 className="h-full mx-auto"
                 alt=""
-                layout="fill"
+                fill
               />
             </figure>
             <Container className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-10">
@@ -193,10 +199,11 @@ const Home: NextPage<any> = () => {
           </div>
 
           <div className="mx-auto mt-12">
-            <Link href="/case-studies">
-              <a className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm">
-                View More
-              </a>
+            <Link
+              href="/case-studies"
+              className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm"
+            >
+              View More
             </Link>
           </div>
         </Container>
@@ -227,19 +234,19 @@ const Home: NextPage<any> = () => {
         <figure className="aboslute lg:hidden inset-0">
           <AnimatedImage
             alt=""
-            layout="fill"
             loading="eager"
-            src="images/seda_hero-mobile.png"
+            src={SedaMobileHeroImage}
             className="object-cover"
+            fill
           />
         </figure>
         <figure className="aboslute hidden lg:block inset-0">
           <AnimatedImage
             alt=""
-            layout="fill"
             loading="eager"
-            src="images/seda_hero.png"
+            src={SedaHeroImage}
             className="object-cover"
+            fill
           />
         </figure>
 

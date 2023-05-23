@@ -18,7 +18,7 @@ export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
       <article className="flex flex-col gap-2">
         <figure className="relative aspect-[3/2]">
           <ExportedImage
-            layout="fill"
+            fill
             src={thumbnail}
             alt=""
             className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
@@ -48,7 +48,7 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
     <article className="group flex flex-col gap-2">
       <figure className="relative aspect-[3/2]">
         <ExportedImage
-          layout="fill"
+          fill
           src={thumbnail}
           alt=""
           className="absolute inset-0 bg-slate-300 object-cover w-full h-full"

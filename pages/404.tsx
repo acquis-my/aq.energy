@@ -16,10 +16,10 @@ const NotFoundPage = () => {
             The page you are looking for might have been moved, had its name
             changed, or is temporarily unavailable.
           </p>
-          <Link href="/">
-            <a className="hover:underline font-semibold">
+          <Link href="/" className="hover:underline font-semibold">
+            
               &larr; Go to Homepage
-            </a>
+            
           </Link>
         </div>
       </section>

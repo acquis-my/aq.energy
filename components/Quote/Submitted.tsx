@@ -23,11 +23,13 @@ const Submitted = () => {
           </div>
           <div className="mt-4">
             <div className="-mx-2 -my-1.5 flex ">
-              <Link href="/">
-                <a className="flex flex-row items-center gap-2 rounded-md bg-green-50 px-2 py-1.5 text-sm font-medium text-green-800 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
-                  <ArrowLeftIcon className="h-4 w-4" />
-                  <span>Back to homepage</span>
-                </a>
+              <Link
+                href="/"
+                className="flex flex-row items-center gap-2 rounded-md bg-green-50 px-2 py-1.5 text-sm font-medium text-green-800 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
+
+                <ArrowLeftIcon className="h-4 w-4" />
+                <span>Back to homepage</span>
+
               </Link>
             </div>
           </div>

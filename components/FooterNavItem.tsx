@@ -7,8 +7,8 @@ interface NavItem {
 
 const FooterNavItem: React.FC<NavItem> = ({ href = "", children = "" }) => {
   return (
-    <Link href={href}>
-      <a className="hover:text-cyber-yellow">{children}</a>
+    <Link href={href} className="hover:text-cyber-yellow">
+      {children}
     </Link>
   );
 };

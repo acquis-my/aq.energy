@@ -1,9 +1,10 @@
+import { type StaticImageData } from "next/image";
 import AnimatedImage from "./AnimatedImage";
 import Container from "./Container";
 import Nav from "./Nav";
 
 type Header = {
-  bgImage?: string;
+  bgImage?: string | StaticImageData;
   children: React.ReactNode;
 };
 
@@ -16,8 +17,8 @@ const Hero: React.FC<Header> = ({ bgImage, children }) => {
             src={bgImage}
             alt=""
             loading="eager"
-            layout="fill"
             className="object-cover"
+            fill
           />
         )}
       </figure>
