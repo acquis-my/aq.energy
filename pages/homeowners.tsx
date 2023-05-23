@@ -1,7 +1,5 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import dynamic from "next/dynamic";
 import Hero from "../components/Hero";
-import { Button, OutlineButton } from "../components/Button";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
@@ -10,11 +8,16 @@ import Testimonial from "../components/Testimonial";
 import testimonials from "../_content/testimonials.json";
 import CTA from "../components/CTA";
 import ExportedImage from "next-image-export-optimizer";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { Button, OutlineButton } from "../components/Button";
 import { NextSeo } from "next-seo";
+import type { NextPage } from "next";
+import AnimatedImage from "../components/AnimatedImage";
 
-// import SolarCalculator from "../components/SolarCalculator";
+import GalleryImage from "../public/images/gallery-1.jpg";
+import RoofPanelImage from "../public/images/panels.jpg";
+import InverterIamge from "../public/images/inverter.jpg";
+import NEMGraphic from "../public/images/nem.svg";
+import SelcoGraphic from "../public/images/selco.svg";
 
 const SolarCalculator = dynamic(() => import("../components/SolarCalculator"));
 
@@ -82,7 +85,7 @@ const HomeownersPage: NextPage = () => {
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
                 <ExportedImage
-                  src="images/nem.svg"
+                  src={NEMGraphic}
                   height={128}
                   width={128}
                   alt=""
@@ -95,11 +98,6 @@ const HomeownersPage: NextPage = () => {
                 Complement your energy usage with clean solar power and sell
                 excess energy to the grid.
               </p>
-              {/* <p>
-                <a className="underline" href="">
-                  Watch how NEM works &rarr;
-                </a>
-              </p> */}
             </div>
           </div>
 
@@ -107,7 +105,7 @@ const HomeownersPage: NextPage = () => {
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
                 <ExportedImage
-                  src="images/selco.svg"
+                  src={SelcoGraphic}
                   height={128}
                   width={128}
                   alt=""
@@ -191,31 +189,27 @@ const HomeownersPage: NextPage = () => {
         </div>
         <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <figure className="relative aspect-[3/2]">
-            <ExportedImage
-              src="images/gallery-1.jpg"
-              layout="fill"
-              alt="Solar panels"
+            <AnimatedImage
               className="object-cover h-full w-full rounded-lg bg-slate-100"
+              src={GalleryImage}
+              alt="Solar panels"
+              fill
             />
           </figure>
           <figure className="relative aspect-[3/2] md:aspect-auto md:row-span-2 lg:col-span-2 ">
-            <ExportedImage
-              src="images/panels.jpg"
-              height={800}
-              width={1200}
-              layout="fill"
-              alt="Roof"
+            <AnimatedImage
               className="object-cover aspect-[3/2] h-full w-full rounded-lg bg-slate-100"
+              src={RoofPanelImage}
+              alt="Roof"
+              fill
             />
           </figure>
           <figure className="relative aspect-[3/2]">
-            <ExportedImage
-              src="images/inverter.jpg"
-              height={400}
-              width={600}
-              layout="fill"
-              alt="Inverter"
+            <AnimatedImage
               className="h-full w-full object-cover rounded-lg bg-slate-100"
+              src={InverterIamge}
+              alt="Inverter"
+              fill
             />
           </figure>
         </Container>
