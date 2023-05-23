@@ -13,6 +13,7 @@ import { NextSeo } from "next-seo";
 import type { NextPage } from "next";
 import AnimatedImage from "../components/AnimatedImage";
 
+import HomeownersHero from "../public/images/home-hero.jpg";
 import GalleryImage from "../public/images/gallery-1.jpg";
 import RoofPanelImage from "../public/images/panels.jpg";
 import InverterIamge from "../public/images/inverter.jpg";
@@ -59,7 +60,7 @@ const HomeownersPage: NextPage = () => {
         description="Give your roof superpowers with our reliable and affordable solar PV system."
       />
 
-      <Hero bgImage="images/home-hero.jpg">
+      <Hero bgImage={HomeownersHero}>
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             <span className="text-cyber-yellow">Affordable</span> and{" "}
