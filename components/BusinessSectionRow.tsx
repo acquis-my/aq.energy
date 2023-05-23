@@ -1,4 +1,3 @@
-import Container from "./Container";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import AnimatedImage from "./AnimatedImage";
 
@@ -36,8 +35,8 @@ const BusinessSectionRow: React.FC<Row> = ({
             <AnimatedImage
               src={imgURL}
               alt={""}
-              layout="fill"
               className="absolute object-cover rounded-lg"
+              fill
             />
             <div className="relative h-full bg-black/5 rounded-lg"></div>
           </figure>

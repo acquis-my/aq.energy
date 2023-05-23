@@ -1,6 +1,8 @@
-import ExportedImage from "next-image-export-optimizer";
+import AnimatedImage from "./AnimatedImage";
 import Container from "./Container";
 import Nav from "./Nav";
+
+import SunPattern from "../public/images/sun.svg";
 
 type Header = {
   title: string;
@@ -12,11 +14,11 @@ const Header: React.FC<Header> = ({ title, subtitle, children }) => {
   return (
     <header className="relative bg-indigo-dye">
       <figure className="absolute inset-0">
-        <ExportedImage
-          src="images/sun.svg"
-          layout="fill"
+        <AnimatedImage
+          src={SunPattern}
           className="object-cover mx-auto h-full w-full"
           alt=""
+          fill
         />
       </figure>
       <div className="relative">

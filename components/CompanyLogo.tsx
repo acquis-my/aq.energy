@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import AnimatedImage from "./AnimatedImage";
 
 interface CompanyLogo {
   src?: string;
@@ -12,12 +12,7 @@ const CompanyLogo: React.FC<CompanyLogo> = ({
   // return <img src={src} className="object-contain w-28" />;
   return (
     <li className="relative h-7 w-full pointer-events-none select-none">
-      <ExportedImage
-        className="object-contain"
-        layout="fill"
-        src={src}
-        alt={alt}
-      />
+      <AnimatedImage className="object-contain" src={src} alt={alt} fill />
     </li>
   );
 };

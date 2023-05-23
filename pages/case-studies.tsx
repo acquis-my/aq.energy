@@ -11,6 +11,9 @@ import { ButtonVariant2 } from "../components/Button";
 import ExportedImage from "next-image-export-optimizer";
 import SupplierLogos from "../components/SupplierLogos";
 
+import CaseStudiesHeroImage from "../public/images/case-studies-hero.jpg";
+import PatternGraphic from "../public/images/Pattern.svg";
+
 const CaseStudiesPage = () => {
   const [type, setType] = useState("all");
 
@@ -26,7 +29,7 @@ const CaseStudiesPage = () => {
         description="Case studies from clients who've worked with us."
       />
 
-      <Hero bgImage="images/case-studies-hero.jpg">
+      <Hero bgImage={CaseStudiesHeroImage}>
         <section className="flex flex-col items-center py-16 lg:py-22 gap-y-10 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             Success Stories
@@ -66,9 +69,9 @@ const CaseStudiesPage = () => {
         <figure className="absolute inset-0">
           <ExportedImage
             alt=""
-            layout="fill"
-            src="images/Pattern.svg"
+            src={PatternGraphic}
             className="object-cover mx-auto h-full"
+            fill
           />
         </figure>
         <div className="relative flex flex-col gap-12">

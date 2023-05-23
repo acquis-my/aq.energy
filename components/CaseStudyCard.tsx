@@ -1,6 +1,7 @@
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import { BanknotesIcon, CalendarIcon } from "@heroicons/react/24/solid";
 import ExportedImage from "next-image-export-optimizer";
+import AnimatedImage from "./AnimatedImage";
 
 interface CaseStudy {
   type: string;
@@ -17,11 +18,11 @@ export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
     <a href={whitepaper} className="group cursor-default">
       <article className="flex flex-col gap-2">
         <figure className="relative aspect-[3/2]">
-          <ExportedImage
-            fill
+          <AnimatedImage
+            className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
             src={thumbnail}
             alt=""
-            className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
+            fill
           />
           <div className="relative h-full bg-transparent group-hover:bg-slate-200 group-hover:bg-opacity-25"></div>
         </figure>
@@ -47,11 +48,11 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
     // <a href={whitepaper} className="group cursor-default">
     <article className="group flex flex-col gap-2">
       <figure className="relative aspect-[3/2]">
-        <ExportedImage
-          fill
+        <AnimatedImage
+          className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
           src={thumbnail}
           alt=""
-          className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
+          fill
         />
         <div className="relative h-full bg-transparent group-hover:bg-slate-200 group-hover:bg-opacity-25"></div>
       </figure>

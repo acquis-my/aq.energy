@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { NextSeo } from "next-seo";
 import ExportedImage from "next-image-export-optimizer";
 
@@ -11,9 +10,12 @@ import { ButtonVariant2 } from "../components/Button";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import SupplierLogos from "../components/SupplierLogos";
 
-import Portrait from "../components/Portrait";
-import JobPost from "../components/JobPost";
+// import Portrait from "../components/Portrait";
+// import JobPost from "../components/JobPost";
 import NoJobs from "../components/NoJobs";
+
+import AboutHeroImage from "../public/images/about/about-hero.png";
+import MaxbellImage from "../public/images/about/mb.jpeg";
 
 const AboutPage = () => {
   return (
@@ -23,7 +25,7 @@ const AboutPage = () => {
         description="Case studies from clients who've worked with us."
       />
 
-      <Hero bgImage="images/about/about-hero.png">
+      <Hero bgImage={AboutHeroImage}>
         <section className="max-w-lg mx-auto flex flex-col items-center py-12 gap-y-12 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
             About Us
@@ -80,10 +82,10 @@ const AboutPage = () => {
         </div>
         <figure className="relative w-full lg:w-2/5 h-96 my-auto">
           <ExportedImage
-            src="images/about/mb.jpeg"
+            src={MaxbellImage}
             alt="Acquis Logo"
             className="object-cover rounded-xl"
-            layout="fill"
+            fill
           />
         </figure>
       </Container>

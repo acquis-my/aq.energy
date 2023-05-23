@@ -8,6 +8,8 @@ import CTA from "../components/CTA";
 import CaseStudiesSection from "../components/CaseStudiesSection";
 import { NextSeo } from "next-seo";
 
+import WorkHeroImage from "../public/images/for-work/work_hero.jpeg";
+
 const BusinessesPage = () => {
   const rows = [
     "Extended Workmanship Guarantee",
@@ -26,7 +28,7 @@ const BusinessesPage = () => {
         description="Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint."
       />
 
-      <Hero bgImage="images/for-work/work_hero.jpeg">
+      <Hero bgImage={WorkHeroImage}>
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-xl text-4xl lg:text-5xl text-white font-bold">
             Energize your business with{" "}
