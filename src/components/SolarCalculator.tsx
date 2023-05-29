@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { NumericFormat } from "react-number-format";
 import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
 import ExportedImage from "next-image-export-optimizer";
 import Graph from "./Graph";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const MIN_BILL: number = 200;
 const MAX_BILL: number = 1000;
@@ -26,7 +27,7 @@ export default function SolarCalculator() {
   });
 
   function getQuote() {
-    router.push({ pathname: "/quote", query: { bill: bill } });
+    router.push("quote");
   }
 
   return (
