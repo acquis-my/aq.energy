@@ -2,7 +2,7 @@ import AnimatedImage from "./AnimatedImage";
 import Container from "./Container";
 import Nav from "./Nav";
 
-import SunPattern from "../public/images/sun.svg";
+import SunPattern from "~/../public/images/sun.svg";
 
 type Header = {
   title: string;

@@ -1,8 +1,9 @@
+"use client";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import Step2 from "./Step2";
 import Step1 from "./Step1";
 import Submitted from "./Submitted";
+import { useSearchParams } from "next/navigation";
 
 interface QuoteData {
   token: string;
@@ -14,8 +15,9 @@ interface QuoteData {
 }
 
 const QuoteForm = () => {
-  const router = useRouter();
-  const { ref = "", bill = 0 } = router.query;
+  const params = useSearchParams();
+  const ref = params.get("ref") ?? "";
+  const bill = params.get("bill") ?? 0;
 
   const [data, setData] = useState({
     token: "",
