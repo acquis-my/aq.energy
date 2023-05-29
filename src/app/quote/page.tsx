@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const Quote: React.FC<{}> = () => {
   return (
-    <Layout>
+    <>
       <Header title="Quote" subtitle="Get started on supercharging your roof">
         <div className="pb-36" />
       </Header>
@@ -46,7 +46,7 @@ const Quote: React.FC<{}> = () => {
           <SupplierLogos />
         </div>
       </Container>
-    </Layout>
+    </>
   );
 };
 
