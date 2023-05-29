@@ -1,7 +1,7 @@
 import { ButtonVariant } from "./Button";
 import Container from "./Container";
 import PrimaryCard from "./PrimaryCard";
-import SunGraphic from "../public/images/sun.svg";
+import SunGraphic from "~/../public/images/sun.svg";
 import AnimatedImage from "./AnimatedImage";
 
 const CTA: React.FC<{ caption: string }> = ({ caption }) => {
