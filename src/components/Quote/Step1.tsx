@@ -1,12 +1,12 @@
+"use client";
 import { Field, Form, Formik } from "formik";
 import FieldError from "./FieldError";
 import { NumericFormat } from "react-number-format";
 import states from "../../lib/states";
 import fmtString from "../../lib/fmt_string";
 import * as Yup from "yup";
-import { useRouter } from "next/router";
 import { useState } from "react";
-import { CheckIcon } from "@heroicons/react/20/solid";
+import { useSearchParams } from "next/navigation";
 
 const Step1Schema = Yup.object().shape({
   avg_bill: Yup.number().required("Required"),
@@ -16,8 +16,8 @@ const Step1Schema = Yup.object().shape({
 });
 
 const Step1 = ({ data, next }: any) => {
-  const router = useRouter();
-  const { bill } = router.query;
+  const params = useSearchParams();
+  const bill = params.get("bill") ?? 0;
 
   const [prefilled, setPrefilled] = useState(!!bill);
 

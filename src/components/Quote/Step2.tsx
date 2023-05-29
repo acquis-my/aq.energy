@@ -1,3 +1,4 @@
+"use client";
 import { Field, Form, Formik } from "formik";
 import FieldError from "./FieldError";
 import { PatternFormat } from "react-number-format";
