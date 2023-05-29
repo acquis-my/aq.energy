@@ -1,4 +1,3 @@
-"use client";
 import dynamic from "next/dynamic";
 import Hero from "~/components/Hero";
 import Layout from "~/components/Layout";
@@ -11,7 +10,7 @@ import CTA from "~/components/CTA";
 import ExportedImage from "next-image-export-optimizer";
 import { Button, OutlineButton } from "~/components/Button";
 import { NextSeo } from "next-seo";
-import type { NextPage } from "next";
+import type { Metadata, NextPage } from "next";
 import AnimatedImage from "~/components/AnimatedImage";
 
 import HomeownersHero from "~/../public/images/home-hero.jpg";
@@ -22,6 +21,12 @@ import NEMGraphic from "~/../public/images/nem.svg";
 import SelcoGraphic from "~/../public/images/selco.svg";
 
 const SolarCalculator = dynamic(() => import("~/components/SolarCalculator"));
+
+export const metadata: Metadata = {
+  title: "Affordable and Reliable Solar Energy for your Home",
+  description:
+    "Give your roof superpowers with our reliable and affordable solar PV system.",
+};
 
 const HomeownersPage: NextPage = () => {
   const steps = [
@@ -55,12 +60,7 @@ const HomeownersPage: NextPage = () => {
   const reviews = testimonials.slice(0, 3);
 
   return (
-    <Layout>
-      <NextSeo
-        title="Affordable and Reliable Solar Energy for your Home"
-        description="Give your roof superpowers with our reliable and affordable solar PV system."
-      />
-
+    <>
       <Hero bgImage={HomeownersHero}>
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
@@ -241,7 +241,7 @@ const HomeownersPage: NextPage = () => {
 
         <CTA caption="Let's start your journey on the clean energy revolution!" />
       </section>
-    </Layout>
+    </>
   );
 };
 
