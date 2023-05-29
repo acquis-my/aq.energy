@@ -63,12 +63,7 @@ const Home: NextPage<any> = () => {
   const reviews = testimonials.slice(0, 3);
 
   return (
-    <Layout>
-      {/* <NextSeo
-        title="Affordable and reliable solar energy systems"
-        description="We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power."
-      /> */}
-
+    <>
       <Hero bgImage={homepageHero}>
         <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
           <p className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
@@ -310,7 +305,7 @@ const Home: NextPage<any> = () => {
           <OutlineButtonDark href="/faq">View More</OutlineButtonDark>
         </div>
       </Container>
-    </Layout>
+    </>
   );
 };
 
