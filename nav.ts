@@ -1,4 +1,4 @@
-import { NavLink } from "./components/types";
+import { NavLink } from "./src/components/types";
 
 const links: NavLink[] = [
   { label: "For Home", dest: "/homeowners" },

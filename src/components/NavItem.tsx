@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { NavLink } from "./types";
+
+interface NavItemProps {
+  link: NavLink;
+}
 
 export const NavItem: React.FC<any> = ({ link }) => {
   const router = useRouter();
@@ -8,15 +12,14 @@ export const NavItem: React.FC<any> = ({ link }) => {
   const isActivePath = router.pathname === dest;
 
   return (
-    (<Link
+    <Link
       href={dest}
       className={`${
         isActivePath ? "text-cyber-yellow font-semibold" : "text-white"
-      } hover:text-cyber-yellow `}>
-
+      } hover:text-cyber-yellow `}
+    >
       {label}
-
-    </Link>)
+    </Link>
   );
 };
 
@@ -32,7 +35,8 @@ export const MobileNavItem: React.FC<any> = ({ link }) => {
       className={`${
         isActivePath ? "text-black font-semibold" : "text-gray-600"
       } hover:text-black`}
-      legacyBehavior>
+      legacyBehavior
+    >
       {label}
     </Link>
   );

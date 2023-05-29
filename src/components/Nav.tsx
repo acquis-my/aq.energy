@@ -1,3 +1,4 @@
+"use client";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { NavItem, MobileNavItem } from "./NavItem";
@@ -7,7 +8,7 @@ import Container from "./Container";
 import Logo, { LogoSecondary } from "./Logo";
 import Link from "next/link";
 
-import links from "../nav";
+import links from "../../nav";
 
 const Nav = () => {
   return (
