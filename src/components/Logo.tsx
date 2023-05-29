@@ -1,8 +1,8 @@
 import Link from "next/link";
 import AnimatedImage from "./AnimatedImage";
 
-import PrimaryLogo from "../public/images/aq-logo-primary.png";
-import SecondaryLogo from "../public/images/aq-logo-secondary.png";
+import PrimaryLogo from "../../public/images/aq-logo-primary.png";
+import SecondaryLogo from "../../public/images/aq-logo-secondary.png";
 
 const Logo = () => {
   return (
