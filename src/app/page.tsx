@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
 import Statistic from "../components/Statistic";
 import Link from "next/link";
-import FAQ from "../components/FAQ";
+import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
 import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 
@@ -52,7 +52,7 @@ const stats = [
 ];
 
 export const metadata: Metadata = {
-  title: "Home: Affordable and reliable solar energy systems",
+  title: "Affordable and reliable solar energy systems",
   description:
     "We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power.",
 };
