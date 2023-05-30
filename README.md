@@ -16,8 +16,8 @@ In both development and production use, the following environment variables are 
 Simply run the following commands after cloning the repository.
 
 ```
-yarn
-yarn dev
+pnpm i
+pnpm dev
 ```
 
 ## Deployment
