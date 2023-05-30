@@ -1,4 +1,6 @@
 import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
+import QuoteFigure from "./QuoteFigure";
 
 interface Testimonial {
   quote: string;
@@ -49,17 +51,16 @@ const Testimonial: React.FC<{ data: Testimonial; invertColours?: boolean }> = ({
   );
 };
 
-const QuoteFigure = () => {
-  return (
-    <ExportedImage
-      src="quotemark.svg"
-      className="h-12 w-12"
-      layout="intrinsic"
-      width={56}
-      height={56}
-      alt=""
-    />
-  );
-};
+// const QuoteFigure = () => {
+//   return (
+//     <Image
+//       src="quotemark.svg"
+//       className="h-12 w-12"
+//       width={56}
+//       height={56}
+//       alt=""
+//     />
+//   );
+// };
 
 export default Testimonial;
