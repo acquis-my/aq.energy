@@ -17,8 +17,7 @@ import HomeownersHero from "~/../public/images/home-hero.jpg";
 import GalleryImage from "~/../public/images/gallery-1.jpg";
 import RoofPanelImage from "~/../public/images/panels.jpg";
 import InverterIamge from "~/../public/images/inverter.jpg";
-import NEMGraphic from "~/../public/images/nem.svg";
-import SelcoGraphic from "~/../public/images/selco.svg";
+import { NEMGraphic, SelcoGraphic } from "./Graphics";
 
 const SolarCalculator = dynamic(() => import("~/components/SolarCalculator"));
 
@@ -86,12 +85,7 @@ const HomeownersPage: NextPage = () => {
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10">
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
-                <ExportedImage
-                  src={NEMGraphic}
-                  height={128}
-                  width={128}
-                  alt=""
-                />
+                <NEMGraphic className="h-14 w-14" />
               </div>
             </div>
             <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
@@ -106,12 +100,7 @@ const HomeownersPage: NextPage = () => {
           <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10 border-gray-500 border-t lg:border-l lg:border-t-0 ">
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
-                <ExportedImage
-                  src={SelcoGraphic}
-                  height={128}
-                  width={128}
-                  alt=""
-                />
+                <SelcoGraphic className="h-14 w-14" />
               </div>
             </div>
             <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
