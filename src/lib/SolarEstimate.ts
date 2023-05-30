@@ -9,6 +9,8 @@ interface CalculatorArgs {
   maxBill: number;
 }
 
+type SystemSpecs = (typeof prices)[number];
+
 export enum PaymentMethods {
   CASH = "cash",
   CREDIT = "credit",
@@ -44,6 +46,11 @@ class Estimate {
 
     this.interest = interest;
     this.paymentType = paymentType;
+
+    const getPrice = (bill: Bill) => {
+      const price = prices.filter((p) => p.bill >= bill)[0];
+      return price ? price : (prices[prices.length - 1] as SystemSpecs);
+    };
 
     this.price = getPrice(bill);
   }
