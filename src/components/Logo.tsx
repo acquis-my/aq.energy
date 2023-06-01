@@ -13,7 +13,7 @@ const Logo = () => {
           alt="Acquis Logo"
           height={256}
           width={256}
-          loading="eager"
+          loading="lazy"
         />
       </Link>
     </figure>
@@ -29,7 +29,6 @@ export const LogoSecondary = () => {
           alt="Acquis Logo"
           height={151}
           width={625}
-          loading="eager"
         />
       </Link>
     </figure>
