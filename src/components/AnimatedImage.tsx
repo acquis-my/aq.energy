@@ -1,22 +1,26 @@
 "use client";
 import { useState } from "react";
-import ExportedImage, { ExportedImageProps } from "next-image-export-optimizer";
+import Image from "next/image";
+import classNames from "~/lib/classNames";
 
-const AnimatedImage: React.FC<ExportedImageProps> = (props) => {
+type AnimatedImage = typeof Image extends React.FC<infer P> ? P : never;
+
+const AnimatedImage: React.FC<AnimatedImage> = (props) => {
+  const { className } = props;
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const imageProps = { ...props };
-  delete imageProps["className"];
-
-  const style = `${props["className"] ?? ""} transition duration-1000 ${
-    imageLoaded ? "opacity-100" : "opacity-0 "
-  }`;
+  const style = classNames(
+    className ?? "",
+    imageLoaded ? "opacity-100" : "opacity-0 ",
+    "transition duration-1000"
+  );
 
   return (
-    <ExportedImage
+    // eslint-disable-next-line jsx-a11y/alt-text
+    <Image
       onLoadingComplete={() => setImageLoaded(true)}
       className={style}
-      {...imageProps}
+      {...props}
     />
   );
 };

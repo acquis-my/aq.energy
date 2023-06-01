@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { NumericFormat } from "react-number-format";
 import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
-import ExportedImage from "next-image-export-optimizer";
 import Graph from "./Graph";
 import { useRouter } from "next/navigation";
+import { LogoSecondary } from "./Logo";
 
 const MIN_BILL: number = 200;
 const MAX_BILL: number = 1000;
@@ -27,7 +27,7 @@ export default function SolarCalculator() {
   });
 
   function getQuote() {
-    router.push("quote");
+    router.push(`/quote?bill=${bill}`);
   }
 
   return (
@@ -188,15 +188,6 @@ export default function SolarCalculator() {
             />
           )}
         </div>
-
-        <figure className="hidden sm:block relative md:absolute md:bottom-0 md:right-8 mx-auto pb-4 w-28 md:w-32 pointer-events-none">
-          <ExportedImage
-            src="images/aq-logo-secondary.png"
-            alt="Acquis Logo"
-            height={151}
-            width={625}
-          />
-        </figure>
       </section>
     </div>
   );

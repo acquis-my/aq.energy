@@ -1,14 +1,13 @@
-import Layout from "~/components/Layout";
-import Hero from "~/components/Hero";
+import { Metadata } from "next";
 import { Button, OutlineButton } from "~/components/Button";
 import BusinessSectionRow from "~/components/BusinessSectionRow";
+import Hero from "~/components/Hero";
 
 import { studies as caseStudies } from "~/_content";
 import CTA from "~/components/CTA";
 import CaseStudiesSection from "~/components/CaseStudiesSection";
 
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Energize your business with clean solar",
@@ -49,7 +48,7 @@ const BusinessesPage = () => {
         <BusinessSectionRow
           reversed={false}
           badgeText={"5 Years"}
-          imgURL={"images/for-work/workmanship.png"}
+          imgURL={"/images/for-work/workmanship.png"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
             Extended Workmanship Guarantee
@@ -63,7 +62,7 @@ const BusinessesPage = () => {
         <BusinessSectionRow
           reversed={true}
           // badgeText={"2 Years"}
-          imgURL={"images/for-work/site-research.jpg"}
+          imgURL={"/images/for-work/site-research.jpg"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
             Professional Site Research
@@ -77,7 +76,7 @@ const BusinessesPage = () => {
         <BusinessSectionRow
           reversed={false}
           badgeText={"System Inclusive"}
-          imgURL={"images/for-work/monitoring.jpg"}
+          imgURL={"/images/for-work/monitoring.jpg"}
         >
           <h1 className="text-3xl md:text-4xl font-bold">
             Post-Installation Monitoring and Service

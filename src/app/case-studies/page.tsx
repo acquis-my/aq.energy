@@ -3,13 +3,13 @@ import Hero from "~/components/Hero";
 
 import CTA from "~/components/CTA";
 import { ButtonVariant2 } from "~/components/Button";
-import ExportedImage from "next-image-export-optimizer";
 import SupplierLogos from "~/components/SupplierLogos";
 
 import CaseStudiesHeroImage from "~/../public/images/case-studies-hero.jpg";
 import PatternGraphic from "~/../public/images/Pattern.svg";
 import CaseGrid from "./CaseGrid";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Success stories",
@@ -35,7 +35,7 @@ const CaseStudiesPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <ExportedImage
+          <Image
             alt=""
             src={PatternGraphic}
             className="object-cover mx-auto h-full"
