@@ -1,6 +1,4 @@
-import { MapPinIcon } from "@heroicons/react/20/solid";
 import { BanknotesIcon, CalendarIcon } from "@heroicons/react/24/solid";
-import ExportedImage from "next-image-export-optimizer";
 import AnimatedImage from "./AnimatedImage";
 
 interface CaseStudy {

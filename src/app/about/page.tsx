@@ -1,5 +1,3 @@
-import ExportedImage from "next-image-export-optimizer";
-
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
 import { Icon } from "~/components/Icon";
@@ -15,6 +13,8 @@ import NoJobs from "~/components/NoJobs";
 import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import MaxbellImage from "~/../public/images/about/mb.jpeg";
 import { Metadata } from "next";
+import Image from "next/image";
+import Patter from "~/../public/images/Pattern.svg";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -80,7 +80,7 @@ const AboutPage = () => {
           </p>
         </div>
         <figure className="relative w-full lg:w-2/5 h-96 my-auto">
-          <ExportedImage
+          <Image
             src={MaxbellImage}
             alt="Acquis Logo"
             className="object-cover rounded-xl"
@@ -242,9 +242,9 @@ const AboutPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <ExportedImage
+          <Image
             alt=""
-            layout="fill"
+            fill
             src="images/Pattern.svg"
             className="object-cover mx-auto h-full"
           />
