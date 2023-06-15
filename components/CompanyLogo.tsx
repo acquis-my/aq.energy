@@ -12,7 +12,12 @@ const CompanyLogo: React.FC<CompanyLogo> = ({
   // return <img src={src} className="object-contain w-28" />;
   return (
     <li className="relative h-7 w-full pointer-events-none select-none">
-      <AnimatedImage className="object-contain" src={src} alt={alt} fill />
+      <AnimatedImage
+        className="object-contain w-full grayscale"
+        src={src}
+        alt={alt}
+        fill
+      />
     </li>
   );
 };

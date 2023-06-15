@@ -84,7 +84,7 @@ const Home: NextPage<any> = () => {
           </div>
           <div className="flex flex-col gap-y-2">
             <p>With support from the best of the Solar industry:</p>
-            <div className="max-w-lg">
+            <div className="max-w-xl">
               <SupplierLogos />
             </div>
           </div>
