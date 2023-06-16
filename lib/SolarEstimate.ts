@@ -1,4 +1,4 @@
-import { prices } from "../_content/prices";
+import { prices } from "../_content";
 
 type Bill = number;
 interface CalculatorArgs {

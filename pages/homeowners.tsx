@@ -7,7 +7,7 @@ import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
 import Step from "../components/Step";
 import Testimonial from "../components/Testimonial";
-import { testimonials } from "../_content/testimonials";
+import { testimonials } from "../_content";
 import CTA from "../components/CTA";
 import ExportedImage from "next-image-export-optimizer";
 import dynamic from "next/dynamic";

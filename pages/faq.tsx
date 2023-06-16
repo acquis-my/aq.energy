@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import FAQ from "../components/FAQ";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import {faqs} from "../_content/faqs";
+import { faqs } from "../_content";
 
 const FAQPage = () => {
   const [list, setList] = useState(faqs);
