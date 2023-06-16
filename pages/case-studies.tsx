@@ -5,7 +5,7 @@ import Container from "../components/Container";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 
-import { caseStudies } from "../_content/studies";
+import { caseStudies } from "../_content";
 import CTA from "../components/CTA";
 import { ButtonVariant2 } from "../components/Button";
 import ExportedImage from "next-image-export-optimizer";
