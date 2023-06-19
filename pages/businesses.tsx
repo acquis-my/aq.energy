@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import { Button, OutlineButton } from "../components/Button";
 import BusinessSectionRow from "../components/BusinessSectionRow";
 
-import caseStudies from "../_content/studies.json";
+import { caseStudies } from "../_content";
 import CTA from "../components/CTA";
 import CaseStudiesSection from "../components/CaseStudiesSection";
 import { NextSeo } from "next-seo";

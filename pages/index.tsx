@@ -11,9 +11,7 @@ import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 import { NextSeo } from "next-seo";
 import type { NextPage } from "next";
 
-import caseStudies from "../_content/studies.json";
-import testimonials from "../_content/testimonials.json";
-import faqs from "../_content/faqs.json";
+import { faqs, caseStudies, testimonials } from "../_content";
 import Testimonial from "../components/Testimonial";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";
