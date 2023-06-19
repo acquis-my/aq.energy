@@ -1,4 +1,4 @@
-import prices from "../_content/prices.json";
+import { prices } from "../_content";
 
 type Bill = number;
 interface CalculatorArgs {
