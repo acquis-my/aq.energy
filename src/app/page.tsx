@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-import Layout from "../components/Layout";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
 import Statistic from "../components/Statistic";
@@ -10,9 +9,10 @@ import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 
 import type { NextPage, Metadata } from "next";
 
-import caseStudies from "../_content/studies.json";
+// import caseStudies from "../_content/studies.json";
+import { studies as caseStudies, faqs } from "~/_content";
 import testimonials from "../_content/testimonials.json";
-import faqs from "../_content/faqs.json";
+// import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";

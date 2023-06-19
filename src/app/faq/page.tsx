@@ -1,6 +1,5 @@
 import Header from "~/components/Header";
-import Layout from "~/components/Layout";
-import faqs from "~/_content/faqs.json";
+import { faqs } from "~/_content";
 import { Metadata } from "next";
 import FAQList from "./FAQList";
 
