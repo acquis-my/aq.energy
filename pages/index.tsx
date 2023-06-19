@@ -58,8 +58,8 @@ const Home: NextPage<any> = () => {
   return (
     <Layout>
       <NextSeo
-        title="Affordable and reliable solar energy systems"
-        description="We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power."
+        title="AQ Energy: Malaysia's Top Solar Panel Solutions Provider"
+        description="We provide first-class expertise and support for residential and commercial solar panel installations all over Malaysia."
       />
 
       <Hero bgImage={homepageHero}>

@@ -56,8 +56,8 @@ const HomeownersPage: NextPage = () => {
   return (
     <Layout>
       <NextSeo
-        title="Affordable and Reliable Solar Energy for your Home"
-        description="Give your roof superpowers with our reliable and affordable solar PV system."
+        title="Malaysia Solar Panel Solutions: Empowering Homeowners with Renewable Energy"
+        description="Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable enery to your doorstep. Save on bills, embrace a greener future. Get a quote now!"
       />
 
       <Hero bgImage={HomeownersHero}>
@@ -151,7 +151,7 @@ const HomeownersPage: NextPage = () => {
               How it works
             </h1>
             <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
-              5 Steps to Super-Roofs
+              5 Steps to Adding Solar Power to Your Home
             </p>
             <p className="text-sm md:text-base text-gray-500">
               A complete solar PV system can be installed in as little as 5 easy
@@ -181,7 +181,7 @@ const HomeownersPage: NextPage = () => {
             Gallery
           </h1>
           <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
-            Reliable + Cost Effective
+            Reliable and Cost Effective Solar PV System
           </p>
           <p className="text-sm md:text-base text-gray-500">
             We only use the best components to ensure your system reliably

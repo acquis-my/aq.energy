@@ -24,8 +24,8 @@ const BusinessesPage = () => {
   return (
     <Layout>
       <NextSeo
-        title="Energize your business with clean solar"
-        description="Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint."
+        title="Empowering Businesses in Malaysia with Solar Panel Solutions for Sustainable Energy Consumption"
+        description="Discover the power of solar paneling for businesses in Malaysia. Our tailored solutions provide cost-effective and sustainable energy solutions, reducing operational costs and environmental impact. Get a quote now!"
       />
 
       <Hero bgImage={WorkHeroImage}>
