@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Container from "~/components/Container";
-// import caseStudies from "~/_content/studies.json";
 import { studies as caseStudies } from "~/_content";
 import { CaseStudyCardVariant } from "~/components/CaseStudyCard";
 
