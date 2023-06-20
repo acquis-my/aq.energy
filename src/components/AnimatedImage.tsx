@@ -6,7 +6,7 @@ import classNames from "~/lib/classNames";
 type AnimatedImage = typeof Image extends React.FC<infer P> ? P : never;
 
 const AnimatedImage: React.FC<AnimatedImage> = (props) => {
-  const { className } = props;
+  const { className, alt, ...rest } = props;
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const style = classNames(
@@ -20,7 +20,8 @@ const AnimatedImage: React.FC<AnimatedImage> = (props) => {
     <Image
       onLoadingComplete={() => setImageLoaded(true)}
       className={style}
-      {...props}
+      alt={alt ?? ""}
+      {...rest}
     />
   );
 };
