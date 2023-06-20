@@ -5,7 +5,7 @@ type Price = {
   savings: number;
 };
 
-const prices = [
+export const prices = [
   {
     bill: 260,
     size: 3.22,
