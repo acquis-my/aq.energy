@@ -1,4 +1,4 @@
-import prices from "../_content/prices.json";
+import { prices } from "~/_content";
 
 type Bill = number;
 interface CalculatorArgs {
@@ -13,6 +13,16 @@ export enum PaymentMethods {
   CASH = "cash",
   CREDIT = "credit",
   LOAN = "loan",
+}
+
+type Price = (typeof prices)[number];
+
+function getPrice(bill: number): Price {
+  const max = prices[prices.length - 1] as Price;
+  const { bill: maxBill } = max;
+
+  if (bill > maxBill) return max;
+  return prices.filter((p) => p.bill >= bill)[0] as Price;
 }
 
 class Estimate {
@@ -35,10 +45,7 @@ class Estimate {
     this.interest = interest;
     this.paymentType = paymentType;
 
-    this.price =
-      this.electricBill > prices[prices.length - 1].bill
-        ? prices[prices.length - 1]
-        : prices.filter((p) => p.bill >= Number(this.electricBill))[0];
+    this.price = getPrice(bill);
   }
 
   getSavings(): number {
