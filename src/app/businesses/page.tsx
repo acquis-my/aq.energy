@@ -8,6 +8,7 @@ import CTA from "~/components/CTA";
 import CaseStudiesSection from "~/components/CaseStudiesSection";
 
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
+import { getStudies } from "~/lib/data";
 
 export const metadata: Metadata = {
   title: "Energize your business with clean solar",
@@ -15,10 +16,8 @@ export const metadata: Metadata = {
     "Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint.",
 };
 
-const BusinessesPage = () => {
-  const studies = caseStudies
-    .filter((study) => study.type === "business")
-    .slice(0, 3);
+export default async function BusinessesPage() {
+  const studies = await getStudies({ type: "commercial", limit: 3 });
 
   return (
     <>
@@ -104,6 +103,4 @@ const BusinessesPage = () => {
       </section>
     </>
   );
-};
-
-export default BusinessesPage;
+}

@@ -6,13 +6,11 @@ import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
 import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
+import { getStudies } from "~/lib/data";
+import type { Metadata } from "next";
 
-import type { NextPage, Metadata } from "next";
-
-// import caseStudies from "../_content/studies.json";
-import { studies as caseStudies, faqs } from "~/_content";
+import { faqs } from "~/_content";
 import testimonials from "../_content/testimonials.json";
-// import faqs from "../_content/faqs.json";
 import Testimonial from "../components/Testimonial";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";
@@ -57,9 +55,8 @@ export const metadata: Metadata = {
     "We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power.",
 };
 
-const Home: NextPage<any> = () => {
-  // Only get the first three
-  const studies = caseStudies.slice(0, 3);
+export default async function Home() {
+  const studies = await getStudies({ limit: 3, type: "residential" });
   const reviews = testimonials.slice(0, 3);
 
   return (
@@ -307,6 +304,4 @@ const Home: NextPage<any> = () => {
       </Container>
     </>
   );
-};
-
-export default Home;
+}

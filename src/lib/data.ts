@@ -11,7 +11,7 @@ export type CaseStudy = {
 
 interface GetStudiesOptions {
   type?: "commercial" | "residential";
-  slice?: number;
+  limit?: number;
 }
 
 export async function getStudies(options?: GetStudiesOptions) {
@@ -25,9 +25,9 @@ export async function getStudies(options?: GetStudiesOptions) {
     studies = studies.filter((study) => study.type === options.type);
   }
 
-  // Slice
-  if (options?.slice) {
-    studies = studies.slice(0, options.slice);
+  // limit
+  if (options?.limit) {
+    studies = studies.slice(0, options.limit);
   }
 
   return studies.map((study) => {
