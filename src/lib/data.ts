@@ -16,8 +16,10 @@ interface GetStudiesOptions {
 
 export async function getStudies(options?: GetStudiesOptions) {
   let studies = await client.fetch<CaseStudy[]>({
-    query: `*[_type == "case_study"]`,
-    config: { next: { revalidate: 60 } },
+    query: `*[_type == "case_study"] | order(_createdAt desc)`,
+    config: {
+      next: { revalidate: 60 },
+    },
   });
 
   // Filter by type

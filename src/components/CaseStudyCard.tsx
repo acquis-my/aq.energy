@@ -20,6 +20,7 @@ export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
             src={thumbnail}
             alt=""
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="relative h-full bg-transparent group-hover:bg-slate-200 group-hover:bg-opacity-25"></div>
         </figure>
@@ -50,6 +51,7 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
           src={thumbnail}
           alt=""
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="relative h-full bg-transparent group-hover:bg-slate-200 group-hover:bg-opacity-25"></div>
       </figure>
