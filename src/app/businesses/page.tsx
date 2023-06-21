@@ -3,7 +3,6 @@ import { Button, OutlineButton } from "~/components/Button";
 import BusinessSectionRow from "~/components/BusinessSectionRow";
 import Hero from "~/components/Hero";
 
-import { studies as caseStudies } from "~/_content";
 import CTA from "~/components/CTA";
 import CaseStudiesSection from "~/components/CaseStudiesSection";
 

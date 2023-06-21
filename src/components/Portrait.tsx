@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import AnimatedImage from "./AnimatedImage";
 
 type Portrait = { name: string; title: string; image: string };
 
@@ -6,7 +6,7 @@ const PortraitCard: React.FC<Portrait> = ({ name, title, image }) => {
   return (
     <div className="relative bg-slate-200 rounded aspect-[1/1.25] overflow-hidden">
       <figure className="absolute inset-0">
-        <ExportedImage
+        <AnimatedImage
           alt=""
           src={image}
           layout="fill"

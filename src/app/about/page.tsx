@@ -14,7 +14,7 @@ import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import MaxbellImage from "~/../public/images/about/mb.jpeg";
 import { Metadata } from "next";
 import Image from "next/image";
-import Patter from "~/../public/images/Pattern.svg";
+import Pattern from "~/../public/images/Pattern.svg";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -245,7 +245,7 @@ const AboutPage = () => {
           <Image
             alt=""
             fill
-            src="images/Pattern.svg"
+            src={Pattern}
             className="object-cover mx-auto h-full"
           />
         </figure>

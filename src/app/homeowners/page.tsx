@@ -1,15 +1,12 @@
 import dynamic from "next/dynamic";
 import Hero from "~/components/Hero";
-import Layout from "~/components/Layout";
 import Container from "~/components/Container";
 import PrimaryCard from "~/components/PrimaryCard";
 import Step from "~/components/Step";
 import Testimonial from "~/components/Testimonial";
-import testimonials from "~/_content/testimonials.json";
+import { testimonials } from "~/_content";
 import CTA from "~/components/CTA";
-import ExportedImage from "next-image-export-optimizer";
 import { Button, OutlineButton } from "~/components/Button";
-import { NextSeo } from "next-seo";
 import type { Metadata, NextPage } from "next";
 import AnimatedImage from "~/components/AnimatedImage";
 

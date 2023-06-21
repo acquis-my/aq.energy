@@ -1,6 +1,5 @@
 import Header from "~/components/Header";
 import Container from "~/components/Container";
-import Layout from "~/components/Layout";
 import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
 import dynamic from "next/dynamic";

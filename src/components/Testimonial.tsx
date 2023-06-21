@@ -1,5 +1,3 @@
-import ExportedImage from "next-image-export-optimizer";
-import Image from "next/image";
 import QuoteFigure from "./QuoteFigure";
 
 interface Testimonial {

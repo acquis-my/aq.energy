@@ -9,8 +9,7 @@ import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
 import { getStudies } from "~/lib/data";
 import type { Metadata } from "next";
 
-import { faqs } from "~/_content";
-import testimonials from "../_content/testimonials.json";
+import { faqs, testimonials } from "~/_content";
 import Testimonial from "../components/Testimonial";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";
