@@ -31,7 +31,7 @@ export default async function CaseStudiesPage({
       <Hero bgImage={CaseStudiesHeroImage}>
         <section className="flex flex-col items-center py-16 lg:py-22 gap-y-10 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
-            Success Stories ({type})
+            Success Stories
           </h1>
           <p className="max-w-prose text-gray-200 text-sm">
             From the smallest to largest, residential to industrial, explore
