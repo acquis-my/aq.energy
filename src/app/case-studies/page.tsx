@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
 
@@ -18,12 +17,7 @@ export const metadata: Metadata = {
   description: "Case studies from clients who've worked with us.",
 };
 
-export default async function CaseStudiesPage({
-  searchParams,
-}: {
-  searchParams: { [k: string]: string | string[] | null };
-}) {
-  const { type } = searchParams;
+export default async function CaseStudiesPage() {
   const studies = await getStudies();
 
   return (
