@@ -5,16 +5,15 @@ interface CaseStudy {
   type: string;
   title: string;
   thumbnail: string;
-  size: number;
-  whitepaper?: string;
+  systemSize: number;
   year?: number;
 }
 
 export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
-  const { type, title, thumbnail, size, whitepaper = "#" } = data;
+  const { type, title, thumbnail, systemSize } = data;
   return (
-    <a href={whitepaper} className="group cursor-default">
-      <article className="flex flex-col gap-2">
+    <article className="group cursor-default">
+      <div className="flex flex-col gap-2">
         <figure className="relative aspect-[3/2]">
           <AnimatedImage
             className="absolute inset-0 bg-slate-300 object-cover w-full h-full"
@@ -28,20 +27,20 @@ export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
           <span className="bg-gray-300 px-3 py-1 rounded-full uppercase tracking-wide">
             {type}
           </span>
-          <span>{size.toFixed(2)} kWp</span>
+          <span>{systemSize.toFixed(2)} kWp</span>
         </div>
         <h1 className="group-hover:text-indigo-dye font-semibold first-letter:uppercase">
           {title}
         </h1>
-      </article>
-    </a>
+      </div>
+    </article>
   );
 };
 
 export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
   data,
 }) => {
-  const { type, title, thumbnail, size, whitepaper = "#", year } = data;
+  const { type, title, thumbnail, systemSize, year } = data;
   return (
     // <a href={whitepaper} className="group cursor-default">
     <article className="group flex flex-col gap-2">
@@ -59,7 +58,7 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
           {type}
         </span>
         <div className="flex gap-1 items-center font-semibold text-gray-600">
-          <span>{size.toFixed(1)} kWp</span>
+          <span>{systemSize.toFixed(1)} kWp</span>
           {year ? (
             <>
               <span>|</span>

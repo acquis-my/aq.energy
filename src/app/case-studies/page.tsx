@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
 
@@ -10,19 +11,27 @@ import PatternGraphic from "~/../public/images/Pattern.svg";
 import CaseGrid from "./CaseGrid";
 import { Metadata } from "next";
 import Image from "next/image";
+import { getStudies } from "~/lib/data";
 
 export const metadata: Metadata = {
   title: "Success stories",
   description: "Case studies from clients who've worked with us.",
 };
 
-const CaseStudiesPage = () => {
+export default async function CaseStudiesPage({
+  searchParams,
+}: {
+  searchParams: { [k: string]: string | string[] | null };
+}) {
+  const { type } = searchParams;
+  const studies = await getStudies();
+
   return (
     <>
       <Hero bgImage={CaseStudiesHeroImage}>
         <section className="flex flex-col items-center py-16 lg:py-22 gap-y-10 text-white text-center">
           <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
-            Success Stories
+            Success Stories ({type})
           </h1>
           <p className="max-w-prose text-gray-200 text-sm">
             From the smallest to largest, residential to industrial, explore
@@ -31,7 +40,7 @@ const CaseStudiesPage = () => {
         </section>
       </Hero>
 
-      <CaseGrid />
+      <CaseGrid studies={studies} />
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
@@ -71,6 +80,4 @@ const CaseStudiesPage = () => {
       </section>
     </>
   );
-};
-
-export default CaseStudiesPage;
+}
