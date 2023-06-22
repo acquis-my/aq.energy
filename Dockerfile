@@ -10,7 +10,7 @@ LABEL fly_launch_runtime="Next.js"
 WORKDIR /app
 
 # Set production environment
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 ARG PNPM_VERSION=latest
 RUN npm install -g pnpm@$PNPM_VERSION
