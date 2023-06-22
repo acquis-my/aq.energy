@@ -1,0 +1,37 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - cms
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-22.04
+    env:
+      SKIP_ENV_VALIDATION: true
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        name: Setup pnpm
+        with:
+          version: latest
+          run_install: true
+      - name: Run lint
+        run: pnpm lint
+
+  deploy:
+    name: Deploy to Fly.io
+    needs: lint
+    runs-on: ubuntu-22.04
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          flyctl deploy --remote-only --config fly.staging.toml
