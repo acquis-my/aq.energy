@@ -1,25 +1,20 @@
 "use client";
-import React, { useState } from "react";
 import Link from "next/link";
-import { NumericFormat } from "react-number-format";
-import Estimate, { PaymentMethods } from "../lib/SolarEstimate";
 import Graph from "./Graph";
+import Estimate, { PaymentMethod } from "../lib/SolarEstimate";
+import { NumericFormat } from "react-number-format";
 import { useRouter } from "next/navigation";
-import { LogoSecondary } from "./Logo";
+import { useCalculatorStore } from "~/stores/calculatorStore";
 
 const MIN_BILL: number = 200;
 const MAX_BILL: number = 1000;
 
 export default function SolarCalculator() {
   const router = useRouter();
-  const [bill, setBill] = useState(250);
-  const [tenure, setTenure] = useState(1);
-  const [payType, setPayType] = useState<PaymentMethods | string>(
-    PaymentMethods.CASH
-  );
+  const { bill, tenure, paymentMethod, setValues } = useCalculatorStore();
 
   const estimate = new Estimate(bill, {
-    paymentType: payType,
+    paymentMethod: paymentMethod,
     tenure: tenure,
     interest: 0.02,
     minBill: MIN_BILL,
@@ -55,7 +50,8 @@ export default function SolarCalculator() {
               decimalScale={0}
               thousandSeparator={","}
               placeholder="250"
-              onValueChange={(v) => setBill(v.floatValue ?? 0)}
+              onValueChange={(v) => setValues({ bill: v.floatValue ?? 0 })}
+              // onValueChange={(v) => setBill(v.floatValue ?? 0)}
               className="w-full border-0 focus:ring-0"
             />
           </div>
@@ -64,33 +60,37 @@ export default function SolarCalculator() {
           <label className="text-slate-700">Payment Method</label>
           <select
             className="w-full px-3 focus:ring-0 border border-slate-200"
-            value={payType}
+            value={paymentMethod}
             onChange={(e) => {
-              return setPayType(e.target.value);
+              setValues({ paymentMethod: e.target.value as PaymentMethod });
+              // return setPayType(e.target.value as PaymentMethod);
             }}
           >
-            <option value={PaymentMethods.CASH}>Upfront Payment</option>
-            <option value={PaymentMethods.CREDIT}>
+            <option value={"cash"}>Upfront Payment</option>
+            <option value={"credit"}>
               Easy Payment Plan - 2% interest p.a.
             </option>
             {bill >= 370 && (
-              <option value={PaymentMethods.LOAN}>Solar Loan - 10 years</option>
+              <option value={"loan"}>Solar Loan - 10 years</option>
             )}
           </select>
-          {payType == PaymentMethods.LOAN ? (
+          {paymentMethod === "loan" ? (
             <div className="text-xs pt-1">
               This option is only available through Affin Bank.
             </div>
           ) : null}
         </div>
 
-        {payType == PaymentMethods.CREDIT ? (
+        {paymentMethod === "credit" ? (
           <div className="">
             <label className="text-slate-700">Installment Duration</label>
             <select
               className="w-full px-3 focus:ring-0 border border-slate-200"
               value={tenure}
-              onChange={(e) => setTenure(Number(e.target.value))}
+              onChange={(e) => {
+                setValues({ tenure: Number(e.target.value) });
+              }}
+              // onChange={(e) => setTenure(Number(e.target.value))}
             >
               <option value={1}>1 year</option>
               <option value={2}>2 years</option>
@@ -127,7 +127,7 @@ export default function SolarCalculator() {
       <section className="relative w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row px-4 sm:px-0 py-2 sm:py-6 xl:py-10 justify-between divide-y-4 sm:divide-y-0 sm:divide-x-4 divide-slate-500 text-white">
           <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
-            {payType === PaymentMethods.LOAN ? (
+            {paymentMethod === "loan" ? (
               <>
                 <h2 className="text-xs sm:text-sm">Monthly Bill Savings</h2>
                 <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
@@ -156,7 +156,7 @@ export default function SolarCalculator() {
             </span>
           </div>
           <div className="w-full sm:w-1/3 py-4 sm:py-2 sm:pl-6 xl:pl-14 2xl:pl-16">
-            {payType === PaymentMethods.LOAN ? (
+            {paymentMethod === "loan" ? (
               <>
                 <h2 className="text-xs sm:text-sm">Net Yearly Savings</h2>
                 <span className="text-xl sm:text-2xl xl:text-3xl font-semibold">
@@ -184,7 +184,7 @@ export default function SolarCalculator() {
           {estimate.meetBillReq && (
             <Graph
               data={estimate.generateGraphData()}
-              paymentMethod={payType as PaymentMethods}
+              paymentMethod={paymentMethod}
             />
           )}
         </div>

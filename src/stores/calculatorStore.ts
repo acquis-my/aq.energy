@@ -8,8 +8,9 @@ type CalculatorValues = {
   paymentMethod: PaymentMethod;
 };
 
-type setValues = (values: Partial<CalculatorValues>) => void;
-type CalculatorStore = CalculatorValues & { setValues: setValues };
+interface CalculatorStore extends CalculatorValues {
+  setValues: (values: Partial<CalculatorValues>) => void;
+}
 
 export const useCalculatorStore = create<CalculatorStore>((set) => ({
   bill: 250,

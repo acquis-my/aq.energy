@@ -1,7 +1,6 @@
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -9,9 +8,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { PaymentMethods } from "../lib/SolarEstimate";
+import { PaymentMethod } from "../lib/SolarEstimate";
 
-const Graph: React.FC<{ data: any; paymentMethod: PaymentMethods }> = ({
+const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
   data,
   paymentMethod,
 }) => {
@@ -83,7 +82,7 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethods }> = ({
           fill="#ff5714"
         />
 
-        {paymentMethod !== PaymentMethods.CASH && (
+        {paymentMethod !== "cash" && (
           <Bar
             maxBarSize={20}
             name="System Payment"

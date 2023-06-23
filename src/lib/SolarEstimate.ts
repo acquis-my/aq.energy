@@ -2,7 +2,7 @@ import { prices } from "../_content";
 
 type Bill = number;
 interface CalculatorArgs {
-  paymentType: PaymentMethods | string;
+  paymentMethod: PaymentMethod;
   tenure: number;
   interest: number;
   minBill: number;
@@ -17,35 +17,27 @@ export enum PaymentMethods {
   LOAN = "loan",
 }
 
-type Price = (typeof prices)[number];
-
-function getPrice(bill: number): Price {
-  const max = prices[prices.length - 1] as Price;
-  const { bill: maxBill } = max;
-
-  if (bill > maxBill) return max;
-  return prices.filter((p) => p.bill >= bill)[0] as Price;
-}
+export type PaymentMethod = "cash" | "credit" | "loan";
 
 class Estimate {
   private electricBill;
   private tenure: number;
-  private paymentType: PaymentMethods | string;
+  private paymentMethod: PaymentMethod;
   private interest: number;
   private price;
   public meetBillReq;
 
   constructor(
     bill: Bill,
-    { paymentType, tenure = 0, interest, minBill, maxBill }: CalculatorArgs
+    { paymentMethod, tenure = 0, interest, minBill, maxBill }: CalculatorArgs
   ) {
     this.electricBill = bill;
 
     this.meetBillReq = bill >= minBill && bill <= maxBill;
-    this.tenure = paymentType == PaymentMethods.CASH ? 0 : tenure;
+    this.tenure = paymentMethod == "cash" ? 0 : tenure;
 
     this.interest = interest;
-    this.paymentType = paymentType;
+    this.paymentMethod = paymentMethod;
 
     const getPrice = (bill: Bill) => {
       const price = prices.filter((p) => p.bill >= bill)[0];
@@ -74,9 +66,9 @@ class Estimate {
 
     const loanInterest = 0.065;
 
-    if (this.paymentType === PaymentMethods.LOAN)
+    if (this.paymentMethod === "loan")
       return (this.price.price - 500) * (1.05 + 10 * loanInterest);
-    return this.paymentType == PaymentMethods.CASH ? this.price.price : cost;
+    return this.paymentMethod == "cash" ? this.price.price : cost;
   }
 
   getLoanAnnualSavings(): number {
@@ -89,13 +81,13 @@ class Estimate {
     if (!this.meetBillReq) return [null];
 
     let costs: any = [];
-    let remainder = this.paymentType === PaymentMethods.LOAN ? 10 : this.tenure;
+    let remainder = this.paymentMethod === "loan" ? 10 : this.tenure;
     let payment = 0;
     let savings = 0;
     let bill = 0;
 
     const yearlyCost =
-      this.paymentType === PaymentMethods.LOAN
+      this.paymentMethod === "loan"
         ? this.getCost() / 10
         : this.getCost() / this.tenure;
 
