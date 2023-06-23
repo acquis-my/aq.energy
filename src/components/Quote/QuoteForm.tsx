@@ -4,11 +4,12 @@ import Step2 from "./Step2";
 import Step1 from "./Step1";
 import Submitted from "./Submitted";
 import { useSearchParams } from "next/navigation";
+import { useCalculatorStore } from "~/stores/calculatorStore";
 
 interface QuoteData {
   token: string;
   is_commercial: number;
-  avg_bill: string;
+  avg_bill: number;
   name: string;
   mobile: string;
   state: string;
@@ -17,7 +18,7 @@ interface QuoteData {
 const QuoteForm = () => {
   const params = useSearchParams();
   const ref = params.get("ref") ?? "";
-  const bill = params.get("bill") ?? 0;
+  const bill = useCalculatorStore((state) => state.bill);
 
   const [data, setData] = useState({
     token: "",

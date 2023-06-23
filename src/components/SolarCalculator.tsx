@@ -21,10 +21,6 @@ export default function SolarCalculator() {
     maxBill: MAX_BILL,
   });
 
-  function getQuote() {
-    router.push(`/quote?bill=${bill}`);
-  }
-
   return (
     <div className="flex flex-col lg:flex-row mt-12 pt-4 md:p-4 lg:p-8 gap-y-10 gap-x-10 border border-gray-200 bg-white shadow-lg shadow-gray-100 rounded-md justify-between">
       <section className="w-full lg:w-1/3 flex flex-col gap-2 gap-y-6 lg:gap-8 p-4">
@@ -117,12 +113,12 @@ export default function SolarCalculator() {
           </div>
         )}
 
-        <button
-          className="bg-indigo-dye text-white p-3 rounded-md"
-          onClick={getQuote}
+        <Link
+          href="/quote"
+          className="bg-indigo-dye text-white p-3 rounded-md text-center hover:opacity-95"
         >
           Get Quote
-        </button>
+        </Link>
       </section>
       <section className="relative w-full mt-4 md:mt-0 lg:w-2/3 bg-black-coral rounded-md flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row px-4 sm:px-0 py-2 sm:py-6 xl:py-10 justify-between divide-y-4 sm:divide-y-0 sm:divide-x-4 divide-slate-500 text-white">
