@@ -27,12 +27,16 @@ jobs:
     name: Deploy to Fly.io
     needs: lint
     runs-on: ubuntu-22.04
+    enviroment: staging
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+      NEXT_PUBLIC_TURNSTILE_SITEKEY: ${{ vars.NEXT_PUBLIC_TURNSTILE_SITEKEY }}
+      NEXT_PUBLIC_ZEN_API: ${{ vars.NEXT_PUBLIC_ZEN_API }}
 
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          flyctl deploy --remote-only --config fly.staging.toml \
-            --build-arg SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }}
+          flyctl deploy --remote-only --config fly.staging.toml
