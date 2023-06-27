@@ -36,7 +36,7 @@ const QuoteForm = () => {
   const handleSubmit = async (formData: QuoteData) => {
     setIsSubmitting(true);
     const data = { referrer: ref, ...formData };
-    const API_HOST = env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
+    const API_HOST = env.NEXT_PUBLIC_ZEN_API;
 
     try {
       const result = await fetch(`${API_HOST}/leads`, {
