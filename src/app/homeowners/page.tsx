@@ -19,9 +19,10 @@ import { NEMGraphic, SelcoGraphic } from "./Graphics";
 const SolarCalculator = dynamic(() => import("~/components/SolarCalculator"));
 
 export const metadata: Metadata = {
-  title: "Affordable and Reliable Solar Energy for your Home",
+  title:
+    "Malaysia Solar Panel Solutions: Empowering Homeowners with Renewable Energy",
   description:
-    "Give your roof superpowers with our reliable and affordable solar PV system.",
+    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy to your doorstep. Save on bills, embrace a greener future. Get a quote now!",
 };
 
 const HomeownersPage: NextPage = () => {
@@ -138,7 +139,7 @@ const HomeownersPage: NextPage = () => {
               How it works
             </h1>
             <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
-              5 Steps to Super-Roofs
+              5 Steps to Adding Solar Power to Your Roof
             </p>
             <p className="text-sm md:text-base text-gray-500">
               A complete solar PV system can be installed in as little as 5 easy
@@ -168,7 +169,7 @@ const HomeownersPage: NextPage = () => {
             Gallery
           </h1>
           <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
-            Reliable + Cost Effective
+            Reliable and Cost Effective
           </p>
           <p className="text-sm md:text-base text-gray-500">
             We only use the best components to ensure your system reliably

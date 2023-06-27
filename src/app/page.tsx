@@ -49,9 +49,9 @@ const stats = [
 ];
 
 export const metadata: Metadata = {
-  title: "Affordable and reliable solar energy systems",
+  title: "AQ Energy: Malaysia's Top Solar Panel Solutions Provider",
   description:
-    "We provide solutions to supercharge your roof with clean Solar Energy and reducing your reliance on grid power.",
+    "We provide first-class expertise and support for residential and commercial solar panel installations all over Malaysia.",
 };
 
 export default async function Home() {
@@ -91,7 +91,7 @@ export default async function Home() {
       <Container className="pt-24 pb-48">
         <div className="max-w-xl mx-auto mb-12 text-center">
           <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
-            Multi-scale Solar
+            Solar Energy Solutions
           </h1>
           <p className="text-4xl font-semibold mb-4 capitalize">
             Big or small, we do it all.
@@ -115,7 +115,7 @@ export default async function Home() {
 
             <Container className="relative flex flex-col py-14 text-center gap-6 rounded-lg text-white bg-gradient-to-b from-black/70">
               <h2 className="text-2xl lg:text-3xl font-semibold">
-                For Homeowners
+                Solar For Home
               </h2>
               <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
                 Build your own sun generator and save up to RM 850 per month.
@@ -138,7 +138,7 @@ export default async function Home() {
 
             <Container className="relative flex flex-col py-14 text-center gap-6 text-white">
               <h2 className="text-2xl lg:text-3xl font-semibold">
-                For Businessess
+                Solar For Businessess
               </h2>
               <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
                 With large roofs, come greater savings and stronger

@@ -1,15 +1,15 @@
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
-
 import CTA from "~/components/CTA";
-import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
+import { ButtonVariant2 } from "~/components/Button";
 
 import CaseStudiesHeroImage from "~/../public/images/case-studies-hero.jpg";
 import PatternGraphic from "~/../public/images/Pattern.svg";
 import CaseGrid from "./CaseGrid";
-import { Metadata } from "next";
+
 import Image from "next/image";
+import { Metadata } from "next";
 import { getStudies } from "~/lib/data";
 
 export const metadata: Metadata = {
@@ -28,8 +28,13 @@ export default async function CaseStudiesPage() {
             Success Stories
           </h1>
           <p className="max-w-prose text-gray-200 text-sm">
-            From the smallest to largest, residential to industrial, explore
-            some of our previous installations across Malaysia since 2013.
+            Since 2013, our solar solutions company has been meeting the solar
+            power needs of customers in Malaysia, catering to both residential
+            and commercial projects. From small-scale installations to
+            large-scale ventures, we take pride in our extensive portfolio of
+            successful solar panel projects. Explore our case studies and
+            request a quote to become a part of our growing list of satisfied
+            customers.
           </p>
         </section>
       </Hero>

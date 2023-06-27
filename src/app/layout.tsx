@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
+      </head>
       <body>
         <Analytics />
         <div className="flex flex-col min-h-screen">

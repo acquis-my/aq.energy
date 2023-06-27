@@ -10,9 +10,10 @@ import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
 import { getStudies } from "~/lib/data";
 
 export const metadata: Metadata = {
-  title: "Energize your business with clean solar",
+  title:
+    "Empowering Businesses in Malaysia with Solar Panel Solutions for Sustainable Energy use",
   description:
-    "Join hundreds of other businesses who have introduced solar energy into their energy mix to reduce their carbon footprint.",
+    "Discover the power of solar paneling for businesses in Malaysia. Our tailored solutions provide cost-effective and sustainable energy solutions, reducing operational costs and environmental impact. Get a quote now!",
 };
 
 export default async function BusinessesPage() {
