@@ -36,7 +36,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
           flyctl deploy --remote-only --config fly.staging.toml \
-          --build-arg SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }} \ 
-          --build-arg NEXT_PUBLIC_GA_ID=${{ vars.NEXT_PUBLIC_GA_ID }} \
-          --build-arg NEXT_PUBLIC_TURNSTILE_SITEKEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITEKEY }} \
-          --build-arg NEXT_PUBLIC_ZEN_API=${{ vars.NEXT_PUBLIC_ZEN_API }}
+            --build-arg SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }} \ 
+            --build-arg NEXT_PUBLIC_GA_ID=${{ vars.NEXT_PUBLIC_GA_ID }} \
+            --build-arg NEXT_PUBLIC_TURNSTILE_SITEKEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITEKEY }} \
+            --build-arg NEXT_PUBLIC_ZEN_API=${{ vars.NEXT_PUBLIC_ZEN_API }}
