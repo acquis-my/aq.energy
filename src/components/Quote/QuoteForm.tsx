@@ -5,6 +5,7 @@ import Step1 from "./Step1";
 import Submitted from "./Submitted";
 import { useSearchParams } from "next/navigation";
 import { useCalculatorStore } from "~/stores/calculatorStore";
+import { env } from "~/env.mjs";
 
 interface QuoteData {
   token: string;
@@ -17,8 +18,8 @@ interface QuoteData {
 
 const QuoteForm = () => {
   const params = useSearchParams();
-  const ref = params.get("ref") ?? "";
   const bill = useCalculatorStore((state) => state.bill);
+  const ref = params.get("ref") ?? "";
 
   const [data, setData] = useState({
     token: "",
@@ -35,7 +36,7 @@ const QuoteForm = () => {
   const handleSubmit = async (formData: QuoteData) => {
     setIsSubmitting(true);
     const data = { referrer: ref, ...formData };
-    const API_HOST = process.env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
+    const API_HOST = env.NEXT_PUBLIC_ZEN_API ?? "http://localhost:8787";
 
     try {
       const result = await fetch(`${API_HOST}/leads`, {

@@ -1,11 +1,12 @@
 "use client";
-import { Field, Form, Formik } from "formik";
-import FieldError from "./FieldError";
-import { PatternFormat } from "react-number-format";
 import Turnstile from "react-turnstile";
+import FieldError from "./FieldError";
+import { Field, Form, Formik } from "formik";
+import { PatternFormat } from "react-number-format";
 import * as Yup from "yup";
+import { env } from "~/env.mjs";
 
-const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY ?? "";
+const SITE_KEY = env.NEXT_PUBLIC_TURNSTILE_SITEKEY;
 
 const Step2Schema = Yup.object().shape({
   name: Yup.string().min(3, "Too short!").required("Required"),
