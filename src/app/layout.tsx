@@ -1,8 +1,14 @@
 import "../app/globals.css";
 import Analytics from "~/components/Analytics";
 import Footer from "../components/Footer";
-import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Albert_Sans } from "next/font/google";
+import { type Metadata } from "next";
+
+const albertSans = Albert_Sans({
+  display: "swap",
+  subsets: ["latin"],
+});
 
 export const meta: Metadata = {
   title: "AQ Energy",
@@ -16,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={albertSans.className}>
       <head>
         <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
       </head>
