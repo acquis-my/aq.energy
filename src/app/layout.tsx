@@ -2,6 +2,7 @@ import "../app/globals.css";
 import Analytics from "~/components/Analytics";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const meta: Metadata = {
   title: "AQ Energy",
@@ -20,7 +21,9 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
       </head>
       <body>
-        <Analytics />
+        <Suspense>
+          <Analytics />
+        </Suspense>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>
           <Footer />
