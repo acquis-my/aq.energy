@@ -27,7 +27,7 @@ jobs:
     name: Deploy to Fly.io
     needs: lint
     runs-on: ubuntu-22.04
-#     environment: staging
+    #     environment: staging
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -35,8 +35,17 @@ jobs:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          flyctl deploy --remote-only --config fly.staging.toml \
-            --build-arg SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }} \ 
-            --build-arg NEXT_PUBLIC_GA_ID=${{ vars.NEXT_PUBLIC_GA_ID }} \
-            --build-arg NEXT_PUBLIC_TURNSTILE_SITEKEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITEKEY }} \
-            --build-arg NEXT_PUBLIC_ZEN_API=${{ vars.NEXT_PUBLIC_ZEN_API }}
+          flyctl deploy --remote-only \
+            --build-arg NEXT_PUBLIC_ST_API_DOMAIN=${{ vars.ST_API_DOMAIN }} \
+            --build-arg NEXT_PUBLIC_ST_WEB_DOMAIN=${{ vars.ST_WEB_DOMAIN }} \
+            --build-arg NEXT_PUBLIC_LOGO=${{ vars.LOGO }}
+
+    # steps:
+    #   - uses: actions/checkout@v3
+    #   - uses: superfly/flyctl-actions/setup-flyctl@master
+    #   - run: |
+    #       flyctl deploy --remote-only --config fly.staging.toml \
+    #         --build-arg SANITY_PROJECT_ID=${{ secrets.SANITY_PROJECT_ID }} \
+    #         --build-arg NEXT_PUBLIC_GA_ID=${{ vars.NEXT_PUBLIC_GA_ID }} \
+    #         --build-arg NEXT_PUBLIC_TURNSTILE_SITEKEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITEKEY }} \
+    #         --build-arg NEXT_PUBLIC_ZEN_API=${{ vars.NEXT_PUBLIC_ZEN_API }}
