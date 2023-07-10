@@ -1,4 +1,4 @@
-import { BanknotesIcon, CalendarIcon } from "@heroicons/react/24/solid";
+import { CalendarIcon } from "@heroicons/react/24/solid";
 import AnimatedImage from "./AnimatedImage";
 
 interface CaseStudy {
@@ -30,9 +30,9 @@ export const CaseStudyCard: React.FC<{ data: CaseStudy }> = ({ data }) => {
           </span>
           <span>{systemSize.toFixed(2)} kWp</span>
         </div>
-        <h1 className="group-hover:text-indigo-dye font-semibold first-letter:uppercase">
+        <div className="group-hover:text-indigo-dye font-semibold first-letter:uppercase">
           {title}
-        </h1>
+        </div>
       </div>
     </article>
   );
@@ -43,7 +43,6 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
 }) => {
   const { type, title, thumbnail, systemSize, year } = data;
   return (
-    // <a href={whitepaper} className="group cursor-default">
     <article className="group flex flex-col gap-2">
       <figure className="relative aspect-[3/2]">
         <AnimatedImage
@@ -71,11 +70,10 @@ export const CaseStudyCardVariant: React.FC<{ data: CaseStudy }> = ({
           ) : null}
         </div>
       </div>
-      <h1 className="group-hover:text-indigo-dye font-semibold first-letter:uppercase">
+      <div className="group-hover:text-indigo-dye font-semibold first-letter:uppercase">
         {title}
-      </h1>
+      </div>
     </article>
-    // </a>
   );
 };
 

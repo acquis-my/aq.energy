@@ -15,6 +15,7 @@ import MaxbellImage from "~/../public/images/about/mb.jpeg";
 import { Metadata } from "next";
 import Image from "next/image";
 import Pattern from "~/../public/images/Pattern.svg";
+import SectionHeader from "~/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -60,7 +61,7 @@ const AboutPage = () => {
 
       <Container className="flex flex-col md:flex-row justify-between py-20 gap-8">
         <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center md:text-left">
-          <h1 className="font-bold text-4xl text-gray-800">Our Story</h1>
+          <h2 className="font-bold text-4xl text-gray-800">Our Story</h2>
           <p>
             <strong>Building Sustainability, One Panel at a Time.</strong>
           </p>
@@ -91,17 +92,11 @@ const AboutPage = () => {
 
       <section id="careers" className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
-              Open Positions
-            </h1>
-            <p className="text-4xl font-semibold mb-4 capitalize">
-              Develop a Positive-Impact Career with Us
-            </p>
-            <p className="text-gray-500">
-              A place to work, and a place to do good.
-            </p>
-          </div>
+          <SectionHeader
+            alt="Open Positions"
+            header="Develop a Positive-Impact Career with Us"
+            subheader="A place to work, and a place to do good."
+          />
 
           <div className="flex flex-col gap-4 overflow-hidden items-center">
             <NoJobs />
@@ -121,11 +116,8 @@ const AboutPage = () => {
 
       <section>
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <h1 className="text-4xl font-semibold mb-4 capitalize">
-              Our Ethos
-            </h1>
-          </div>
+          <SectionHeader header="Our Ethos" />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="flex flex-col items-center text-center gap-3">
               <figure className="pb-6">
@@ -162,10 +154,8 @@ const AboutPage = () => {
 
       <section className="bg-indigo-dye">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <h1 className="text-2xl text-white mb-4">
-              Trusted by 400+ of homeowners and businesses throughout Malaysia
-            </h1>
+          <div className="max-w-xl mx-auto mb-16 text-center text-2xl text-white">
+            Trusted by 400+ of homeowners and businesses throughout Malaysia
           </div>
           <div className="w-full max-w-3xl mx-auto text-center">
             <SupplierLogos />
@@ -196,14 +186,11 @@ const AboutPage = () => {
             id="contact"
             // className="mt-10 md:mt-16 flex flex-col bg-gray-100 rounded px-8 py-12 lg:px-12 md:py-14 lg:py-16"
           >
-            <div className="max-w-xl mx-auto mb-8 lg:mb-12 text-center">
-              <h1 className="text-3xl lg:text-4xl font-semibold mb-4 capitalize">
-                Contact Us
-              </h1>
-              <p className="text-slate-600">
-                Feel free to get in touch with us. Powered by 100% humans.
-              </p>
-            </div>
+            <SectionHeader
+              header="Contact Us"
+              subheader="Feel free to get in touch with us. Powered by 100% humans."
+            />
+
             <div className="flex flex-col md:flex-row lg:justify-center md:items-baseline mx-auto divide-y md:divide-y-0 md:divide-x divide-slate-300 overflow-hidden text-sm font-semibold text-black-coral">
               <a
                 href="https://wa.me/60377339939"
@@ -226,7 +213,7 @@ const AboutPage = () => {
                 hello@aq.energy
               </a>
               <a
-                href="https://g.page/MaxBellSolar"
+                href="https://goo.gl/maps/6cN1wHW1SR6MivpD8"
                 className="flex items-start xl:items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0"
               >
                 <Icon>
@@ -252,9 +239,9 @@ const AboutPage = () => {
         <div className="relative flex flex-col gap-12">
           <Container>
             <div className="flex flex-col mx-auto max-w-prose items-center text-center gap-10">
-              <h1 className="text-4xl font-bold">
+              <div className="text-4xl font-bold">
                 Why leave your roofs empty?
-              </h1>
+              </div>
               <p className="text-gray-600">
                 Solar energy is clean, quiet, and does not require significant
                 maintenance. With more people and companies signing up each day,

@@ -8,6 +8,7 @@ import CaseStudiesSection from "~/components/CaseStudiesSection";
 
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
 import { getStudies } from "~/lib/data";
+import SectionHeader from "~/components/SectionHeader";
 
 export const metadata: Metadata = {
   title:
@@ -49,9 +50,9 @@ export default async function BusinessesPage() {
           badgeText={"5 Years"}
           imgURL={"/images/for-work/workmanship.png"}
         >
-          <h1 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl md:text-4xl font-bold">
             Extended Workmanship Guarantee
-          </h1>
+          </h3>
           <p className="text-gray-600">
             Big investments deserve greater care. We provide an additional 2
             years to ensure your system performs at its maximum for longer.
@@ -63,9 +64,9 @@ export default async function BusinessesPage() {
           // badgeText={"2 Years"}
           imgURL={"/images/for-work/site-research.jpg"}
         >
-          <h1 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl md:text-4xl font-bold">
             Professional Site Research
-          </h1>
+          </h3>
           <p className="text-gray-600">
             From satellite-based imagery, software simulations, to on-site power
             data-logging, we use the best tools in the industry.
@@ -77,9 +78,9 @@ export default async function BusinessesPage() {
           badgeText={"System Inclusive"}
           imgURL={"/images/for-work/monitoring.jpg"}
         >
-          <h1 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl md:text-4xl font-bold">
             Post-Installation Monitoring and Service
-          </h1>
+          </h3>
           <p className="text-gray-600">
             With great power, comes great responsibility. We ensure fast online
             troubleshooting of system issues and responsive servicing that

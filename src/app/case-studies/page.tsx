@@ -53,7 +53,7 @@ export default async function CaseStudiesPage() {
         <div className="relative flex flex-col gap-12">
           <Container>
             <div className="flex flex-col mx-auto max-w-prose items-center text-center gap-10">
-              <h1 className="text-4xl font-bold">Feeling inspired?</h1>
+              <div className="text-4xl font-bold">Feeling inspired?</div>
               <p className="text-gray-600">
                 Like any electrical appliance or machinery, we know that solar
                 energy is a significant investment. We work with the best in the

@@ -87,7 +87,7 @@ const HomeownersPage: NextPage = () => {
               </div>
             </div>
             <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
-              <h1 className="font-semibold text-xl">Net Energy Metering</h1>
+              <h3 className="font-semibold text-xl">Net Energy Metering</h3>
               <p>
                 Complement your energy usage with clean solar power and sell
                 excess energy to the grid.
@@ -102,7 +102,7 @@ const HomeownersPage: NextPage = () => {
               </div>
             </div>
             <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
-              <h1 className="font-semibold text-xl">Self Consumption</h1>
+              <h3 className="font-semibold text-xl">Self Consumption</h3>
               <p>Save on bills by reducing your reliance on grid power.</p>
             </div>
           </div>
@@ -112,9 +112,9 @@ const HomeownersPage: NextPage = () => {
       <section className="">
         <Container className="py-24">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
-            <h1 className="w-full lg:w-1/3 text-center lg:text-left text-4xl font-bold">
+            <div className="w-full lg:w-1/3 text-center lg:text-left text-4xl font-bold">
               It&apos;s never been easier to save!
-            </h1>
+            </div>
             <p className="w-full lg:w-1/2 text-center lg:text-left text-gray-500">
               With our flexible payment options, you can choose between maximum
               return of investment, or lower capital commitments.
@@ -135,12 +135,12 @@ const HomeownersPage: NextPage = () => {
       <section className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
           <div className="max-w-xl mx-auto mb-12 text-center">
-            <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+            <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
               How it works
-            </h1>
-            <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
+            </div>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
               5 Steps to Adding Solar Power to Your Roof
-            </p>
+            </h2>
             <p className="text-sm md:text-base text-gray-500">
               A complete solar PV system can be installed in as little as 5 easy
               steps.
@@ -165,12 +165,12 @@ const HomeownersPage: NextPage = () => {
           className="max-w-xl p-5
          mx-auto mb-12 text-center"
         >
-          <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+          <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
             Gallery
-          </h1>
-          <p className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
+          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
             Reliable and Cost Effective
-          </p>
+          </h2>
           <p className="text-sm md:text-base text-gray-500">
             We only use the best components to ensure your system reliably
             generates returns for longer.
@@ -207,12 +207,12 @@ const HomeownersPage: NextPage = () => {
       <section className="py-20 md:py-24 bg-slate-200">
         <Container className="flex flex-col">
           <div className="max-w-xl mx-auto mb-12 text-center">
-            <h1 className="text-gray-700 mb-2 uppercase text-sm font-semibold">
+            <div className="text-gray-700 mb-2 uppercase text-sm font-semibold">
               Testimonials
-            </h1>
-            <p className="text-black text-3xl md:text-4xl font-semibold mb-4 capitalize">
+            </div>
+            <h2 className="text-black text-3xl md:text-4xl font-semibold mb-4 capitalize">
               What our Clients say
-            </p>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">

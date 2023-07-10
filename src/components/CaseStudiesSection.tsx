@@ -17,10 +17,10 @@ const CaseStudiesSection: React.FC<CaseStudySection> = ({
   return (
     <Container className="flex flex-col py-24">
       <div className="max-w-xl mx-auto mb-12 text-center">
-        <h1 className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+        <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
           Case studies
-        </h1>
-        <p className="text-4xl font-semibold mb-4 capitalize">{header}</p>
+        </div>
+        <h2 className="text-4xl font-semibold mb-4 capitalize">{header}</h2>
         <p className="text-gray-500">{subheader}</p>
       </div>
 
@@ -33,10 +33,9 @@ const CaseStudiesSection: React.FC<CaseStudySection> = ({
       <div className="mx-auto mt-12">
         <Link
           href="/case-studies"
-          className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm">
-          
-            View More
-          
+          className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm"
+        >
+          View More
         </Link>
       </div>
     </Container>
