@@ -4,8 +4,8 @@ import { Popover, Transition } from "@headlessui/react";
 import { NavItem, MobileNavItem } from "./NavItem";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { Button } from "./Button";
+import { LogoSecondary } from "./Logo";
 import Container from "./Container";
-import Logo, { LogoSecondary } from "./Logo";
 import Link from "next/link";
 
 import links from "../../nav";

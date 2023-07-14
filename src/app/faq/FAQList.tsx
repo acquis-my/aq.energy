@@ -11,10 +11,9 @@ type FAQ = {
 export default function FAQList({ faqs }: { faqs: FAQ[] }) {
   const [list, setList] = useState(faqs);
 
-  const handleSearch = async (e: any) => {
+  const handleSearch = async (query: string) => {
     const Fuse = (await import("fuse.js")).default;
     const fuse = new Fuse(faqs, { keys: ["question", "answer"] });
-    const { value: query } = e.target;
 
     if (!query || query === "") return setList(faqs);
     const searchResult = fuse.search(query).map((res) => res.item);
@@ -29,7 +28,7 @@ export default function FAQList({ faqs }: { faqs: FAQ[] }) {
           <label className="whitespace-nowrap">Filter: </label>
           <input
             type={"text"}
-            onChange={handleSearch}
+            onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search questions"
             className="w-full text-sm
                     px-0.5

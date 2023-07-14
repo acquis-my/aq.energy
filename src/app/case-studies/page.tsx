@@ -5,12 +5,11 @@ import SupplierLogos from "~/components/SupplierLogos";
 import { ButtonVariant2 } from "~/components/Button";
 
 import CaseStudiesHeroImage from "~/../public/images/case-studies-hero.jpg";
-import PatternGraphic from "~/../public/images/Pattern.svg";
 import CaseGrid from "./CaseGrid";
 
-import Image from "next/image";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import { getStudies } from "~/lib/data";
+import { Pattern } from "~/components/Pattern";
 
 export const metadata: Metadata = {
   title: "Success stories",
@@ -43,12 +42,7 @@ export default async function CaseStudiesPage() {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <Image
-            alt=""
-            src={PatternGraphic}
-            className="object-cover mx-auto h-full"
-            fill
-          />
+          <Pattern className="object-cover mx-auto h-full" fill />
         </figure>
         <div className="relative flex flex-col gap-12">
           <Container>

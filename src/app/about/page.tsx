@@ -4,18 +4,18 @@ import { Icon } from "~/components/Icon";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { ButtonVariant2 } from "~/components/Button";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
-import SupplierLogos from "~/components/SupplierLogos";
+import { type Metadata } from "next";
 
 // import Portrait from "../components/Portrait";
 // import JobPost from "../components/JobPost";
 import NoJobs from "~/components/NoJobs";
 
+import Image from "next/image";
 import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import MaxbellImage from "~/../public/images/about/mb.jpeg";
-import { Metadata } from "next";
-import Image from "next/image";
-import Pattern from "~/../public/images/Pattern.svg";
 import SectionHeader from "~/components/SectionHeader";
+import SupplierLogos from "~/components/SupplierLogos";
+import { Pattern } from "~/components/Pattern";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -229,12 +229,7 @@ const AboutPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <Image
-            alt=""
-            fill
-            src={Pattern}
-            className="object-cover mx-auto h-full"
-          />
+          <Pattern className="object-cover mx-auto h-full" fill />
         </figure>
         <div className="relative flex flex-col gap-12">
           <Container>

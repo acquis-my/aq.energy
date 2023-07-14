@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useCalculatorStore } from "~/stores/calculatorStore";
 import { env } from "~/env.mjs";
 
-interface QuoteData {
+export interface QuoteData {
   token: string;
   is_commercial: number;
   avg_bill: number;
@@ -55,11 +55,11 @@ const QuoteForm = () => {
     }
   };
 
-  const handleNextStep = (newData: QuoteData, final = false) => {
+  const handleNextStep = async (newData: QuoteData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
 
     if (final) {
-      handleSubmit(newData);
+      await handleSubmit(newData);
       return;
     }
 

@@ -5,6 +5,7 @@ import { Field, Form, Formik } from "formik";
 import { PatternFormat } from "react-number-format";
 import * as Yup from "yup";
 import { env } from "~/env.mjs";
+import { type QuoteData } from "./QuoteForm";
 
 const SITE_KEY = env.NEXT_PUBLIC_TURNSTILE_SITEKEY;
 
@@ -15,7 +16,14 @@ const Step2Schema = Yup.object().shape({
     .required("Required"),
 });
 
-const Step2 = ({ data, isSubmitting, next, prev }: any) => {
+interface StepProps {
+  data: QuoteData;
+  isSubmitting: boolean;
+  next: (data: QuoteData, final?: boolean) => void;
+  prev: (data: QuoteData) => void;
+}
+
+const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
   return (
     <Formik
       initialValues={data}

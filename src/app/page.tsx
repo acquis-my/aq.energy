@@ -14,12 +14,12 @@ import Testimonial from "../components/Testimonial";
 import AnimatedImage from "../components/AnimatedImage";
 import SupplierLogos from "../components/SupplierLogos";
 
-import SunPattern from "../../public/images/sun.svg";
 import homepageHero from "../../public/images/main-hero.jpg";
 import homeSolutionsImage from "../../public/images/soln-home.jpg";
 import businessSolutionsImage from "../../public/images/soln-business.jpg";
 import SedaHeroImage from "../../public/images/seda_hero.png";
 import SedaMobileHeroImage from "../../public/images/seda_hero-mobile.png";
+import { SunPattern } from "~/components/Pattern";
 
 const stats = [
   {
@@ -157,12 +157,7 @@ export default async function Home() {
         <Container className="py-4">
           <PrimaryCard className="relative -mt-32 overflow-hidden">
             <figure className="absolute inset-0 ">
-              <AnimatedImage
-                src={SunPattern}
-                className="h-full mx-auto"
-                alt=""
-                fill
-              />
+              <SunPattern className="h-full mx-auto" alt="" fill />
             </figure>
             <Container className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-10">
               {stats.map((stat, i) => (

@@ -1,13 +1,11 @@
 import React from "react";
 import Footer from "./Footer";
 
-const Layout: React.FC<any> = ({ children }) => {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
-};
-
-export default Layout;
+}

@@ -1,7 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 
-interface Job {
+interface JobItemProps extends Record<string, string> {
   title: string;
   department: string;
   type: string;
@@ -10,7 +10,7 @@ interface Job {
   link: string;
 }
 
-const FAQ: React.FC<{}> = () => {
+export default function FAQ({ ...job }: JobItemProps) {
   return (
     <article className="w-full max-w-4xl mx-auto border boder-slate-200 rounded">
       <Disclosure>
@@ -19,14 +19,14 @@ const FAQ: React.FC<{}> = () => {
             <Disclosure.Button className="flex items-center z-10 mx-auto w-full justify-between rounded px-4 md:px-8 lg:px-10 py-3 md:py-6 lg:py-8 text-left text-gray-800 bg-white hover:bg-slate-50 focus:outline-none focus-visible:ring focus-visible:ring-cyber-yellow focus-visible:ring-opacity-75">
               <div className="flex flex-col">
                 <span className="font-semibold text-base md:text-xl tracking-wide">
-                  Hybrid Marketing Manager
+                  {job.title}
                 </span>
                 <div className="flex flex-row gap-2 text-sm md:text-base">
-                  <span>Marketing</span>
+                  <span>{job.department}</span>
                   <span>&middot;</span>
-                  <span>Full-time</span>
+                  <span>{job.type}</span>
                   <span className="hidden sm:block">&middot;</span>
-                  <span className="hidden sm:block">Kuala Lumpur</span>
+                  <span className="hidden sm:block">{job.location}</span>
                 </div>
               </div>
               <span className="text-indigo-dye font-bold text-xl">
@@ -68,11 +68,10 @@ const FAQ: React.FC<{}> = () => {
               </section>
               <aside className="w-full mt-5 py-2 flex justify-end text-sm md:text-base">
                 <Link
-                  href={""}
-                  className="px-7 py-2 rounded-lg bg-indigo-dye text-white font-medium">
-                  
-                    Apply for this Job
-                  
+                  href={job.link}
+                  className="px-7 py-2 rounded-lg bg-indigo-dye text-white font-medium"
+                >
+                  Apply for this Job
                 </Link>
               </aside>
             </Disclosure.Panel>
@@ -81,6 +80,4 @@ const FAQ: React.FC<{}> = () => {
       </Disclosure>
     </article>
   );
-};
-
-export default FAQ;
+}

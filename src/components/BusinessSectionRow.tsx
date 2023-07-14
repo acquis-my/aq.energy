@@ -34,7 +34,7 @@ const BusinessSectionRow: React.FC<Row> = ({
           >
             <AnimatedImage
               src={imgURL}
-              alt={""}
+              alt={imgAlt}
               className="absolute object-cover rounded-lg"
               fill
             />

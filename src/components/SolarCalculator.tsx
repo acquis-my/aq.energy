@@ -1,16 +1,14 @@
 "use client";
 import Link from "next/link";
 import Graph from "./Graph";
-import Estimate, { PaymentMethod } from "../lib/SolarEstimate";
+import Estimate, { type PaymentMethod } from "../lib/SolarEstimate";
 import { NumericFormat } from "react-number-format";
-import { useRouter } from "next/navigation";
 import { useCalculatorStore } from "~/stores/calculatorStore";
 
 const MIN_BILL: number = 200;
 const MAX_BILL: number = 1000;
 
 export default function SolarCalculator() {
-  const router = useRouter();
   const { bill, tenure, paymentMethod, setValues } = useCalculatorStore();
 
   const estimate = new Estimate(bill, {
@@ -179,6 +177,7 @@ export default function SolarCalculator() {
         <div className="w-full aspect-[4/3] sm:aspect-[2/1] px-4 pb-6 xl:px-14 2xl:pl-16 md:px-6 md:pb-12 overflow-hidden">
           {estimate.meetBillReq && (
             <Graph
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               data={estimate.generateGraphData()}
               paymentMethod={paymentMethod}
             />

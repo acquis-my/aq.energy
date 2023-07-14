@@ -1,6 +1,6 @@
 import "client-only";
 import { create } from "zustand";
-import { PaymentMethod } from "~/lib/SolarEstimate";
+import { type PaymentMethod } from "~/lib/SolarEstimate";
 
 type CalculatorValues = {
   bill: number;

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
-import { CaseStudyCardVariant } from "./CaseStudyCard";
 import Container from "./Container";
+import { CaseStudyCardVariant } from "./CaseStudyCard";
+import { type CaseStudy } from "~/lib/data";
 
 interface CaseStudySection {
   header: string;
   subheader: string;
-  studies: any[];
+  studies: CaseStudy[];
 }
 
 const CaseStudiesSection: React.FC<CaseStudySection> = ({

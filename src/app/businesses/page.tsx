@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import { Button, OutlineButton } from "~/components/Button";
 import BusinessSectionRow from "~/components/BusinessSectionRow";
 import Hero from "~/components/Hero";
@@ -8,7 +8,6 @@ import CaseStudiesSection from "~/components/CaseStudiesSection";
 
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
 import { getStudies } from "~/lib/data";
-import SectionHeader from "~/components/SectionHeader";
 
 export const metadata: Metadata = {
   title:

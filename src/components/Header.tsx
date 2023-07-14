@@ -1,21 +1,19 @@
-import AnimatedImage from "./AnimatedImage";
+import React from "react";
 import Container from "./Container";
 import Nav from "./Nav";
-
-import SunPattern from "~/../public/images/sun.svg";
+import { SunPattern } from "./Pattern";
 
 type Header = {
   title: string;
   subtitle?: string;
-  children?: any;
+  children?: React.ReactNode;
 };
 
 const Header: React.FC<Header> = ({ title, subtitle, children }) => {
   return (
     <header className="relative bg-indigo-dye">
       <figure className="absolute inset-0">
-        <AnimatedImage
-          src={SunPattern}
+        <SunPattern
           className="object-cover mx-auto h-full w-full"
           alt=""
           fill

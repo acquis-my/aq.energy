@@ -7,6 +7,7 @@ import fmtString from "../../lib/fmt_string";
 import * as Yup from "yup";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { type QuoteData } from "./QuoteForm";
 
 const Step1Schema = Yup.object().shape({
   avg_bill: Yup.number().required("Required"),
@@ -15,7 +16,12 @@ const Step1Schema = Yup.object().shape({
     .required("Required"),
 });
 
-const Step1 = ({ data, next }: any) => {
+interface StepProps {
+  data: QuoteData;
+  next: (data: QuoteData) => void;
+}
+
+const Step1 = ({ data, next }: StepProps) => {
   const params = useSearchParams();
   const bill = params.get("bill") ?? 0;
 

@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   BarChart,
   Bar,
@@ -8,7 +12,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { PaymentMethod } from "../lib/SolarEstimate";
+import { type PaymentMethod } from "../lib/SolarEstimate";
+
+// TODO: Refactor this to be typesafe
 
 const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
   data,
@@ -31,7 +37,7 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
         <YAxis
           axisLine={false}
           // tick={{ fill: "#bfc0c0" }}
-          tick={({ x, y, stroke, payload }) => (
+          tick={({ x, y, payload }) => (
             <g transform={`translate(${x},${y})`}>
               <text
                 className=""
@@ -41,12 +47,12 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
                 textAnchor="end"
                 fill="#bfc0c0"
               >
-                RM {payload.value / 1000}k
+                RM {(payload.value as number) / 1000}k
               </text>
             </g>
           )}
           scale="linear"
-          tickFormatter={(tick) => tick.toLocaleString()}
+          tickFormatter={(tick: string) => tick.toLocaleString()}
           allowDecimals={false}
         />
         <Tooltip
@@ -57,7 +63,9 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
           }}
         />
 
-        <Legend formatter={(v) => v.charAt(0).toUpperCase() + v.slice(1)} />
+        <Legend
+          formatter={(v: string) => v.charAt(0).toUpperCase() + v.slice(1)}
+        />
 
         <CartesianGrid
           vertical={false}

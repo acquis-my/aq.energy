@@ -19,6 +19,14 @@ export enum PaymentMethods {
 
 export type PaymentMethod = "cash" | "credit" | "loan";
 
+type Cost = {
+  year: number;
+  bill: number;
+  savings: number;
+  payment: number;
+  remainder: number;
+};
+
 class Estimate {
   private electricBill;
   private tenure: number;
@@ -80,7 +88,7 @@ class Estimate {
   generateGraphData() {
     if (!this.meetBillReq) return [null];
 
-    let costs: any = [];
+    let costs: Cost[] = [];
     let remainder = this.paymentMethod === "loan" ? 10 : this.tenure;
     let payment = 0;
     let savings = 0;

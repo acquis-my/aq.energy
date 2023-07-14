@@ -1,6 +1,6 @@
 import Header from "~/components/Header";
 import { faqs } from "~/_content";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import FAQList from "./FAQList";
 
 export const metadata: Metadata = {

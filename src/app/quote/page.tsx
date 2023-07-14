@@ -3,7 +3,7 @@ import Container from "~/components/Container";
 import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
 import dynamic from "next/dynamic";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 const QuoteForm = dynamic(() => import("~/components/Quote/QuoteForm"));
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Get a personalised quote for your solar energy solution; big or small, we do it all.",
 };
 
-const Quote: React.FC<{}> = () => {
+const Quote: React.FC<object> = () => {
   return (
     <>
       <Header title="Quote" subtitle="Get started on supercharging your roof">
