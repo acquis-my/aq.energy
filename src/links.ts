@@ -9,3 +9,8 @@ export const navLinks = [
   { label: "Case Studies", dest: "/case-studies" },
   { label: "About", dest: "/about" },
 ] satisfies NavItem[];
+
+export const socialLinks = {
+  facebook: "https://www.facebook.com/aq.energymys/",
+  linkedin: "https://www.linkedin.com/company/aqenergy",
+} satisfies Record<string, string>;
