@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { type NavLink } from "./types";
 import { usePathname } from "next/navigation";
+import { type NavItem as NavLink } from "~/links";
 
 interface NavItemProps {
   link: NavLink;

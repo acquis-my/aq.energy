@@ -8,7 +8,7 @@ import { LogoSecondary } from "./Logo";
 import Container from "./Container";
 import Link from "next/link";
 
-import links from "../../nav";
+import { navLinks as links } from "~/links";
 
 const Nav = () => {
   return (

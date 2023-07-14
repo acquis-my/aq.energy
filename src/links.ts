@@ -1,10 +1,11 @@
-import { NavLink } from "./src/components/types";
+export type NavItem = {
+  label: string;
+  dest: string;
+};
 
-const links: NavLink[] = [
+export const navLinks = [
   { label: "For Home", dest: "/homeowners" },
   { label: "For Work", dest: "/businesses" },
   { label: "Case Studies", dest: "/case-studies" },
   { label: "About", dest: "/about" },
-];
-
-export default links;
+] satisfies NavItem[];
