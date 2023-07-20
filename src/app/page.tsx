@@ -280,7 +280,7 @@ export default async function Home() {
       {/* FAQ  */}
       <Container className="flex flex-col py-24">
         <div className="max-w-xl mx-auto mb-12 text-center">
-          <h1 className="text-4xl font-semibold mb-4 capitalize">FAQ</h1>
+          <h2 className="text-4xl font-semibold mb-4 capitalize">FAQ</h2>
           <p className="text-gray-500">
             Some of the most common questions from our clients.
           </p>
