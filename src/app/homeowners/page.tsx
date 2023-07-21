@@ -1,22 +1,21 @@
-import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import type { Metadata, NextPage } from "next";
 import Hero from "~/components/Hero";
 import Container from "~/components/Container";
 import PrimaryCard from "~/components/PrimaryCard";
 import Step from "~/components/Step";
 import Testimonial from "~/components/Testimonial";
-import { testimonials } from "~/_content";
 import CTA from "~/components/CTA";
-import { Button, OutlineButton } from "~/components/Button";
-import type { Metadata, NextPage } from "next";
 import AnimatedImage from "~/components/AnimatedImage";
+import { testimonials } from "~/_content";
+import { Button, OutlineButton } from "~/components/Button";
 
 import HomeownersHero from "~/../public/images/home-hero.jpg";
 import GalleryImage from "~/../public/images/gallery-1.jpg";
 import RoofPanelImage from "~/../public/images/panels.jpg";
 import InverterIamge from "~/../public/images/inverter.jpg";
 import { NEMGraphic, SelcoGraphic } from "./Graphics";
-
-const SolarCalculator = dynamic(() => import("~/components/SolarCalculator"));
+import SolarCalculator from "~/components/SolarCalculator";
 
 export const metadata: Metadata = {
   title:
@@ -121,7 +120,9 @@ const HomeownersPage: NextPage = () => {
             </p>
           </div>
 
-          <SolarCalculator />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SolarCalculator />
+          </Suspense>
 
           <p className="pt-2 text-xs text-gray-500">
             Disclaimer: The figures shown above are for illustrative purposes
