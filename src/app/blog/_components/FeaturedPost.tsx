@@ -15,6 +15,8 @@ export default function FeaturedPost({ post }: { post: Post }) {
   if (!post) return null;
 
   const { title, description, slug, featuredImage, postedAt } = post;
+  const dateTime = new Date(postedAt);
+
   return (
     <Link href={`/blog/${slug}`}>
       <article className="flex flex-row gap-24 items-center justify-between w-full transition">
@@ -22,13 +24,16 @@ export default function FeaturedPost({ post }: { post: Post }) {
           <div className="text-sm lg:text-base inline-flex items-center gap-4 text-slate-400">
             <span>Featured</span>
             <span className="h-0.5 w-full bg-slate-700" />
-            <span className="whitespace-nowrap">
+            <time
+              dateTime={dateTime.toISOString()}
+              className="whitespace-nowrap"
+            >
               {Intl.DateTimeFormat("en-GB", {
                 day: "numeric",
                 year: "numeric",
                 month: "short",
-              }).format(new Date(postedAt))}
-            </span>
+              }).format(dateTime)}
+            </time>
           </div>
 
           <h2 className="mt-2 text-3xl xl:text-4xl font-semibold mb-4 capitalize">

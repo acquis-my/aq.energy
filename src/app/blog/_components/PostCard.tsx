@@ -13,6 +13,8 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   const { title, description, slug, featuredImage, postedAt } = post;
+  const dateTime = new Date(postedAt);
+
   return (
     <Link href={`/blog/${slug}`}>
       <article className="flex flex-col gap-4 bg-white lg:p-2 rounded-2xl overflow-hidden lg:shadow lg:hover:shadow-lg transition ease-in-out h-full lg:border-slate-200">
@@ -37,13 +39,16 @@ export default function PostCard({ post }: PostCardProps) {
           <span className="text-sm md:text-base text-cyber-yellow ">
             Read more &rarr;
           </span>
-          <span className="text-sm md:text-base text-gray-500 ">
+          <time
+            dateTime={dateTime.toISOString()}
+            className="text-sm md:text-base text-gray-500 "
+          >
             {Intl.DateTimeFormat("en-GB", {
               day: "numeric",
               year: "numeric",
               month: "short",
-            }).format(new Date(postedAt))}
-          </span>
+            }).format(dateTime)}
+          </time>
         </div>
       </article>
     </Link>
