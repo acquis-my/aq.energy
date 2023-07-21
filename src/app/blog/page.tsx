@@ -38,13 +38,18 @@ export default function page() {
   const featuredPost = posts[0];
 
   return (
-    <div className="bg-sky-100 relative">
+    <div className="bg-blue-50 relative">
       <Hero>
-        <div className="flex flex-col py-10 lg:py-14 gap-y-12 text-white mb-14">
+        <div className="flex flex-col py-10 lg:py-14 gap-y-12 text-white mb-14 px-2">
           <FeaturedPost post={featuredPost} />
         </div>
       </Hero>
 
+      <Container className="relative grid lg:grid-cols-3 gap-4 lg:gap-8 pb-16 -mt-12 z-10">
+        {posts.map((post) => (
+          <PostCard key={post.slug} post={post} />
+        ))}
+      </Container>
     </div>
   );
 }
