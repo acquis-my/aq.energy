@@ -101,7 +101,7 @@ const Step1 = ({ data, next }: StepProps) => {
                 allowNegative={false}
                 onValueChange={(v) => {
                   setPrefilled(false);
-                  setFieldValue("avg_bill", v.floatValue);
+                  void setFieldValue("avg_bill", v.floatValue);
                 }}
                 onBlur={() => {
                   if (!values.avg_bill) {

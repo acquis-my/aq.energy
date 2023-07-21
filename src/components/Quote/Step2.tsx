@@ -77,7 +77,7 @@ const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
                   }
                 }}
                 onValueChange={(vals) => {
-                  setFieldValue("mobile", vals.value);
+                  void setFieldValue("mobile", vals.value);
                 }}
               />
             </div>
