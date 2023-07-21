@@ -15,7 +15,7 @@ export default function PostCard({ post }: PostCardProps) {
   const { title, description, slug, featuredImage, postedAt } = post;
   return (
     <Link href={`/blog/${slug}`}>
-      <article className="flex flex-col gap-4 bg-white p-2 rounded-2xl overflow-hidden shadow hover:shadow-lg transition ease-in-out h-full border-slate-200">
+      <article className="flex flex-col gap-4 bg-white lg:p-2 rounded-2xl overflow-hidden lg:shadow lg:hover:shadow-lg transition ease-in-out h-full lg:border-slate-200">
         <figure className="relative aspect-[3/2]">
           <Image
             className="object-cover h-full w-full rounded-xl bg-slate-100"
