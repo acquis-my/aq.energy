@@ -26,7 +26,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
       </head>
-      <body>
+      <body className="overflow-y-scroll">
         <Suspense>
           <Analytics />
         </Suspense>
