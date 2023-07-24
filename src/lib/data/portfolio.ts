@@ -1,5 +1,5 @@
-import client from "./sanity/client";
-import { urlForImage } from "./sanity/image";
+import client from "../sanity/client";
+import { urlForImage } from "../sanity/image";
 
 export type CaseStudy = {
   year?: number;

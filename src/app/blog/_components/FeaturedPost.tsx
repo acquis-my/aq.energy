@@ -1,21 +1,12 @@
 import Link from "next/link";
 import AnimatedImage from "~/components/AnimatedImage";
+import { type Post } from "~/lib/data";
 
-type Post =
-  | {
-      title: string;
-      description: string;
-      slug: string;
-      featuredImage: string;
-      postedAt: string;
-    }
-  | undefined;
-
-export default function FeaturedPost({ post }: { post: Post }) {
+export default function FeaturedPost({ post }: { post: Post | undefined }) {
   if (!post) return null;
 
-  const { title, description, slug, featuredImage, postedAt } = post;
-  const dateTime = new Date(postedAt);
+  const { title, excerpt, slug, coverImage, date } = post;
+  const dateTime = new Date(date);
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -36,11 +27,11 @@ export default function FeaturedPost({ post }: { post: Post }) {
             </time>
           </div>
 
-          <h2 className="mt-2 text-3xl xl:text-4xl font-semibold mb-4 capitalize">
+          <h2 className="mt-2 text-3xl xl:text-4xl font-semibold mb-4 capitalize line-clamp-2">
             {title}
           </h2>
           <p className="lg:text-lg text-gray-400 line-clamp-3 font-medium">
-            {description}
+            {excerpt}
           </p>
           <span className="mt-8 font-medium lg:text-lg text-cyber-yellow whitespace-nowrap">
             Read more &rarr;
@@ -49,10 +40,9 @@ export default function FeaturedPost({ post }: { post: Post }) {
         <figure className="hidden lg:block relative w-full h-96">
           <AnimatedImage
             className="object-cover h-full w-full rounded-xl bg-slate-100"
-            src={featuredImage}
+            src={coverImage}
             alt={title}
             fill
-            unoptimized
           />
         </figure>
       </article>

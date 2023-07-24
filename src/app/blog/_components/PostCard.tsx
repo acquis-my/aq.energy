@@ -1,19 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { type Post } from "~/lib/data";
 
 interface PostCardProps {
-  post: {
-    title: string;
-    description: string;
-    slug: string;
-    featuredImage: string;
-    postedAt: string;
-  };
+  post: Post;
 }
 
 export default function PostCard({ post }: PostCardProps) {
-  const { title, description, slug, featuredImage, postedAt } = post;
-  const dateTime = new Date(postedAt);
+  const { title, excerpt, slug, coverImage, date } = post;
+  const dateTime = new Date(date);
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -21,17 +16,16 @@ export default function PostCard({ post }: PostCardProps) {
         <figure className="relative aspect-[3/2]">
           <Image
             className="object-cover h-full w-full rounded-xl bg-slate-100"
-            src={featuredImage}
+            src={coverImage}
             alt={title}
             fill
-            unoptimized
           />
         </figure>
 
         <div className="flex flex-col gap-2 px-2 lg:px-6 py-3">
           <h2 className="text-2xl font-semibold mb-2 capitalize">{title}</h2>
           <p className="text-sm md:text-base text-gray-500 line-clamp-3 font-medium">
-            {description}
+            {excerpt}
           </p>
         </div>
 
