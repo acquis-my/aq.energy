@@ -173,13 +173,13 @@ export default async function Home() {
         <Container className="flex flex-col py-24">
           <div className="max-w-xl mx-auto mb-12 text-center">
             <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
-              Case studies
+              Track Record
             </div>
             <h2 className="text-4xl font-semibold mb-4 capitalize">
               See how others have gained from Solar Energy
             </h2>
             <p className="text-gray-600">
-              Verified by our customers, and monitoring data.
+              Verified by our customers and monitoring data.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default async function Home() {
 
           <div className="mx-auto mt-12">
             <Link
-              href="/case-studies"
+              href="/portfolio"
               className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm"
             >
               View More
