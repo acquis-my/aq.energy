@@ -7,6 +7,15 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/case-studies",
+        destination: "/portfolio",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 // module.exports = nextConfig;

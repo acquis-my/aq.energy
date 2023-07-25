@@ -6,10 +6,14 @@ interface NavItemProps {
   link: NavLink;
 }
 
+function getRootPath(path: string): string {
+  return path.split("/")[1] ?? "";
+}
+
 export const NavItem: React.FC<NavItemProps> = ({ link }) => {
   const path = usePathname();
   const { dest, label } = link;
-  const isActivePath = path === dest;
+  const isActivePath = `/${getRootPath(path)}` === dest;
 
   return (
     <Link
