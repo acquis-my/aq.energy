@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={albertSans.className}>
       <head>
-        <link rel="icon" type="image/png" href="images/aq-logo-primary.png" />
+        <link rel="icon" type="image/png" href="/images/aq-logo-primary.png" />
       </head>
       <body className="overflow-y-scroll">
         <Suspense>
