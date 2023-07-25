@@ -1,8 +1,9 @@
+import Image from "next/image";
+import PostImage from "./PostImage";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "~/lib/data";
 import { type Metadata } from "next";
-import Image from "next/image";
 
 interface PostPageProps {
   params: { slug: string };
@@ -42,41 +43,56 @@ export default async function PostPage({ params }: PostPageProps) {
   const updatedAt = post._updatedAt ? new Date(post._updatedAt) : null;
 
   return (
-    <article className="mx-auto my-12 w-full prose prose-lg leading-wide">
-      <h2 className="text-3xl lg:text-4xl mb-2">{post.title}</h2>
+    <article className="max-w-screen-md mx-auto py-12 w-full leading-7">
       <time
         dateTime={publishedAt.toISOString()}
-        className="text-gray-500 text-sm font-medium"
+        className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
       >
-        {Intl.DateTimeFormat("en-GB", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        }).format(publishedAt)}
+        <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+        <span className="ml-3 font-medium">Published</span>
+        <span className="ml-2">
+          {Intl.DateTimeFormat("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }).format(publishedAt)}
+        </span>
       </time>
+      <h2 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+        {post.title}
+      </h2>
 
-      <figure className="relative  aspect-[3/2] sm:aspect-video mt-4 mb-6">
+      <figure className="relative aspect-[3/2] sm:aspect-video mt-10 mb-14 bx-container-padding">
         <Image
-          className="object-cover h-full w-full rounded-lg bg-slate-100"
+          className="object-cover h-full w-full text-center sm:rounded-xl bx-container bg-slate-100"
           src={post.coverImage}
           alt={post.title}
           fill
         />
       </figure>
 
-      <PortableText value={post.content} />
+      <div className="font-default max-w-screen-sm mx-auto prose">
+        <PortableText
+          value={post.content}
+          components={{
+            types: { image: PostImage },
+          }}
+        />
+      </div>
 
       {updatedAt ? (
-        <div className="text-sm text-slate-500 border-t py-4">
+        <footer className="text-sm text-zinc-400 border-t mt-12 py-4">
           <time dateTime={updatedAt.toISOString()}>
-            Updated{" "}
-            {Intl.DateTimeFormat("en-GB", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            }).format(updatedAt)}
+            <span>Last Updated</span>
+            <span className="ml-2">
+              {Intl.DateTimeFormat("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              }).format(updatedAt)}
+            </span>
           </time>
-        </div>
+        </footer>
       ) : null}
     </article>
   );

@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["AlbertSans", ...defaultTheme.fontFamily.sans],
+        default: defaultTheme.fontFamily.sans,
       },
       colors: {
         "indigo-dye": "#234e70",
