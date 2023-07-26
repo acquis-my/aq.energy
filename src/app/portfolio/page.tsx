@@ -5,7 +5,7 @@ import SupplierLogos from "~/components/SupplierLogos";
 import { ButtonVariant2 } from "~/components/Button";
 
 import CaseStudiesHeroImage from "~/../public/images/case-studies-hero.jpg";
-import CaseGrid from "./CaseGrid";
+import CaseGrid from "./_components/CaseGrid";
 
 import { type Metadata } from "next";
 import { getStudies } from "~/lib/data";
