@@ -20,6 +20,7 @@ import businessSolutionsImage from "../../public/images/soln-business.jpg";
 import SedaHeroImage from "../../public/images/seda_hero.png";
 import SedaMobileHeroImage from "../../public/images/seda_hero-mobile.png";
 import { SunPattern } from "~/components/Pattern";
+import Emphasize from "~/components/EmphasizeWord";
 
 const stats = [
   {
@@ -61,12 +62,12 @@ export default async function Home() {
   return (
     <>
       <Hero bgImage={homepageHero}>
-        <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
-          <h1 className="max-w-md text-4xl lg:text-5xl text-white capitalize font-bold">
-            Give your roof{" "}
-            <span className="text-cyber-yellow">Superpowers</span>
+        <div className="flex flex-col gap-y-12 py-16 text-white lg:py-24">
+          <h1 className="max-w-2xl text-4xl font-bold capitalize text-white lg:text-5xl">
+            Providing Malaysians with <Emphasize>Reliable</Emphasize> Solar
+            Panel Solutions
           </h1>
-          <p className="max-w-prose text-gray-50 font-light">
+          <p className="max-w-prose font-light text-gray-50">
             Generate clean solar energy to fulfill your electricity needs. From
             small-scale residential, to large-scale commercial solutions, we
             have a dedicated team to help you achieve lower electricity costs
@@ -88,12 +89,12 @@ export default async function Home() {
       </Hero>
 
       {/* Solutions Section */}
-      <Container className="pt-24 pb-48">
-        <div className="max-w-xl mx-auto mb-12 text-center">
-          <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+      <Container className="pb-48 pt-24">
+        <div className="mx-auto mb-12 max-w-xl text-center">
+          <div className="mb-2 text-sm font-semibold uppercase text-gray-600">
             Solar Energy Solutions
           </div>
-          <h2 className="text-4xl font-semibold mb-4 capitalize">
+          <h2 className="mb-4 text-4xl font-semibold capitalize">
             Big or small, we do it all.
           </h2>
           <p className="text-gray-500">
@@ -102,22 +103,22 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-x-12 gap-y-8 ">
-          <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] md:aspect-[3/3] lg:aspect-[1.2/1] min-h-fit">
+        <div className="flex flex-col gap-x-12 gap-y-8 md:flex-row ">
+          <div className="relative aspect-[1/1.1] min-h-fit w-full rounded-lg bg-slate-100 md:aspect-[3/3] md:w-1/2 lg:aspect-[1.2/1]">
             <figure className="absolute inset-0 ">
               <AnimatedImage
                 src={homeSolutionsImage}
-                className="object-cover rounded-lg"
+                className="rounded-lg object-cover"
                 alt="Home solar PV system on a roof."
                 fill
               />
             </figure>
 
-            <Container className="relative flex flex-col py-14 text-center gap-6 rounded-lg text-white bg-gradient-to-b from-black/70">
-              <h3 className="text-2xl lg:text-3xl font-semibold">
+            <Container className="relative flex flex-col gap-6 rounded-lg bg-gradient-to-b from-black/70 py-14 text-center text-white">
+              <h3 className="text-2xl font-semibold lg:text-3xl">
                 Solar For Home
               </h3>
-              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
+              <div className="mx-auto mb-4 max-w-sm text-sm text-gray-300">
                 Build your own sun generator and save up to RM 850 per month.
               </div>
               <div>
@@ -126,21 +127,21 @@ export default async function Home() {
             </Container>
           </div>
 
-          <div className="relative w-full md:w-1/2 bg-slate-100 rounded-lg aspect-[1/1.1] lg:aspect-[1.2/1] min-h-fit">
+          <div className="relative aspect-[1/1.1] min-h-fit w-full rounded-lg bg-slate-100 md:w-1/2 lg:aspect-[1.2/1]">
             <figure className="absolute inset-0">
               <AnimatedImage
                 fill
                 src={businessSolutionsImage}
-                className="object-cover rounded-lg"
+                className="rounded-lg object-cover"
                 alt="Array of solar panels on a grassy field."
               />
             </figure>
 
-            <Container className="relative flex flex-col py-14 text-center gap-6 text-white">
-              <h3 className="text-2xl lg:text-3xl font-semibold">
+            <Container className="relative flex flex-col gap-6 py-14 text-center text-white">
+              <h3 className="text-2xl font-semibold lg:text-3xl">
                 Solar For Businessess
               </h3>
-              <div className="max-w-sm mx-auto mb-4 text-sm text-gray-300">
+              <div className="mx-auto mb-4 max-w-sm text-sm text-gray-300">
                 With large roofs, come greater savings and stronger
                 environmental responsibility.
               </div>
@@ -157,9 +158,9 @@ export default async function Home() {
         <Container className="py-4">
           <PrimaryCard className="relative -mt-32 overflow-hidden">
             <figure className="absolute inset-0 ">
-              <SunPattern className="h-full mx-auto" alt="" fill />
+              <SunPattern className="mx-auto h-full" alt="" fill />
             </figure>
-            <Container className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-10">
+            <Container className="relative grid grid-cols-1 gap-12 py-10 md:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, i) => (
                 <Statistic key={"stat_" + i} stat={stat} />
               ))}
@@ -171,11 +172,11 @@ export default async function Home() {
       {/* Case Studies  */}
       <section className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+          <div className="mx-auto mb-12 max-w-xl text-center">
+            <div className="mb-2 text-sm font-semibold uppercase text-gray-600">
               Track Record
             </div>
-            <h2 className="text-4xl font-semibold mb-4 capitalize">
+            <h2 className="mb-4 text-4xl font-semibold capitalize">
               See how others have gained from Solar Energy
             </h2>
             <p className="text-gray-600">
@@ -183,7 +184,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {studies.map((study, i) => (
               <CaseStudyCardVariant key={"study_" + i} data={study} />
             ))}
@@ -192,7 +193,7 @@ export default async function Home() {
           <div className="mx-auto mt-12">
             <Link
               href="/portfolio"
-              className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm"
+              className="rounded border border-indigo-dye px-6 py-2 text-sm font-semibold text-indigo-dye hover:bg-indigo-dye hover:text-white"
             >
               View More
             </Link>
@@ -203,16 +204,16 @@ export default async function Home() {
       {/* Testimonials  */}
       <section className="bg-indigo-dye">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <div className="text-cyber-yellow mb-2 uppercase text-sm font-semibold">
+          <div className="mx-auto mb-12 max-w-xl text-center">
+            <div className="mb-2 text-sm font-semibold uppercase text-cyber-yellow">
               Testimonials
             </div>
-            <h2 className="text-white text-4xl font-semibold mb-4 capitalize">
+            <h2 className="mb-4 text-4xl font-semibold capitalize text-white">
               What our Clients say
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {reviews.map((review, i) => (
               <Testimonial key={"review_" + i} data={review} />
             ))}
@@ -222,7 +223,7 @@ export default async function Home() {
 
       {/* Quick Quote Form  */}
       <section className="relative">
-        <figure className="aboslute lg:hidden inset-0">
+        <figure className="aboslute inset-0 lg:hidden">
           <AnimatedImage
             alt=""
             loading="eager"
@@ -231,7 +232,7 @@ export default async function Home() {
             fill
           />
         </figure>
-        <figure className="aboslute hidden lg:block inset-0">
+        <figure className="aboslute inset-0 hidden lg:block">
           <AnimatedImage
             alt=""
             loading="eager"
@@ -241,25 +242,25 @@ export default async function Home() {
           />
         </figure>
 
-        <div className="relative bg-gradient-to-r from-indigo-dye/30 to-indigo-dye/20 px-8 lg:px-36 py-36 xl:py-48 flex justify-center lg:justify-end">
+        <div className="relative flex justify-center bg-gradient-to-r from-indigo-dye/30 to-indigo-dye/20 px-8 py-36 lg:justify-end lg:px-36 xl:py-48">
           <div className="container">
-            <div className="ml-auto mr-auto lg:mr-0 max-w-xl bg-white rounded-md">
-              <div className="flex flex-row -mt-1">
-                <div className="w-3/6 h-1 bg-indigo-dye rounded-tl-md"></div>
-                <div className="w-2/6 h-1 bg-cyber-yellow"></div>
-                <div className="w-1/6 h-1 bg-silver rounded-tr-md"></div>
+            <div className="ml-auto mr-auto max-w-xl rounded-md bg-white lg:mr-0">
+              <div className="-mt-1 flex flex-row">
+                <div className="h-1 w-3/6 rounded-tl-md bg-indigo-dye"></div>
+                <div className="h-1 w-2/6 bg-cyber-yellow"></div>
+                <div className="h-1 w-1/6 rounded-tr-md bg-silver"></div>
               </div>
               <div className="flex flex-col gap-6 p-12">
                 <div>
-                  <div className="font-semibold text-3xl">
+                  <div className="text-3xl font-semibold">
                     We take care of everything
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   From SEDA submission, installation, and post-installation
                   services, we do it all.
                 </p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm text-gray-600">
                   With no hidden fees and all-inclusive pricing, feel safe with
                   our{" "}
                   <a
@@ -279,8 +280,8 @@ export default async function Home() {
 
       {/* FAQ  */}
       <Container className="flex flex-col py-24">
-        <div className="max-w-xl mx-auto mb-12 text-center">
-          <h2 className="text-4xl font-semibold mb-4 capitalize">FAQ</h2>
+        <div className="mx-auto mb-12 max-w-xl text-center">
+          <h2 className="mb-4 text-4xl font-semibold capitalize">FAQ</h2>
           <p className="text-gray-500">
             Some of the most common questions from our clients.
           </p>
