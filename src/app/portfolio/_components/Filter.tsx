@@ -7,7 +7,7 @@ interface FilterProps {
   name: string;
   label: string;
   options: FilterOption[];
-  currentValue: string;
+  currentValue: FilterOption["value"];
   handleChange: (value: string) => void;
 }
 

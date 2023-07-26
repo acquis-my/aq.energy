@@ -14,7 +14,7 @@ export default function useFilter<T extends object>(
     setFilters((prev) => ({ ...prev, [name]: value }));
   }
 
-  function getValue(name: keyof T): string {
+  function getValue(name: keyof typeof filters) {
     return filters[name] ?? "";
   }
 

@@ -3,7 +3,7 @@
  */
 export function filterData<T extends object>(
   data: T[],
-  filters: Partial<Record<keyof T, string>>
+  filters: Partial<Record<keyof T, T[keyof T]>>
 ) {
   if (Object.keys(filters).length === 0) return data;
 
