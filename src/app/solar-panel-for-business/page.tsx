@@ -11,8 +11,7 @@ import { getStudies } from "~/lib/data";
 import Emphasize from "~/components/EmphasizeWord";
 
 export const metadata: Metadata = {
-  title:
-    "Empowering Businesses in Malaysia with Solar Panel Solutions for Sustainable Energy use",
+  title: "We Provide Solar Panel Solutions for Businesses | AQ Energy",
   description:
     "Discover the power of solar paneling for businesses in Malaysia. Our tailored solutions provide cost-effective and sustainable energy solutions, reducing operational costs and environmental impact. Get a quote now!",
 };

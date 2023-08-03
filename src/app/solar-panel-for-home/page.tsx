@@ -20,9 +20,9 @@ import Emphasize from "~/components/EmphasizeWord";
 
 export const metadata: Metadata = {
   title:
-    "Malaysia Solar Panel Solutions: Empowering Homeowners with Renewable Energy",
+    "Malaysia Solar Panel Solutions: Empowering Your Home with Renewable Energy | AQ Energy",
   description:
-    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy to your doorstep. Save on bills, embrace a greener future. Get a quote now!",
+    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy for your home. Save on bills, embrace a greener future. Get a quote now!",
 };
 
 const HomeownersPage: NextPage = () => {
@@ -62,7 +62,7 @@ const HomeownersPage: NextPage = () => {
         <div className="flex flex-col gap-y-12 py-16 text-white lg:py-24">
           <h1 className="max-w-2xl text-4xl font-bold text-white lg:text-5xl">
             <Emphasize>Affordable</Emphasize> and{" "}
-            <Emphasize>Reliable</Emphasize> Solar Solutions for Homeowners
+            <Emphasize>Reliable</Emphasize> Solar Panels for Your Home
           </h1>
           <p className="max-w-prose font-light text-gray-50">
             Clean electricity does not need to be expensive. Superpower your
