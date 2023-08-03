@@ -26,42 +26,42 @@ const AboutPage = () => {
   return (
     <>
       <Hero bgImage={AboutHeroImage}>
-        <section className="max-w-lg mx-auto flex flex-col items-center py-12 gap-y-12 text-white text-center">
-          <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
+        <section className="mx-auto flex max-w-lg flex-col items-center gap-y-12 py-12 text-center text-white">
+          <h1 className="max-w-lg text-4xl font-bold text-white lg:text-5xl">
             About Us
           </h1>
-          <p className="max-w-prose text-gray-300 text-sm">
+          <p className="max-w-prose text-sm text-gray-300">
             With rising energy demand and accelerating climate change,
             sustainable and renewable energy has become ever so important. We
             take pride in playing a part in that transformation and supporting
             Malaysia&apos;s goal of achieving net-zero carbon by 2050.
           </p>
           <div className="grid grid-cols-3 divide-x divide-dashed divide-gray-600">
-            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
-              <span className="uppercase text-xs text-gray-200">
+            <div className="flex flex-col justify-between gap-4 px-2 sm:px-6">
+              <span className="text-xs uppercase text-gray-200">
                 Operating Since
               </span>
               <span className="text-4xl font-bold text-cyber-yellow">2013</span>
             </div>
-            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
-              <span className="uppercase text-xs text-gray-200">
+            <div className="flex flex-col justify-between gap-4 px-2 sm:px-6">
+              <span className="text-xs uppercase text-gray-200">
                 Mitigated CO2 Emissions
               </span>
               <span className="text-4xl font-bold text-cyber-yellow">
                 2.1 kT
               </span>
             </div>
-            <div className="flex flex-col gap-4 px-2 sm:px-6 justify-between">
-              <span className="uppercase text-xs text-gray-200">Clients</span>
-              <span className="text-4xl font-bold text-cyber-yellow">400+</span>
+            <div className="flex flex-col justify-between gap-4 px-2 sm:px-6">
+              <span className="text-xs uppercase text-gray-200">Clients</span>
+              <span className="text-4xl font-bold text-cyber-yellow">450+</span>
             </div>
           </div>
         </section>
       </Hero>
 
-      <Container className="flex flex-col md:flex-row justify-between py-20 gap-8">
-        <div className="w-full lg:w-3/5 max-w-prose flex flex-col gap-6 my-auto text-gray-600 text-center md:text-left">
-          <h2 className="font-bold text-4xl text-gray-800">Our Story</h2>
+      <Container className="flex flex-col justify-between gap-8 py-20 md:flex-row">
+        <div className="my-auto flex w-full max-w-prose flex-col gap-6 text-center text-gray-600 md:text-left lg:w-3/5">
+          <h2 className="text-4xl font-bold text-gray-800">Our Story</h2>
           <p>
             <strong>Building Sustainability, One Panel at a Time.</strong>
           </p>
@@ -80,11 +80,11 @@ const AboutPage = () => {
             affordable for everyone.
           </p>
         </div>
-        <figure className="relative w-full lg:w-2/5 h-96 my-auto">
+        <figure className="relative my-auto h-96 w-full lg:w-2/5">
           <Image
             src={MaxbellImage}
             alt="Acquis Logo"
-            className="object-cover rounded-xl"
+            className="rounded-xl object-cover"
             fill
           />
         </figure>
@@ -98,7 +98,7 @@ const AboutPage = () => {
             subheader="A place to work, and a place to do good."
           />
 
-          <div className="flex flex-col gap-4 overflow-hidden items-center">
+          <div className="flex flex-col items-center gap-4 overflow-hidden">
             <NoJobs />
 
             {/* <JobPost />
@@ -118,10 +118,10 @@ const AboutPage = () => {
         <Container className="flex flex-col py-24">
           <SectionHeader header="Our Ethos" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col items-center text-center gap-3">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            <div className="flex flex-col items-center gap-3 text-center">
               <figure className="pb-6">
-                <CheckBadgeIcon className="h-20 w-20 mx-auto bg-cyber-yellow text-white rounded-full p-4" />
+                <CheckBadgeIcon className="mx-auto h-20 w-20 rounded-full bg-cyber-yellow p-4 text-white" />
               </figure>
               <span className="text-lg font-semibold">Vision</span>
               <p className="max-w-sm text-sm text-gray-500">
@@ -129,9 +129,9 @@ const AboutPage = () => {
                 carbon economy.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center gap-4">
+            <div className="flex flex-col items-center gap-4 text-center">
               <figure className="pb-6">
-                <CheckBadgeIcon className="h-20 w-20 mx-auto bg-cyber-yellow text-white rounded-full p-4" />
+                <CheckBadgeIcon className="mx-auto h-20 w-20 rounded-full bg-cyber-yellow p-4 text-white" />
               </figure>
               <span className="text-lg font-semibold">Mission</span>
               <p className="max-w-sm text-sm text-gray-500">
@@ -139,9 +139,9 @@ const AboutPage = () => {
                 Malaysians.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center gap-3">
+            <div className="flex flex-col items-center gap-3 text-center">
               <figure className="pb-6">
-                <CheckBadgeIcon className="h-20 w-20 mx-auto bg-cyber-yellow text-white rounded-full p-4" />
+                <CheckBadgeIcon className="mx-auto h-20 w-20 rounded-full bg-cyber-yellow p-4 text-white" />
               </figure>
               <span className="text-lg font-semibold">Values</span>
               <p className="max-w-sm text-sm text-gray-500">
@@ -154,10 +154,10 @@ const AboutPage = () => {
 
       <section className="bg-indigo-dye">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-16 text-center text-2xl text-white">
+          <div className="mx-auto mb-16 max-w-xl text-center text-2xl text-white">
             Trusted by 400+ of homeowners and businesses throughout Malaysia
           </div>
-          <div className="w-full max-w-3xl mx-auto text-center">
+          <div className="mx-auto w-full max-w-3xl text-center">
             <SupplierLogos />
           </div>
         </Container>
@@ -191,10 +191,10 @@ const AboutPage = () => {
               subheader="Feel free to get in touch with us. Powered by 100% humans."
             />
 
-            <div className="flex flex-col md:flex-row lg:justify-center md:items-baseline mx-auto divide-y md:divide-y-0 md:divide-x divide-slate-300 overflow-hidden text-sm font-semibold text-black-coral">
+            <div className="mx-auto flex flex-col divide-y divide-slate-300 overflow-hidden text-sm font-semibold text-black-coral md:flex-row md:items-baseline md:divide-x md:divide-y-0 lg:justify-center">
               <a
                 href="https://wa.me/60377339939"
-                className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap"
+                className="flex items-center gap-3 whitespace-nowrap py-5 sm:px-4 md:py-0 lg:px-6"
               >
                 <Icon>
                   <svg className="h-6 w-6" viewBox="0 0 50 50">
@@ -205,7 +205,7 @@ const AboutPage = () => {
               </a>
               <a
                 href="mailto:hello@aq.energy"
-                className="flex items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0 whitespace-nowrap"
+                className="flex items-center gap-3 whitespace-nowrap py-5 sm:px-4 md:py-0 lg:px-6"
               >
                 <Icon>
                   <EnvelopeIcon className="h-6 w-6" />
@@ -214,7 +214,7 @@ const AboutPage = () => {
               </a>
               <a
                 href="https://goo.gl/maps/6cN1wHW1SR6MivpD8"
-                className="flex items-start xl:items-center gap-3 sm:px-4 lg:px-6 py-5 md:py-0"
+                className="flex items-start gap-3 py-5 sm:px-4 md:py-0 lg:px-6 xl:items-center"
               >
                 <Icon>
                   <MapPinIcon className="h-6 w-6" />
@@ -229,11 +229,11 @@ const AboutPage = () => {
 
       <section className="relative bg-slate-100 py-24">
         <figure className="absolute inset-0">
-          <Pattern className="object-cover mx-auto h-full" fill />
+          <Pattern className="mx-auto h-full object-cover" fill />
         </figure>
         <div className="relative flex flex-col gap-12">
           <Container>
-            <div className="flex flex-col mx-auto max-w-prose items-center text-center gap-10">
+            <div className="mx-auto flex max-w-prose flex-col items-center gap-10 text-center">
               <div className="text-4xl font-bold">
                 Why leave your roofs empty?
               </div>

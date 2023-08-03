@@ -25,7 +25,7 @@ import Emphasize from "~/components/EmphasizeWord";
 const stats = [
   {
     title: "Clients",
-    value: "300+",
+    value: "450+",
     unit: null,
     caption: "Empowering roofs since 2013",
   },
