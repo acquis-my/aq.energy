@@ -14,6 +14,16 @@ const nextConfig = {
         destination: "/portfolio",
         permanent: true,
       },
+      {
+        source: "/homeowners",
+        destination: "/solar-panel-for-home",
+        permanent: true,
+      },
+      {
+        source: "/businesses",
+        destination: "/solar-panel-for-business",
+        permanent: true,
+      },
     ];
   },
 };

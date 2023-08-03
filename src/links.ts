@@ -4,8 +4,8 @@ export type NavItem = {
 };
 
 export const navLinks = [
-  { label: "For Home", dest: "/homeowners" },
-  { label: "For Work", dest: "/businesses" },
+  { label: "For Home", dest: "/solar-panel-for-home" },
+  { label: "For Work", dest: "/solar-panel-for-business" },
   { label: "Blog", dest: "/blog" },
   { label: "Portfolio", dest: "/portfolio" },
   { label: "About", dest: "/about" },
