@@ -33,7 +33,7 @@ const CaseStudiesSection: React.FC<CaseStudySection> = ({
 
       <div className="mx-auto mt-12">
         <Link
-          href="/case-studies"
+          href="/portfolio"
           className="rounded text-indigo-dye hover:text-white border border-indigo-dye hover:bg-indigo-dye px-6 py-2 font-semibold text-sm"
         >
           View More

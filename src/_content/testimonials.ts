@@ -24,9 +24,9 @@ export const testimonials = [
   },
   {
     quote:
-      "From first meeting to installation, we were well informed. Installation team was good, took care of our house and cleaned up after.",
-    src: "https://g.co/kgs/1vmUNp",
-    author: "Hellen Fong",
+      "Good and efficient service. Very quickly they found out the inverter was not working properly and replace a new one for us.",
+    src: "https://g.co/kgs/icPXHd",
+    author: "Soo Soo",
     location: "",
   },
 ] satisfies Testimonial[];

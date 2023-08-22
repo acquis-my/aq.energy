@@ -1,13 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
-module.exports = {
+export default {
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
         sans: ["AlbertSans", ...defaultTheme.fontFamily.sans],
+        default: defaultTheme.fontFamily.sans,
       },
       colors: {
         "indigo-dye": "#234e70",
@@ -65,4 +66,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config;

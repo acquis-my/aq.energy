@@ -16,12 +16,13 @@ import RoofPanelImage from "~/../public/images/panels.jpg";
 import InverterIamge from "~/../public/images/inverter.jpg";
 import { NEMGraphic, SelcoGraphic } from "./Graphics";
 import SolarCalculator from "~/components/SolarCalculator";
+import Emphasize from "~/components/EmphasizeWord";
 
 export const metadata: Metadata = {
   title:
-    "Malaysia Solar Panel Solutions: Empowering Homeowners with Renewable Energy",
+    "Malaysia Solar Panel Solutions: Empowering Your Home with Renewable Energy | AQ Energy",
   description:
-    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy to your doorstep. Save on bills, embrace a greener future. Get a quote now!",
+    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy for your home. Save on bills, embrace a greener future. Get a quote now!",
 };
 
 const HomeownersPage: NextPage = () => {
@@ -58,12 +59,12 @@ const HomeownersPage: NextPage = () => {
   return (
     <>
       <Hero bgImage={HomeownersHero}>
-        <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
-          <h1 className="max-w-lg text-4xl lg:text-5xl text-white font-bold">
-            <span className="text-cyber-yellow">Affordable</span> and{" "}
-            <span className="text-cyber-yellow">Reliable</span> Home Solar
+        <div className="flex flex-col gap-y-12 py-16 text-white lg:py-24">
+          <h1 className="max-w-2xl text-4xl font-bold text-white lg:text-5xl">
+            <Emphasize>Affordable</Emphasize> and{" "}
+            <Emphasize>Reliable</Emphasize> Solar Panels for Your Home
           </h1>
-          <p className="max-w-prose text-gray-50 font-light">
+          <p className="max-w-prose font-light text-gray-50">
             Clean electricity does not need to be expensive. Superpower your
             roof with solar panels and generate your own clean energy. Good for
             your wallet, and our environment.
@@ -79,14 +80,14 @@ const HomeownersPage: NextPage = () => {
 
       <Container>
         <PrimaryCard className="-mt-24">
-          <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10">
+          <div className="flex w-full flex-row gap-6 px-4 py-8 lg:w-1/2 lg:gap-x-10 lg:px-8">
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
                 <NEMGraphic className="h-14 w-14" />
               </div>
             </div>
-            <div className="flex flex-col gap-y-2 text-gray-200 text-sm">
-              <h3 className="font-semibold text-xl">Net Energy Metering</h3>
+            <div className="flex flex-col gap-y-2 text-sm text-gray-200">
+              <h3 className="text-xl font-semibold">Net Energy Metering</h3>
               <p>
                 Complement your energy usage with clean solar power and sell
                 excess energy to the grid.
@@ -94,14 +95,14 @@ const HomeownersPage: NextPage = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 flex flex-row px-4 lg:px-8 py-8 gap-6 lg:gap-x-10 border-gray-500 border-t lg:border-l lg:border-t-0 ">
+          <div className="flex w-full flex-row gap-6 border-t border-gray-500 px-4 py-8 lg:w-1/2 lg:gap-x-10 lg:border-l lg:border-t-0 lg:px-8 ">
             <div className="pt-1">
               <div className="h-14 w-14 rounded-full">
                 <SelcoGraphic className="h-14 w-14" />
               </div>
             </div>
-            <div className="flex flex-col gap-y-4 text-gray-200 text-sm">
-              <h3 className="font-semibold text-xl">Self Consumption</h3>
+            <div className="flex flex-col gap-y-4 text-sm text-gray-200">
+              <h3 className="text-xl font-semibold">Self Consumption</h3>
               <p>Save on bills by reducing your reliance on grid power.</p>
             </div>
           </div>
@@ -110,11 +111,11 @@ const HomeownersPage: NextPage = () => {
 
       <section className="">
         <Container className="py-24">
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
-            <div className="w-full lg:w-1/3 text-center lg:text-left text-4xl font-bold">
+          <div className="flex flex-col items-start justify-between gap-8 lg:flex-row">
+            <div className="w-full text-center text-4xl font-bold lg:w-1/3 lg:text-left">
               It&apos;s never been easier to save!
             </div>
-            <p className="w-full lg:w-1/2 text-center lg:text-left text-gray-500">
+            <p className="w-full text-center text-gray-500 lg:w-1/2 lg:text-left">
               With our flexible payment options, you can choose between maximum
               return of investment, or lower capital commitments.
             </p>
@@ -135,20 +136,20 @@ const HomeownersPage: NextPage = () => {
 
       <section className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+          <div className="mx-auto mb-12 max-w-xl text-center">
+            <div className="mb-2 text-sm font-semibold uppercase text-gray-600">
               How it works
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
+            <h2 className="mb-4 text-3xl font-semibold capitalize md:text-4xl">
               5 Steps to Adding Solar Power to Your Roof
             </h2>
-            <p className="text-sm md:text-base text-gray-500">
+            <p className="text-sm text-gray-500 md:text-base">
               A complete solar PV system can be installed in as little as 5 easy
               steps.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-y-12 overflow-hidden">
+          <div className="grid grid-cols-1 gap-y-12 overflow-hidden md:grid-cols-4 lg:grid-cols-6">
             {steps.map((step, i) => {
               const data = {
                 step: i + 1,
@@ -163,32 +164,32 @@ const HomeownersPage: NextPage = () => {
 
       <section className="py-20">
         <div
-          className="max-w-xl p-5
-         mx-auto mb-12 text-center"
+          className="mx-auto mb-12
+         max-w-xl p-5 text-center"
         >
-          <div className="text-gray-600 mb-2 uppercase text-sm font-semibold">
+          <div className="mb-2 text-sm font-semibold uppercase text-gray-600">
             Gallery
           </div>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 capitalize">
+          <h2 className="mb-4 text-3xl font-semibold capitalize md:text-4xl">
             Reliable and Cost Effective
           </h2>
-          <p className="text-sm md:text-base text-gray-500">
+          <p className="text-sm text-gray-500 md:text-base">
             We only use the best components to ensure your system reliably
             generates returns for longer.
           </p>
         </div>
-        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        <Container className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 ">
           <figure className="relative aspect-[3/2]">
             <AnimatedImage
-              className="object-cover h-full w-full rounded-lg bg-slate-100"
+              className="h-full w-full rounded-lg bg-slate-100 object-cover"
               src={GalleryImage}
               alt="Solar panels"
               fill
             />
           </figure>
-          <figure className="relative aspect-[3/2] md:aspect-auto md:row-span-2 lg:col-span-2 ">
+          <figure className="relative aspect-[3/2] md:row-span-2 md:aspect-auto lg:col-span-2 ">
             <AnimatedImage
-              className="object-cover aspect-[3/2] h-full w-full rounded-lg bg-slate-100"
+              className="aspect-[3/2] h-full w-full rounded-lg bg-slate-100 object-cover"
               src={RoofPanelImage}
               alt="Roof"
               fill
@@ -196,7 +197,7 @@ const HomeownersPage: NextPage = () => {
           </figure>
           <figure className="relative aspect-[3/2]">
             <AnimatedImage
-              className="h-full w-full object-cover rounded-lg bg-slate-100"
+              className="h-full w-full rounded-lg bg-slate-100 object-cover"
               src={InverterIamge}
               alt="Inverter"
               fill
@@ -205,18 +206,18 @@ const HomeownersPage: NextPage = () => {
         </Container>
       </section>
 
-      <section className="py-20 md:py-24 bg-slate-200">
+      <section className="bg-slate-200 py-20 md:py-24">
         <Container className="flex flex-col">
-          <div className="max-w-xl mx-auto mb-12 text-center">
-            <div className="text-gray-700 mb-2 uppercase text-sm font-semibold">
+          <div className="mx-auto mb-12 max-w-xl text-center">
+            <div className="mb-2 text-sm font-semibold uppercase text-gray-700">
               Testimonials
             </div>
-            <h2 className="text-black text-3xl md:text-4xl font-semibold mb-4 capitalize">
+            <h2 className="mb-4 text-3xl font-semibold capitalize text-black md:text-4xl">
               What our Clients say
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
+          <div className="mb-24 grid grid-cols-1 gap-12 lg:grid-cols-3">
             {reviews.map((review, i) => (
               <Testimonial
                 key={"review_" + i}

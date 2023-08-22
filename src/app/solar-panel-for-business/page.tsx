@@ -8,10 +8,10 @@ import CaseStudiesSection from "~/components/CaseStudiesSection";
 
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
 import { getStudies } from "~/lib/data";
+import Emphasize from "~/components/EmphasizeWord";
 
 export const metadata: Metadata = {
-  title:
-    "Empowering Businesses in Malaysia with Solar Panel Solutions for Sustainable Energy use",
+  title: "We Provide Solar Panel Solutions for Businesses | AQ Energy",
   description:
     "Discover the power of solar paneling for businesses in Malaysia. Our tailored solutions provide cost-effective and sustainable energy solutions, reducing operational costs and environmental impact. Get a quote now!",
 };
@@ -22,12 +22,12 @@ export default async function BusinessesPage() {
   return (
     <>
       <Hero bgImage={WorkHeroImage}>
-        <div className="flex flex-col py-16 lg:py-24 gap-y-12 text-white">
-          <h1 className="max-w-xl text-4xl lg:text-5xl text-white font-bold">
-            Energize your business with{" "}
-            <span className="text-cyber-yellow">Great</span> Solar Energy.
+        <div className="flex flex-col gap-y-12 py-16 text-white lg:py-24">
+          <h1 className="max-w-3xl text-4xl font-bold text-white lg:text-5xl">
+            Elevate Business <Emphasize>Sustainability</Emphasize> with
+            Commercial and Industrial Solar Solutions
           </h1>
-          <p className="max-w-prose text-gray-50 font-light">
+          <p className="max-w-prose font-light text-gray-50">
             Protect your energy bills against rising operational costs. Put your
             rooftops to work by transforming them into productive solar
             generators. All with hassle-free systems monitoring and solid
@@ -49,7 +49,7 @@ export default async function BusinessesPage() {
           badgeText={"5 Years"}
           imgURL={"/images/for-work/workmanship.png"}
         >
-          <h3 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl font-bold md:text-4xl">
             Extended Workmanship Guarantee
           </h3>
           <p className="text-gray-600">
@@ -63,7 +63,7 @@ export default async function BusinessesPage() {
           // badgeText={"2 Years"}
           imgURL={"/images/for-work/site-research.jpg"}
         >
-          <h3 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl font-bold md:text-4xl">
             Professional Site Research
           </h3>
           <p className="text-gray-600">
@@ -77,7 +77,7 @@ export default async function BusinessesPage() {
           badgeText={"System Inclusive"}
           imgURL={"/images/for-work/monitoring.jpg"}
         >
-          <h3 className="text-3xl md:text-4xl font-bold">
+          <h3 className="text-3xl font-bold md:text-4xl">
             Post-Installation Monitoring and Service
           </h3>
           <p className="text-gray-600">
