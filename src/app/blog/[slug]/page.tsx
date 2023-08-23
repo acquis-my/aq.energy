@@ -21,11 +21,12 @@ export async function generateMetadata({
 
   return {
     title: post.title,
+    description: post.excerpt,
     openGraph: {
+      type: "article",
       title: post.title,
       description: post.excerpt,
       images: [post.coverImage],
-      type: "article",
       publishedTime: new Date(post.date).toISOString(),
     },
   };
