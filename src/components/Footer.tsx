@@ -8,13 +8,13 @@ const Footer = () => {
   const thisYear = new Date(Date.now()).getFullYear();
 
   return (
-    <footer className="bg-indigo-dye text-gray-200 text-sm">
-      <Container className="flex flex-col divide-y divide-slate-500 gap-2">
-        <section className="flex flex-col sm:flex-row pb-4 pt-8 gap-12 justify-between">
-          <div className="max-w-sm flex flex-col gap-2">
+    <footer className="bg-indigo-dye text-sm text-gray-200">
+      <Container className="flex flex-col gap-2 divide-y divide-slate-500">
+        <section className="flex flex-col justify-between gap-12 pb-4 pt-8 sm:flex-row">
+          <div className="flex max-w-sm flex-col gap-2">
             <LogoSecondary />
             <p className="text-gray-300">Superpowering roofs since 2013.</p>
-            <div className="flex flex-row pt-2 gap-6 items-center">
+            <div className="flex flex-row items-center gap-6 pt-2">
               <FooterSocialIcon
                 href={socialLinks.facebook}
                 aria-label="Visit our Facebook page"
@@ -38,29 +38,33 @@ const Footer = () => {
           <div className="grid grid-cols-2 sm:gap-12 lg:gap-16">
             <div className="whitespace-nowrap">
               <div className="flex flex-col gap-1 text-gray-300">
-                <span className="text-base text-white font-semibold pb-2">
+                <span className="pb-2 text-base font-semibold text-white">
                   Solar Energy
                 </span>
-                <FooterNavItem href="/homeowners">For Homeowners</FooterNavItem>
-                <FooterNavItem href="/businesses">For Businesses</FooterNavItem>
+                <FooterNavItem href="/solar-panel-for-home">
+                  For Homeowners
+                </FooterNavItem>
+                <FooterNavItem href="/solar-panel-for-business">
+                  For Businesses
+                </FooterNavItem>
                 <FooterNavItem href="/faq">FAQ</FooterNavItem>
                 <FooterNavItem href="/quote">Get Quote</FooterNavItem>
               </div>
             </div>
             <div className="whitespace-nowrap">
               <div className="flex flex-col gap-1 text-gray-300">
-                <span className="text-base text-white font-semibold pb-2">
+                <span className="pb-2 text-base font-semibold text-white">
                   Company
                 </span>
                 <FooterNavItem href="/about">About Us</FooterNavItem>
-                <FooterNavItem href="/about#careers">Careers</FooterNavItem>
+                <FooterNavItem href="/blog">Blog</FooterNavItem>
                 <FooterNavItem href="/about#contact">Contact</FooterNavItem>
-                <FooterNavItem href="/case-studies">Case Studies</FooterNavItem>
+                <FooterNavItem href="/portfolio">Case Studies</FooterNavItem>
               </div>
             </div>
           </div>
         </section>
-        <section className="flex flex-col md:flex-row justify-between items-center gap-2 py-4">
+        <section className="flex flex-col items-center justify-between gap-2 py-4 md:flex-row">
           <div>
             &copy; {thisYear} AQ Energy &mdash; A brand of Max Bell Sdn. Bhd.
           </div>
