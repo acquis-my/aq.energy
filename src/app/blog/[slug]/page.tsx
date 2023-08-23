@@ -59,9 +59,9 @@ export default async function PostPage({ params }: PostPageProps) {
           }).format(publishedAt)}
         </span>
       </time>
-      <h2 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
+      <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
         {post.title}
-      </h2>
+      </h1>
 
       <figure className="bx-container-padding relative mb-14 mt-10 aspect-[3/2] sm:aspect-video">
         <Image
