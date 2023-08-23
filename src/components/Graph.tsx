@@ -106,20 +106,28 @@ const Graph: React.FC<{ data: any; paymentMethod: PaymentMethod }> = ({
 
 const CustomTooltip: React.FC<any> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
+    const savings = payload[0].value as number;
+    const cost = payload[1].value as number;
+    const currency = Intl.NumberFormat("en-MY", {
+      style: "currency",
+      currency: "MYR",
+      maximumFractionDigits: 0,
+    });
+
     return (
-      <div className="bg-white border-0 px-4 py-3 rounded shadow-lg outline-none">
+      <div className="rounded border-0 bg-white px-4 py-3 shadow-lg outline-none">
         <span className="font-semibold">Year {label}</span>
         <div className="mt-2 flex flex-row gap-4">
           <div className="flex flex-col">
             <span className="text-xs text-gray-600">Total Savings</span>
             <span className="text-sm font-semibold">
-              RM {payload[0].value.toFixed(0)}
+              {currency.format(savings)}
             </span>
           </div>
           <div className="flex flex-col">
             <span className="text-xs text-gray-600">Paid to TNB</span>
             <span className="text-sm font-semibold">
-              RM {payload[1].value.toFixed(0)}
+              {currency.format(cost)}
             </span>
           </div>
         </div>
