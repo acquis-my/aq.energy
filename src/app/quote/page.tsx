@@ -5,7 +5,7 @@ import SupplierLogos from "~/components/SupplierLogos";
 import dynamic from "next/dynamic";
 import { type Metadata } from "next";
 
-const QuoteForm = dynamic(() => import("~/components/Quote/QuoteForm"));
+const QuoteForm = dynamic(() => import("~/app/quote/Quote/QuoteForm"));
 
 export const metadata: Metadata = {
   title: "Begin your journey of clean solar energy here",
@@ -24,8 +24,8 @@ const Quote: React.FC<object> = () => {
         <QuoteForm />
       </div>
 
-      <Container className="relative py-24 max-w-7xl">
-        <div className="flex flex-col gap-y-10 items-center text-center">
+      <Container className="relative max-w-7xl py-24">
+        <div className="flex flex-col items-center gap-y-10 text-center">
           <h1 className="text-4xl font-bold">
             Have something specific in mind?
           </h1>
@@ -41,7 +41,7 @@ const Quote: React.FC<object> = () => {
             WhatsApp Us
           </ButtonVariant2>
         </div>
-        <div className="max-w-3xl mx-auto pt-16 text-center w-auto invert opacity-40">
+        <div className="mx-auto w-auto max-w-3xl pt-16 text-center opacity-40 invert">
           <SupplierLogos />
         </div>
       </Container>

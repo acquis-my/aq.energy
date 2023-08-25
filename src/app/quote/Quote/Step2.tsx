@@ -11,7 +11,7 @@ const SITE_KEY = env.NEXT_PUBLIC_TURNSTILE_SITEKEY;
 
 const Step2Schema = Yup.object().shape({
   name: Yup.string().min(3, "Too short!").required("Required"),
-  mobile: Yup.string()
+  phone: Yup.string()
     .matches(/^0[0-9]{9,10}$/g, "Invalid number")
     .required("Required"),
 });
@@ -37,8 +37,8 @@ const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
               isSubmitting ? "opacity-60" : ""
             }`}
           >
-            <div className="w-full flex flex-col col-span-6 ">
-              <div className="flex justify-between items-center">
+            <div className="col-span-6 flex w-full flex-col ">
+              <div className="flex items-center justify-between">
                 <label htmlFor="name" className="font-semibold">
                   Name
                 </label>
@@ -50,39 +50,39 @@ const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
                 name="name"
                 disabled={isSubmitting}
                 placeholder="Karen Tan"
-                className="p-3 border border-slate-200 text-gray-700 tracking-wide"
+                className="border border-slate-200 p-3 tracking-wide text-gray-700"
               />
             </div>
 
-            <div className="w-full flex flex-col col-span-6">
-              <div className="flex justify-between items-center">
-                <label htmlFor="mobile" className="font-semibold">
-                  Mobile
+            <div className="col-span-6 flex w-full flex-col">
+              <div className="flex items-center justify-between">
+                <label htmlFor="phone" className="font-semibold">
+                  phone
                 </label>
-                {errors.mobile && touched.mobile ? (
-                  <FieldError>{errors.mobile}</FieldError>
+                {errors.phone && touched.phone ? (
+                  <FieldError>{errors.phone}</FieldError>
                 ) : null}
               </div>
               <PatternFormat
-                name="mobile"
+                name="phone"
                 disabled={isSubmitting}
                 valueIsNumericString
                 format="###-### #####"
-                value={values.mobile}
+                value={values.phone}
                 placeholder="012-345 6789"
-                className="p-3 border border-slate-200 text-gray-700 tracking-wide"
+                className="border border-slate-200 p-3 tracking-wide text-gray-700"
                 onBlur={() => {
-                  if (!values.mobile) {
-                    setFieldTouched("mobile", true);
+                  if (!values.phone) {
+                    setFieldTouched("phone", true);
                   }
                 }}
                 onValueChange={(vals) => {
-                  void setFieldValue("mobile", vals.value);
+                  void setFieldValue("phone", vals.value);
                 }}
               />
             </div>
 
-            <div className="col-span-6 w-full overflow-x-auto h-20">
+            <div className="col-span-6 h-20 w-full overflow-x-auto">
               <Turnstile
                 sitekey={SITE_KEY}
                 action="get-quote"
@@ -91,19 +91,19 @@ const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
             </div>
           </div>
 
-          <div className="w-full flex justify-center sm:justify-end items-end col-span-6 gap-2 mt-6">
+          <div className="col-span-6 mt-6 flex w-full items-end justify-center gap-2 sm:justify-end">
             <button
               type="button"
               disabled={isSubmitting}
               onClick={() => prev(values)}
-              className="inline-flex items-center rounded-md border border-gray-300 bg-white h-10 px-6 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="inline-flex h-10 items-center rounded-md border border-gray-300 bg-white px-6 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
             >
               Back
             </button>
             <button
               type="submit"
               disabled={isSubmitting || values.token === ""}
-              className={`h-10 px-12 py-2 cursor-pointer bg-indigo-dye text-white rounded-lg text-sm disabled:opacity-60 disabled:cursor-not-allowed`}
+              className={`h-10 cursor-pointer rounded-lg bg-indigo-dye px-12 py-2 text-sm text-white disabled:cursor-not-allowed disabled:opacity-60`}
             >
               {isSubmitting ? "Submitting..." : "Get Quote"}
             </button>

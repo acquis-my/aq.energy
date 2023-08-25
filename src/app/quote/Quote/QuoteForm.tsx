@@ -5,28 +5,28 @@ import Step1 from "./Step1";
 import Submitted from "./Submitted";
 import { useSearchParams } from "next/navigation";
 import { useCalculatorStore } from "~/stores/calculatorStore";
-import { env } from "~/env.mjs";
+import { createQuote } from "../actions";
 
 export interface QuoteData {
   token: string;
-  is_commercial: number;
-  avg_bill: number;
+  type: string;
+  bill: number;
   name: string;
-  mobile: string;
+  phone: string;
   state: string;
 }
 
 const QuoteForm = () => {
   const params = useSearchParams();
-  const bill = useCalculatorStore((state) => state.bill);
-  const ref = params.get("ref") ?? "";
+  const calculatorBill = useCalculatorStore((state) => state.bill);
+  const referrer = params.get("ref") ?? undefined;
 
   const [data, setData] = useState({
     token: "",
-    is_commercial: 0,
-    avg_bill: bill ?? 0,
+    type: "RESIDENTIAL",
+    bill: calculatorBill,
     name: "",
-    mobile: "",
+    phone: "",
     state: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -35,24 +35,15 @@ const QuoteForm = () => {
 
   const handleSubmit = async (formData: QuoteData) => {
     setIsSubmitting(true);
-    const data = { referrer: ref, ...formData };
-    const API_HOST = env.NEXT_PUBLIC_ZEN_API;
+    const data = { referrer, ...formData };
 
-    try {
-      const result = await fetch(`${API_HOST}/leads`, {
-        method: "POST",
-        headers: [["Content-Type", "application/json"]],
-        body: JSON.stringify(data),
-      });
-
-      if (!result.ok) throw result.status;
-      setIsSubmitted(true);
-    } catch (error) {
-      alert("Something went wrong! Please try again.");
-      console.log(error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    await createQuote(data)
+      .then(() => setIsSubmitted(true))
+      .catch((err) => {
+        console.log(err);
+        alert("Something went wrong! Please try again.");
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   const handleNextStep = async (newData: QuoteData, final = false) => {
@@ -83,11 +74,11 @@ const QuoteForm = () => {
   ];
 
   return (
-    <div className="relative mx-auto w-full max-w-3xl z-10 -mt-28 px-6 md:px-8 lg:px-14 py-8 lg:py-12 gap-10 rounded-lg shadow-lg bg-white flex flex-col border boder-slate-100 overflow-auto">
+    <div className="boder-slate-100 relative z-10 mx-auto -mt-28 flex w-full max-w-3xl flex-col gap-10 overflow-auto rounded-lg border bg-white px-6 py-8 shadow-lg md:px-8 lg:px-14 lg:py-12">
       <div>
         <div className="mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold">Solar Lagi Jimat!</h1>
-          <p className="text-sm md:text-base pt-2 text-gray-600">
+          <h1 className="text-2xl font-bold md:text-3xl">Solar Lagi Jimat!</h1>
+          <p className="pt-2 text-sm text-gray-600 md:text-base">
             We just need some information and will get back to you with your
             personalised quote.
           </p>

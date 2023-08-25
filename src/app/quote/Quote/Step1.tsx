@@ -2,15 +2,15 @@
 import { Field, Form, Formik } from "formik";
 import FieldError from "./FieldError";
 import { NumericFormat } from "react-number-format";
-import states from "../../lib/states";
-import fmtString from "../../lib/fmt_string";
+import states from "../../../lib/states";
+import fmtString from "../../../lib/fmt_string";
 import * as Yup from "yup";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { type QuoteData } from "./QuoteForm";
 
 const Step1Schema = Yup.object().shape({
-  avg_bill: Yup.number().required("Required"),
+  bill: Yup.number().required("Required"),
   state: Yup.string()
     .oneOf([...states])
     .required("Required"),
@@ -35,84 +35,84 @@ const Step1 = ({ data, next }: StepProps) => {
     >
       {({ values, errors, touched, setFieldTouched, setFieldValue }) => (
         <Form className="grid grid-cols-6 gap-6">
-          <div className="flex flex-col col-span-6">
+          <div className="col-span-6 flex flex-col">
             <label htmlFor="is_commercial" className="font-semibold">
               Installation type
             </label>
 
             <div
               role="group"
-              className="mt-1 flex flex-row gap-x-2 justify-around"
+              className="mt-1 flex flex-row justify-around gap-x-2"
             >
               <label
                 htmlFor="home_radio"
                 className={`border ${
-                  values.is_commercial == 0
+                  values.type === "RESIDENTIAL"
                     ? "border-slate-300 shadow-sm"
                     : "border-gray-200"
-                } px-4 py-3 rounded-md w-full flex gap-3 items-center text-sm sm:text-base accent-indigo-dye`}
+                } flex w-full items-center gap-3 rounded-md px-4 py-3 text-sm accent-indigo-dye sm:text-base`}
               >
                 <Field
                   id="home_radio"
                   type="radio"
-                  name="is_commercial"
-                  value={0}
-                  checked={values.is_commercial == 0}
+                  name="type"
+                  value={"RESIDENTIAL"}
+                  checked={values.type === "RESIDENTIAL"}
                 />
                 Residential
               </label>
               <label
                 htmlFor="commercial_radio"
                 className={`border ${
-                  values.is_commercial == 1
+                  values.type === "COMMERCIAL"
                     ? "border-slate-300 shadow-sm"
                     : "border-gray-200"
-                } px-4 py-3 rounded-md w-full flex gap-3 items-center text-sm sm:text-base accent-indigo-dye`}
+                } flex w-full items-center gap-3 rounded-md px-4 py-3 text-sm accent-indigo-dye sm:text-base`}
               >
                 <Field
                   id="commercial_radio"
                   type="radio"
-                  name="is_commercial"
-                  value={1}
-                  checked={values.is_commercial == 1}
+                  name="type"
+                  value={"COMMERCIAL"}
+                  checked={values.type === "COMMERCIAL"}
                 />
                 Commercial
               </label>
             </div>
           </div>
 
-          <div className="col-span-6 w-full flex flex-col">
-            <div className="flex justify-between items-center">
+          <div className="col-span-6 flex w-full flex-col">
+            <div className="flex items-center justify-between">
               <label htmlFor="mobile" className="font-semibold">
                 Average TNB Bill
               </label>
-              {errors.avg_bill && touched.avg_bill ? (
-                <FieldError>{errors.avg_bill}</FieldError>
+              {errors.bill && touched.bill ? (
+                <FieldError>{errors.bill}</FieldError>
               ) : null}
             </div>
-            <div className="flex p-3 gap-2 border border-slate-200 text-gray-700 tracking-wide rounded">
+            <div className="flex gap-2 rounded border border-slate-200 p-3 tracking-wide text-gray-700">
               <span className="font-semibold">RM</span>
               <NumericFormat
-                name="avg_bill"
-                value={values.avg_bill}
+                name="bill"
+                value={values.bill}
                 decimalScale={0}
                 thousandSeparator={","}
                 placeholder="0"
                 allowNegative={false}
                 onValueChange={(v) => {
                   setPrefilled(false);
-                  void setFieldValue("avg_bill", v.floatValue);
+                  void setFieldValue("bill", v.floatValue);
                 }}
                 onBlur={() => {
-                  if (!values.avg_bill) {
-                    setFieldTouched("avg_bill", true);
+                  if (!values.bill) {
+                    setFieldTouched("bill", true);
                   }
                 }}
-                className="w-full text-right border-0 focus:outline-none focus:ring-0 p-0"
+                className="w-full border-0 p-0 text-right focus:outline-none focus:ring-0"
               />
             </div>
             {prefilled ? (
-              <div className="text-sm text-slate-600 mt-1">
+              <div className="mt-1 text-sm text-slate-600">
                 This field has been pre-filled using information you&apos;ve
                 entered from our calculator.
               </div>
@@ -120,7 +120,7 @@ const Step1 = ({ data, next }: StepProps) => {
           </div>
 
           <div className="col-span-6 flex flex-col">
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <label htmlFor="state" className="font-semibold">
                 State
               </label>
@@ -131,7 +131,7 @@ const Step1 = ({ data, next }: StepProps) => {
             <Field
               name="state"
               component="select"
-              className="p-3 border border-slate-200 text-gray-700 tracking-wide rounded"
+              className="rounded border border-slate-200 p-3 tracking-wide text-gray-700"
             >
               <option value={""}>- Select State -</option>
               {states.map((state) => (
@@ -142,10 +142,10 @@ const Step1 = ({ data, next }: StepProps) => {
             </Field>
           </div>
 
-          <div className="w-full flex justify-center sm:justify-end items-end col-span-6 mt-1">
+          <div className="col-span-6 mt-1 flex w-full items-end justify-center sm:justify-end">
             <button
               type="submit"
-              className={`h-10 px-12 py-2 cursor-pointer bg-indigo-dye text-white rounded-lg text-sm `}
+              className={`h-10 cursor-pointer rounded-lg bg-indigo-dye px-12 py-2 text-sm text-white `}
             >
               Next
             </button>
