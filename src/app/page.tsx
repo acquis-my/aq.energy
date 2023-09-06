@@ -5,7 +5,7 @@ import Statistic from "../components/Statistic";
 import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
-import { Button, OutlineButton, OutlineButtonDark } from "../components/Button";
+import { Button, OutlineButtonDark } from "../components/Button";
 import { getStudies } from "~/lib/data";
 import type { Metadata } from "next";
 
@@ -21,6 +21,7 @@ import SedaHeroImage from "../../public/images/seda_hero.png";
 import SedaMobileHeroImage from "../../public/images/seda_hero-mobile.png";
 import { SunPattern } from "~/components/Pattern";
 import Emphasize from "~/components/EmphasizeWord";
+import WhatsAppButton from "~/components/WhatsAppButton";
 
 const stats = [
   {
@@ -75,9 +76,7 @@ export default async function Home() {
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="https://wa.me/60377339939">
-              WhatsApp Us
-            </OutlineButton>
+            <WhatsAppButton />
           </div>
           <div className="flex flex-col gap-y-2">
             <p>With support from the best of the Solar industry:</p>

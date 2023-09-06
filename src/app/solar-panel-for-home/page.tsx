@@ -8,7 +8,7 @@ import Testimonial from "~/components/Testimonial";
 import CTA from "~/components/CTA";
 import AnimatedImage from "~/components/AnimatedImage";
 import { testimonials } from "~/_content";
-import { Button, OutlineButton } from "~/components/Button";
+import { Button } from "~/components/Button";
 
 import HomeownersHero from "~/../public/images/home-hero.jpg";
 import GalleryImage from "~/../public/images/gallery-1.jpg";
@@ -17,6 +17,7 @@ import InverterIamge from "~/../public/images/inverter.jpg";
 import { NEMGraphic, SelcoGraphic } from "./Graphics";
 import SolarCalculator from "~/components/SolarCalculator";
 import Emphasize from "~/components/EmphasizeWord";
+import WhatsAppButton from "~/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title:
@@ -71,9 +72,7 @@ const HomeownersPage: NextPage = () => {
           </p>
           <div className="flex gap-x-2 pb-24">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="https://wa.me/60377339939">
-              WhatsApp Us
-            </OutlineButton>
+            <WhatsAppButton />
           </div>
         </div>
       </Hero>

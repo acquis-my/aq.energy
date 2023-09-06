@@ -4,6 +4,7 @@ import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
 import dynamic from "next/dynamic";
 import { type Metadata } from "next";
+import { WHATSAPP_LINK } from "~/links";
 
 const QuoteForm = dynamic(() => import("~/components/Quote/QuoteForm"));
 
@@ -24,8 +25,8 @@ const Quote: React.FC<object> = () => {
         <QuoteForm />
       </div>
 
-      <Container className="relative py-24 max-w-7xl">
-        <div className="flex flex-col gap-y-10 items-center text-center">
+      <Container className="relative max-w-7xl py-24">
+        <div className="flex flex-col items-center gap-y-10 text-center">
           <h1 className="text-4xl font-bold">
             Have something specific in mind?
           </h1>
@@ -37,11 +38,9 @@ const Quote: React.FC<object> = () => {
           <p className="text-gray-600">
             Contact us now to have any of your questions or worries answered.
           </p>
-          <ButtonVariant2 href={"https://wa.me/60377339939"}>
-            WhatsApp Us
-          </ButtonVariant2>
+          <ButtonVariant2 href={WHATSAPP_LINK}>WhatsApp Us</ButtonVariant2>
         </div>
-        <div className="max-w-3xl mx-auto pt-16 text-center w-auto invert opacity-40">
+        <div className="mx-auto w-auto max-w-3xl pt-16 text-center opacity-40 invert">
           <SupplierLogos />
         </div>
       </Container>

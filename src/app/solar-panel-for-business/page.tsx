@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { Button, OutlineButton } from "~/components/Button";
+import { Button } from "~/components/Button";
 import BusinessSectionRow from "~/components/BusinessSectionRow";
 import Hero from "~/components/Hero";
 
@@ -9,6 +9,7 @@ import CaseStudiesSection from "~/components/CaseStudiesSection";
 import WorkHeroImage from "~/../public/images/for-work/work_hero.jpeg";
 import { getStudies } from "~/lib/data";
 import Emphasize from "~/components/EmphasizeWord";
+import WhatsAppButton from "~/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "We Provide Solar Panel Solutions for Businesses | AQ Energy",
@@ -35,9 +36,7 @@ export default async function BusinessesPage() {
           </p>
           <div className="flex gap-x-2">
             <Button href="/quote">Get Quote</Button>
-            <OutlineButton href="https://wa.me/60377339939">
-              WhatsApp Us
-            </OutlineButton>
+            <WhatsAppButton />
           </div>
         </div>
       </Hero>
