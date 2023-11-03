@@ -20,7 +20,7 @@ const quoteSchema = z.object({
 type QuoteData = z.infer<typeof quoteSchema>;
 
 const QSTASH_ENDPOINT =
-  "https://qstash.upstash.io/v1/publish/" + env.ZEN_QSTASH_TOPIC;
+  "https://qstash.upstash.io/v2/publish/" + env.ZEN_QSTASH_TOPIC;
 
 export async function createQuote(formValues: QuoteData) {
   const quoteData = await quoteSchema.parseAsync(formValues);
