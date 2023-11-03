@@ -1,6 +1,8 @@
 import Hero from "~/components/Hero";
 import Container from "~/components/Container";
 
+export const runtime = "edge";
+
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative bg-zinc-50">
