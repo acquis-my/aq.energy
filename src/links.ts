@@ -15,3 +15,5 @@ export const socialLinks = {
   facebook: "https://www.facebook.com/aq.energymys/",
   linkedin: "https://www.linkedin.com/company/aqenergy",
 } satisfies Record<string, string>;
+
+export const WHATSAPP_LINK = "https://wa.me/60102933575";

@@ -10,7 +10,7 @@ const albertSans = Albert_Sans({
   subsets: ["latin"],
 });
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
   title: "AQ Energy",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <Suspense>
           <Analytics />
         </Suspense>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex min-h-screen flex-col">
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>

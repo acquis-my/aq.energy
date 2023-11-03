@@ -16,6 +16,7 @@ import MaxbellImage from "~/../public/images/about/mb.jpeg";
 import SectionHeader from "~/components/SectionHeader";
 import SupplierLogos from "~/components/SupplierLogos";
 import { Pattern } from "~/components/Pattern";
+import { WHATSAPP_LINK } from "~/links";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -193,7 +194,7 @@ const AboutPage = () => {
 
             <div className="mx-auto flex flex-col divide-y divide-slate-300 overflow-hidden text-sm font-semibold text-black-coral md:flex-row md:items-baseline md:divide-x md:divide-y-0 lg:justify-center">
               <a
-                href="https://wa.me/60377339939"
+                href={WHATSAPP_LINK}
                 className="flex items-center gap-3 whitespace-nowrap py-5 sm:px-4 md:py-0 lg:px-6"
               >
                 <Icon>

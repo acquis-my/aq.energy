@@ -11,17 +11,18 @@ export const metadata: Metadata = {
 };
 
 export default async function page() {
-  const [featuredPost, ...posts] = await getPosts();
+  const posts = await getPosts();
+  const featured = posts[0];
 
   return (
-    <div className="lg:bg-blue-50 relative">
+    <div className="relative lg:bg-blue-50">
       <Hero>
-        <div className="flex flex-col py-10 lg:py-14 gap-y-12 text-white mb-14 px-1">
-          <FeaturedPost post={featuredPost} />
+        <div className="mb-14 flex flex-col gap-y-12 px-1 py-10 text-white lg:py-14">
+          <FeaturedPost post={featured} />
         </div>
       </Hero>
 
-      <Container className="relative grid lg:grid-cols-3 gap-6 pb-16 mt-12 lg:-mt-12 z-10">
+      <Container className="relative z-10 mt-12 grid gap-6 pb-16 lg:-mt-12 lg:grid-cols-3">
         {posts.map((post) => (
           <PostCard key={post._id} post={post} />
         ))}

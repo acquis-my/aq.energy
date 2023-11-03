@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { urlForImage } from "~/lib/sanity/image";
+import { getImgDimensions, urlForImage } from "~/lib/sanity/image";
 
 interface ImageProps {
   value: {
@@ -10,17 +10,22 @@ interface ImageProps {
 
 export default function PostImage({ value }: ImageProps) {
   const src = urlForImage(value);
+  const dimensions = getImgDimensions(value);
+
+  if (!src || !dimensions) return null;
 
   return (
     <figure>
-      <div className="relative aspect-[3/2]">
+      <div className="relative">
         <Image
-          className="w-full h-full m-0 object-cover"
-          alt={value?.alt ?? ""}
           src={src}
-          fill
+          className="bg-zinc-100"
+          height={dimensions.height}
+          width={dimensions.width}
+          alt={value?.alt ?? ""}
         />
       </div>
+
       {value.caption ? (
         <figcaption className="leading-snug">{value?.caption}</figcaption>
       ) : null}

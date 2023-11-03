@@ -4,6 +4,7 @@ import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
 import dynamic from "next/dynamic";
 import { type Metadata } from "next";
+import { WHATSAPP_LINK } from "~/links";
 
 const QuoteForm = dynamic(() => import("~/app/quote/Quote/QuoteForm"));
 
@@ -37,9 +38,7 @@ const Quote: React.FC<object> = () => {
           <p className="text-gray-600">
             Contact us now to have any of your questions or worries answered.
           </p>
-          <ButtonVariant2 href={"https://wa.me/60377339939"}>
-            WhatsApp Us
-          </ButtonVariant2>
+          <ButtonVariant2 href={WHATSAPP_LINK}>WhatsApp Us</ButtonVariant2>
         </div>
         <div className="mx-auto w-auto max-w-3xl pt-16 text-center opacity-40 invert">
           <SupplierLogos />
