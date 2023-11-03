@@ -1,6 +1,7 @@
 "use server";
 import { z } from "zod";
 import { env } from "~/env.mjs";
+import { qstash } from "~/lib/qstash";
 import { verify } from "~/lib/turnstile";
 
 const quoteSchema = z.object({
@@ -19,9 +20,6 @@ const quoteSchema = z.object({
 
 type QuoteData = z.infer<typeof quoteSchema>;
 
-const QSTASH_ENDPOINT =
-  "https://qstash.upstash.io/v2/publish/" + env.ZEN_QSTASH_TOPIC;
-
 export async function createQuote(formValues: QuoteData) {
   const quoteData = await quoteSchema.parseAsync(formValues);
 
@@ -38,17 +36,13 @@ export async function createQuote(formValues: QuoteData) {
     formData.append(key, value);
   }
 
-  const res = (await fetch(QSTASH_ENDPOINT, {
-    headers: [["Authorization", "Bearer " + env.ZEN_QSTASH_TOKEN]],
-    method: "POST",
-    cache: "no-cache",
+  const publishLead = await qstash.publish({
+    topic: env.ZEN_QSTASH_TOPIC,
     body: formData,
-  }).then((r) => r.json())) as unknown;
+  });
 
-  if (res && typeof res === "object") {
-    if ("messageId" in res) {
-      return { messageId: res.messageId as string };
-    }
+  if (publishLead.length > 0) {
+    return { status: "ok" };
   }
 
   throw new Error("Failed to create quote");

@@ -1,12 +1,12 @@
 import Header from "~/components/Header";
 import Container from "~/components/Container";
-import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
-import dynamic from "next/dynamic";
-import { type Metadata } from "next";
+import QuoteForm from "./Quote/QuoteForm";
+import { ButtonVariant2 } from "~/components/Button";
 import { WHATSAPP_LINK } from "~/links";
+import { type Metadata } from "next";
 
-const QuoteForm = dynamic(() => import("~/app/quote/Quote/QuoteForm"));
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Begin your journey of clean solar energy here",
