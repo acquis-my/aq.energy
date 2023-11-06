@@ -77,8 +77,6 @@ const QuoteForm = () => {
         </div>
         {isSubmitted ? <Submitted /> : renderSteps[currentStep]}
       </div>
-
-      <pre>{JSON.stringify({ ...data, currentStep }, null, 2)}</pre>
     </div>
   );
 };

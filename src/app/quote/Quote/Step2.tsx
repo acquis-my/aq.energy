@@ -66,7 +66,7 @@ const Step2 = ({ data, isSubmitting, next, prev }: StepProps) => {
         <div className="col-span-6 flex w-full flex-col">
           <div className="flex items-center justify-between">
             <label htmlFor="phone" className="font-semibold">
-              phone
+              Phone
             </label>
             <FieldError error={errors.phone} />
           </div>

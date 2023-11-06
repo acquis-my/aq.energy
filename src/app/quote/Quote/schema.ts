@@ -1,4 +1,5 @@
 // import { isValidPhoneNumber } from "libphonenumber-js";
+import { isValidPhoneNumber } from "libphonenumber-js";
 import { z } from "zod";
 import states from "~/lib/states";
 
@@ -11,12 +12,12 @@ export const quoteSchema = z.object({
     .string()
     .refine((v) => states.includes(v), { message: "Invalid state" }),
   name: z.string().nonempty(),
-  phone: z.string().nonempty(),
-
-  // ? Make this into an edge function to reduce the bundle size
-  // .refine((v) => isValidPhoneNumber(v, "MY"), {
-  //   message: "Invalid phone number",
-  // }),
+  phone: z
+    .string()
+    // ? Make this into an edge function to reduce the bundle size
+    .refine((v) => isValidPhoneNumber(v, "MY"), {
+      message: "Invalid phone number",
+    }),
 });
 
 export type QuoteData = z.infer<typeof quoteSchema>;
