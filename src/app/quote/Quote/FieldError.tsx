@@ -1,7 +1,12 @@
-import React from "react";
+import { type FieldError } from "react-hook-form";
 
-const FieldError: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <span className="text-red-700 text-sm">{children}</span>;
-};
+interface FieldErrorProps {
+  error?: FieldError;
+}
 
-export default FieldError;
+export default function FieldError({ error }: FieldErrorProps) {
+  const { message } = error ?? {};
+
+  if (!message) return null;
+  return <span className="text-sm text-red-700">{message}</span>;
+}

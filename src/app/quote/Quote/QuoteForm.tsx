@@ -6,22 +6,17 @@ import Submitted from "./Submitted";
 import { useSearchParams } from "next/navigation";
 import { useCalculatorStore } from "~/stores/calculatorStore";
 import { createQuote } from "../actions";
-
-export interface QuoteData {
-  token: string;
-  type: string;
-  bill: number;
-  name: string;
-  phone: string;
-  state: string;
-}
+import { type QuoteData } from "./schema";
 
 const QuoteForm = () => {
   const params = useSearchParams();
   const calculatorBill = useCalculatorStore((state) => state.bill);
   const referrer = params.get("ref") ?? undefined;
 
-  const [data, setData] = useState({
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [data, setData] = useState<Partial<QuoteData>>({
     token: "",
     type: "RESIDENTIAL",
     bill: calculatorBill,
@@ -29,11 +24,8 @@ const QuoteForm = () => {
     phone: "",
     state: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentStep, setCurrentStep] = useState(0);
 
-  const handleSubmit = async (formData: QuoteData) => {
+  async function handleSubmit(formData: QuoteData) {
     setIsSubmitting(true);
     const data = { referrer, ...formData };
 
@@ -44,20 +36,20 @@ const QuoteForm = () => {
         alert("Something went wrong! Please try again.");
       })
       .finally(() => setIsSubmitting(false));
-  };
+  }
 
-  const handleNextStep = async (newData: QuoteData, final = false) => {
+  const handleNextStep = async (newData: Partial<QuoteData>, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
 
     if (final) {
-      await handleSubmit(newData);
+      await handleSubmit({ ...data, ...newData } as QuoteData);
       return;
     }
 
     setCurrentStep((prev) => prev + 1);
   };
 
-  const handlePreviousStep = (newData: QuoteData) => {
+  const handlePreviousStep = (newData: Partial<QuoteData>) => {
     setData((prev) => ({ ...prev, ...newData }));
     setCurrentStep((prev) => prev - 1);
   };
@@ -85,6 +77,8 @@ const QuoteForm = () => {
         </div>
         {isSubmitted ? <Submitted /> : renderSteps[currentStep]}
       </div>
+
+      <pre>{JSON.stringify({ ...data, currentStep }, null, 2)}</pre>
     </div>
   );
 };
