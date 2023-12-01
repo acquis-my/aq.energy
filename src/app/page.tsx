@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
-import { Statistic, type StatisticItem } from "../components/Statistic";
+import { type HomeStatisticItem, Statistic } from "../components/Statistic";
 import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
@@ -23,7 +23,7 @@ import { SunPattern } from "~/components/Pattern";
 import Emphasize from "~/components/EmphasizeWord";
 import WhatsAppButton from "~/components/WhatsAppButton";
 
-const stats: StatisticItem[] = [
+const stats = [
   {
     title: "Clients",
     value: "450+",
@@ -181,9 +181,11 @@ export default async function Home() {
               <SunPattern className="mx-auto h-full" alt="" fill />
             </figure>
             <Container className="relative grid grid-cols-1 gap-12 py-10 md:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat, i) => (
-                <Statistic key={"stat_" + i} stat={stat} />
-              ))}
+              {stats
+                .map((stat) => ({ ...stat, type: "home" } as HomeStatisticItem))
+                .map((stat, i) => (
+                  <Statistic key={"stat_" + i} stat={stat} />
+                ))}
             </Container>
           </PrimaryCard>
         </Container>

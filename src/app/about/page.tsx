@@ -17,7 +17,7 @@ import SectionHeader from "~/components/SectionHeader";
 import SupplierLogos from "~/components/SupplierLogos";
 import { Pattern } from "~/components/Pattern";
 import { WHATSAPP_LINK } from "~/links";
-import Statistic from "./stats";
+import { Statistic } from "~/components/Statistic";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -49,11 +49,21 @@ const AboutPage = () => {
               <span className="text-xs uppercase text-gray-200">
                 Mitigated CO2 Emissions
               </span>
-              <Statistic start={0.1} end={2.1} suffix=" kT" decimals={1} />
+              <Statistic
+                stat={{
+                  countup: { start: 0.1, end: 2.1, suffix: " kT", decimals: 1 },
+                  type: "about",
+                }}
+              />
             </div>
             <div className="flex flex-col justify-between gap-4 px-2 sm:px-6">
               <span className="text-xs uppercase text-gray-200">Clients</span>
-              <Statistic start={300} end={450} suffix="+" />
+              <Statistic
+                stat={{
+                  countup: { start: 300, end: 450, suffix: "+" },
+                  type: "about",
+                }}
+              />
             </div>
           </div>
         </section>
