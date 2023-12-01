@@ -51,7 +51,14 @@ const AboutPage = () => {
               </span>
               <Statistic
                 stat={{
-                  countup: { start: 0.1, end: 2.1, suffix: " kT", decimals: 1 },
+                  countup: {
+                    start: 0.1,
+                    end: 2.1,
+                    suffix: " kT",
+                    decimals: 1,
+                    scrollSpyOnce: true,
+                    enableScrollSpy: true,
+                  },
                   type: "about",
                 }}
               />
@@ -60,7 +67,13 @@ const AboutPage = () => {
               <span className="text-xs uppercase text-gray-200">Clients</span>
               <Statistic
                 stat={{
-                  countup: { start: 300, end: 450, suffix: "+" },
+                  countup: {
+                    start: 300,
+                    end: 450,
+                    suffix: "+",
+                    scrollSpyOnce: true,
+                    enableScrollSpy: true,
+                  },
                   type: "about",
                 }}
               />

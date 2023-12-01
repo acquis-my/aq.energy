@@ -32,6 +32,8 @@ const stats = [
       start: 100,
       end: 450,
       suffix: "+",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
     },
     caption: "Empowering roofs since 2013",
   },
@@ -42,6 +44,8 @@ const stats = [
     countup: {
       start: 1,
       end: 250,
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
     },
     caption: "Tonnes Yearly",
   },
@@ -53,6 +57,8 @@ const stats = [
       start: 1,
       end: 100,
       suffix: "%",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
     },
     caption: "5-star reviews on Google",
   },
@@ -66,6 +72,8 @@ const stats = [
       decimals: 1,
       prefix: "RM ",
       suffix: "M",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
     },
     caption: "Across all clients based on existing installations",
   },
@@ -181,11 +189,12 @@ export default async function Home() {
               <SunPattern className="mx-auto h-full" alt="" fill />
             </figure>
             <Container className="relative grid grid-cols-1 gap-12 py-10 md:grid-cols-2 lg:grid-cols-4">
-              {stats
-                .map((stat) => ({ ...stat, type: "home" } as HomeStatisticItem))
-                .map((stat, i) => (
-                  <Statistic key={"stat_" + i} stat={stat} />
-                ))}
+              {stats.map((stat, i) => (
+                <Statistic
+                  key={"stat_" + i}
+                  stat={{ ...stat, type: "home" } as HomeStatisticItem}
+                />
+              ))}
             </Container>
           </PrimaryCard>
         </Container>
