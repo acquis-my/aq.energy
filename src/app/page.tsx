@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
-import Statistic from "../components/Statistic";
+import { Statistic, type StatisticItem } from "../components/Statistic";
 import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
@@ -23,29 +23,50 @@ import { SunPattern } from "~/components/Pattern";
 import Emphasize from "~/components/EmphasizeWord";
 import WhatsAppButton from "~/components/WhatsAppButton";
 
-const stats = [
+const stats: StatisticItem[] = [
   {
     title: "Clients",
     value: "450+",
     unit: null,
+    countup: {
+      start: 100,
+      end: 450,
+      suffix: "+",
+    },
     caption: "Empowering roofs since 2013",
   },
   {
     title: "CO2 Reduced",
     value: "250",
     unit: "",
+    countup: {
+      start: 1,
+      end: 250,
+    },
     caption: "Tonnes Yearly",
   },
   {
     title: "Customer Satisfaction",
     value: 100,
     unit: "%",
+    countup: {
+      start: 1,
+      end: 100,
+      suffix: "%",
+    },
     caption: "5-star reviews on Google",
   },
   {
     title: "Achieved yearly savings",
     value: "RM 3.5M",
     unit: null,
+    countup: {
+      start: 0.5,
+      end: 3.5,
+      decimals: 1,
+      prefix: "RM ",
+      suffix: "M",
+    },
     caption: "Across all clients based on existing installations",
   },
 ];
