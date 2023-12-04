@@ -2,88 +2,76 @@
 
 import CountUp, { type CountUpProps } from "react-countup";
 
-interface StatisticItem {
+type StatisticItem = {
   countup?: CountUpProps;
   type?: never;
-}
-interface AboutStatisticItem {
+};
+type AboutStatisticItem = {
   countup: CountUpProps;
   type: "about";
-}
-export interface HomeStatisticItem {
+};
+
+type HomeStatisticItem = {
   title: string;
   value: number | string;
   unit?: string | null;
   caption?: string;
   countup?: CountUpProps;
   type: "home";
-}
-
-const CountUpWithProps = ({ props }: { props: CountUpProps }) =>
-  CountUp({ ...props });
+};
 
 interface AboutMetadata {
   title: string;
   caption?: string;
 }
 
-function StatisticContainer({
-  type,
-  children,
-  metadata,
-}: {
-  type: "home" | "about";
-  children?: JSX.Element;
+interface StatisticContainerProps {
+  children?: React.ReactNode;
   metadata?: AboutMetadata;
-}) {
-  if (type === "about") {
+}
+
+type StatisticProps = {
+  stat: StatisticItem | AboutStatisticItem | HomeStatisticItem;
+  unstyled?: boolean;
+};
+
+function StatisticContainer({ children, metadata }: StatisticContainerProps) {
+  if (!metadata)
     return (
       <span className="text-4xl font-bold text-cyber-yellow">{children}</span>
     );
-  } else if (type === "home" && metadata) {
-    return (
-      <div className="mx-auto flex w-48 flex-col gap-y-3 text-center ">
-        <div className="text-sm uppercase text-white">{metadata.title}</div>
-        <div className="text-4xl font-semibold text-cyber-yellow">
-          {children}
-        </div>
-        <div className="text-xs text-gray-300">{metadata.caption}</div>
-      </div>
-    );
-  }
-  return null;
+
+  return (
+    <div className="mx-auto flex w-48 flex-col gap-y-3 text-center ">
+      <div className="text-sm uppercase text-white">{metadata.title}</div>
+      <div className="text-4xl font-semibold text-cyber-yellow">{children}</div>
+      <div className="text-xs text-gray-300">{metadata.caption}</div>
+    </div>
+  );
 }
 
-export const Statistic: React.FC<{
-  stat: StatisticItem | AboutStatisticItem | HomeStatisticItem;
-  unstyled?: boolean;
-}> = ({ stat, unstyled }) => {
-  if (unstyled && stat.countup) {
-    return <CountUpWithProps props={stat.countup} />;
-  }
+export function Statistic({ stat, unstyled }: StatisticProps) {
+  if (!stat.countup) return null;
+  if (unstyled) return <CountUp {...stat.countup} />;
 
-  if (stat.type) {
+  if (stat.type === "home") {
+    const { countup, value, unit } = stat;
+
     return (
       <StatisticContainer
-        type={stat.type}
-        metadata={
-          stat.type === "home"
-            ? { title: stat.title, caption: stat.caption }
-            : undefined
-        }
+        metadata={{
+          title: stat.title,
+          caption: stat.caption,
+        }}
       >
-        {stat.countup ? (
-          <CountUpWithProps props={stat.countup} />
-        ) : stat.type === "home" ? (
-          <>
-            `${stat.value} ${stat.unit}`
-          </>
-        ) : (
-          <></>
-        )}
+        {countup ? <CountUp {...countup} /> : `${value} ${unit}`}
       </StatisticContainer>
     );
   }
 
-  return null;
-};
+  return (
+    <StatisticContainer>
+      <CountUp {...stat.countup} />
+    </StatisticContainer>
+  );
+}

@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
-import { type HomeStatisticItem, Statistic } from "../components/Statistic";
+import { Statistic } from "../components/Statistic";
 import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
@@ -190,10 +190,7 @@ export default async function Home() {
             </figure>
             <Container className="relative grid grid-cols-1 gap-12 py-10 md:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, i) => (
-                <Statistic
-                  key={"stat_" + i}
-                  stat={{ ...stat, type: "home" } as HomeStatisticItem}
-                />
+                <Statistic key={"stat_" + i} stat={{ ...stat, type: "home" }} />
               ))}
             </Container>
           </PrimaryCard>
