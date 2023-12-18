@@ -40,7 +40,11 @@ export async function createQuote(formValues: QuoteData) {
 
   const { token, ...data } = quoteData;
   if (!token) throw new Error("Missing token");
-  if (!(await verify(token))) {
+
+  // We can skip the verification step if we're using the legacy
+  // lead ingest endpoint because the legacy endpoint
+  // already verifies the token.
+  if (!useLegacy && !(await verify(token))) {
     throw new Error("Invalid token");
   }
 
