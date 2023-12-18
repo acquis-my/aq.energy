@@ -18,7 +18,7 @@ const AnimatedImage: React.FC<AnimatedImage> = (props) => {
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image
-      onLoadingComplete={() => setImageLoaded(true)}
+      onLoad={() => setImageLoaded(true)}
       className={style}
       alt={alt ?? ""}
       {...rest}
