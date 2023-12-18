@@ -10,6 +10,9 @@ export const env = createEnv({
   server: {
     SANITY_PROJECT_ID: z.string().min(1),
     SANITY_DATASET: z.string(),
+    ZEN_QSTASH_TOKEN: z.string().nonempty(),
+    ZEN_QSTASH_TOPIC: z.string().nonempty(),
+    TURNSTILE_SECRET: z.string().nonempty(),
   },
   /*
    * Environment variables available on the client (and server).
@@ -19,7 +22,6 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_GA_ID: z.string().nonempty(),
     NEXT_PUBLIC_TURNSTILE_SITEKEY: z.string().nonempty(),
-    NEXT_PUBLIC_ZEN_API: z.string().url(),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -30,8 +32,10 @@ export const env = createEnv({
   runtimeEnv: {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
     SANITY_DATASET: process.env.SANITY_DATASET ?? "production",
+    ZEN_QSTASH_TOKEN: process.env.ZEN_QSTASH_TOKEN,
+    ZEN_QSTASH_TOPIC: process.env.ZEN_QSTASH_TOPIC,
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     NEXT_PUBLIC_TURNSTILE_SITEKEY: process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY,
-    NEXT_PUBLIC_ZEN_API: process.env.NEXT_PUBLIC_ZEN_API,
+    TURNSTILE_SECRET: process.env.TURNSTILE_SECRET,
   },
 });

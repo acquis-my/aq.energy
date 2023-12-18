@@ -1,17 +1,21 @@
 # AQ Energy
 
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/wpz9.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
+
 Source code for AQ Energy website written in Typescript.
 
 ## Environment Variables
 
-In both development and production use, the following environment variables are required to be set.
+In both development and production environments, the following environment variables must be set.
 
-| variable                        | description                  | example                    |
-| ------------------------------- | ---------------------------- | -------------------------- |
-| `NEXT_PUBLIC_ZEN_API`           | Zen Quotes API endpoint.     | `http://localhost:8001`    |
-| `NEXT_PUBLIC_TURNSTILE_SITEKEY` | Cloudflare Turnstile Sitekey | `1x00000000000000000000AA` |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics ID          | `G-1X00000000`             |
-| `SANITY_PROJECT_ID`             | Sanity Project ID            | `1x000000`                 |
+| Variable                        | Description                           | Example                               |
+| ------------------------------- | ------------------------------------- | ------------------------------------- |
+| `SANITY_PROJECT_ID`             | Sanity Project ID                     | `1x000000`                            |
+| `ZEN_QSTASH_TOKEN`              | Qstash Token                          |                                       |
+| `ZEN_QSTASH_TOPIC`              | Topic for ingest of leads from Qstash |                                       |
+| `TURNSTILE_SECRET`              | Secret for Turnstile                  | `1x0000000000000000000000000000000AA` |
+| `NEXT_PUBLIC_TURNSTILE_SITEKEY` | Cloudflare Turnstile Sitekey          | `1x00000000000000000000AA`            |
+| `NEXT_PUBLIC_GA_ID`             | Google Analytics ID                   | `G-1X00000000`                        |
 
 ## Local Development
 

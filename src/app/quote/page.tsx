@@ -1,12 +1,12 @@
 import Header from "~/components/Header";
 import Container from "~/components/Container";
-import { ButtonVariant2 } from "~/components/Button";
 import SupplierLogos from "~/components/SupplierLogos";
-import dynamic from "next/dynamic";
-import { type Metadata } from "next";
+import QuoteForm from "./Quote/QuoteForm";
+import { ButtonVariant2 } from "~/components/Button";
 import { WHATSAPP_LINK } from "~/links";
+import { type Metadata } from "next";
 
-const QuoteForm = dynamic(() => import("~/components/Quote/QuoteForm"));
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Begin your journey of clean solar energy here",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Get a personalised quote for your solar energy solution; big or small, we do it all.",
 };
 
-const Quote: React.FC<object> = () => {
+export default function page() {
   return (
     <>
       <Header title="Quote" subtitle="Get started on supercharging your roof">
@@ -46,6 +46,4 @@ const Quote: React.FC<object> = () => {
       </Container>
     </>
   );
-};
-
-export default Quote;
+}
