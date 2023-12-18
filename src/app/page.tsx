@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Container from "../components/Container";
 import PrimaryCard from "../components/PrimaryCard";
-import Statistic from "../components/Statistic";
+import { Statistic } from "../components/Statistic";
 import Link from "next/link";
 import FAQ from "./faq/FAQItem";
 import { CaseStudyCardVariant } from "../components/CaseStudyCard";
@@ -28,24 +28,53 @@ const stats = [
     title: "Clients",
     value: "450+",
     unit: null,
+    countup: {
+      start: 100,
+      end: 450,
+      suffix: "+",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
+    },
     caption: "Empowering roofs since 2013",
   },
   {
     title: "CO2 Reduced",
     value: "250",
     unit: "",
+    countup: {
+      start: 1,
+      end: 250,
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
+    },
     caption: "Tonnes Yearly",
   },
   {
     title: "Customer Satisfaction",
     value: 100,
     unit: "%",
+    countup: {
+      start: 1,
+      end: 100,
+      suffix: "%",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
+    },
     caption: "5-star reviews on Google",
   },
   {
     title: "Achieved yearly savings",
     value: "RM 3.5M",
     unit: null,
+    countup: {
+      start: 0.5,
+      end: 3.5,
+      decimals: 1,
+      prefix: "RM ",
+      suffix: "M",
+      scrollSpyOnce: true,
+      enableScrollSpy: true,
+    },
     caption: "Across all clients based on existing installations",
   },
 ];
@@ -161,7 +190,7 @@ export default async function Home() {
             </figure>
             <Container className="relative grid grid-cols-1 gap-12 py-10 md:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, i) => (
-                <Statistic key={"stat_" + i} stat={stat} />
+                <Statistic key={"stat_" + i} stat={{ ...stat, type: "home" }} />
               ))}
             </Container>
           </PrimaryCard>
