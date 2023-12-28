@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: "AQ Energy",
 };
 
+export const revalidate = 60 * 30;
+
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
