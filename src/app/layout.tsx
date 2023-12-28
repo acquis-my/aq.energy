@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "AQ Energy",
 };
 
-export const revalidate = 300;
+export const revalidate = 60 * 30;
 
 export default function RootLayout({
   // Layouts must accept a children prop.
