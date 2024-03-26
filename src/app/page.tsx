@@ -51,16 +51,15 @@ const stats = [
   },
   {
     title: "Customer Satisfaction",
-    value: 100,
-    unit: "%",
+    value: 5,
     countup: {
       start: 1,
-      end: 100,
-      suffix: "%",
+      end: 5,
+      suffix: " Stars",
       scrollSpyOnce: true,
       enableScrollSpy: true,
     },
-    caption: "5-star reviews on Google",
+    caption: "Average Google Reviews Rating",
   },
   {
     title: "Achieved yearly savings",
