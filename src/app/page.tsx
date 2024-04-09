@@ -26,11 +26,11 @@ import WhatsAppButton from "~/components/WhatsAppButton";
 const stats = [
   {
     title: "Clients",
-    value: "450+",
+    value: "700+",
     unit: null,
     countup: {
-      start: 100,
-      end: 450,
+      start: 450,
+      end: 700,
       suffix: "+",
       scrollSpyOnce: true,
       enableScrollSpy: true,
@@ -39,11 +39,11 @@ const stats = [
   },
   {
     title: "CO2 Reduced",
-    value: "250",
+    value: "4500",
     unit: "",
     countup: {
-      start: 1,
-      end: 250,
+      start: 1000,
+      end: 4500,
       scrollSpyOnce: true,
       enableScrollSpy: true,
     },
@@ -63,11 +63,11 @@ const stats = [
   },
   {
     title: "Achieved yearly savings",
-    value: "RM 3.5M",
+    value: "RM 4.5M",
     unit: null,
     countup: {
-      start: 0.5,
-      end: 3.5,
+      start: 1,
+      end: 4.5,
       decimals: 1,
       prefix: "RM ",
       suffix: "M",

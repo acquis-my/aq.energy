@@ -52,8 +52,8 @@ const AboutPage = () => {
               <Statistic
                 stat={{
                   countup: {
-                    start: 0.1,
-                    end: 2.1,
+                    start: 1,
+                    end: 4.5,
                     suffix: " kT",
                     decimals: 1,
                     scrollSpyOnce: true,
@@ -68,8 +68,8 @@ const AboutPage = () => {
               <Statistic
                 stat={{
                   countup: {
-                    start: 300,
-                    end: 450,
+                    start: 450,
+                    end: 700,
                     suffix: "+",
                     scrollSpyOnce: true,
                     enableScrollSpy: true,
