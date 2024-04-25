@@ -12,6 +12,9 @@ const albertSans = Albert_Sans({
 
 export const metadata: Metadata = {
   title: "AQ Energy",
+  openGraph: {
+    images: ["https://i.imgur.com/3tv9GTA.png"],
+  },
 };
 
 export const revalidate = 60 * 30;
