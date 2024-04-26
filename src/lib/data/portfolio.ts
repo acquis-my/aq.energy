@@ -18,7 +18,7 @@ export async function getStudies(options?: GetStudiesOptions) {
   let studies = await client.fetch<CaseStudy[]>({
     query: `*[_type == "case_study"] | order(_createdAt desc)`,
     config: {
-      next: { revalidate: 60 },
+      next: { revalidate: 3600 },
     },
   });
 
