@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
-import Step2 from "./Step2";
-import Step1 from "./Step1";
-import Submitted from "./Submitted";
 import { useSearchParams } from "next/navigation";
+
+import type { QuoteData } from "./schema";
 import { useCalculatorStore } from "~/stores/calculatorStore";
 import { createQuote } from "../actions";
-import { type QuoteData } from "./schema";
+import ErrorList from "~/components/ErrorList";
+import Submitted from "./Submitted";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
 
 const QuoteForm = () => {
   const params = useSearchParams();
@@ -16,6 +18,8 @@ const QuoteForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const [error, setError] = useState<string | null>(null);
+
   const [data, setData] = useState<Partial<QuoteData>>({
     token: "",
     type: "RESIDENTIAL",
@@ -26,11 +30,15 @@ const QuoteForm = () => {
   });
 
   async function handleSubmit(formData: QuoteData) {
+    setError(null);
     setIsSubmitting(true);
     const data = { referrer, ...formData };
 
     await createQuote(data)
-      .then(() => setIsSubmitted(true))
+      .then((r) => {
+        if (r.status === "error") return void setError(r.message);
+        setIsSubmitted(true);
+      })
       .catch((err) => {
         console.log(err);
         alert("Something went wrong! Please try again.");
@@ -67,14 +75,22 @@ const QuoteForm = () => {
 
   return (
     <div className="boder-slate-100 relative z-10 mx-auto -mt-28 flex w-full max-w-3xl flex-col gap-10 overflow-auto rounded-lg border bg-white px-6 py-8 shadow-lg md:px-8 lg:px-14 lg:py-12">
-      <div>
-        <div className="mb-6">
+      <div className="space-y-6">
+        <div>
           <h1 className="text-2xl font-bold md:text-3xl">Solar Lagi Jimat!</h1>
           <p className="pt-2 text-sm text-gray-600 md:text-base">
             We just need some information and will get back to you with your
             personalised quote.
           </p>
         </div>
+
+        {error && (
+          <ErrorList
+            title="Unable to create your quote request"
+            errors={[error]}
+          />
+        )}
+
         {isSubmitted ? <Submitted /> : renderSteps[currentStep]}
       </div>
     </div>

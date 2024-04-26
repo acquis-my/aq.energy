@@ -1,52 +1,34 @@
 "use server";
-import { env } from "~/env.mjs";
+import type { QuoteData } from "./Quote/schema";
+import { quoteSchema } from "./Quote/schema";
 import { qstash } from "~/lib/qstash";
 import { verify } from "~/lib/turnstile";
-import { quoteSchema, type QuoteData } from "./Quote/schema";
-import { get } from "@vercel/edge-config";
-
-async function submitLegacyLead(data: QuoteData) {
-  const API_HOST = process.env.NEXT_PUBLIC_ZEN_API;
-
-  const leadData = {
-    referrer: data.referrer,
-    token: data.token,
-    is_commercial: data.type === "RESIDENTIAL" ? 0 : 1,
-    avg_bill: data.bill,
-    name: data.name,
-    mobile: data.phone,
-    state: data.state,
-  };
-
-  return await fetch(`${API_HOST}/leads`, {
-    method: "POST",
-    headers: [["Content-Type", "application/json"]],
-    body: JSON.stringify(leadData),
-    cache: "no-cache",
-  });
-}
+import { env } from "~/env.mjs";
 
 export async function createQuote(formValues: QuoteData) {
-  const quoteData = await quoteSchema.parseAsync(formValues);
-  const useLegacy = await get("useLegacyLeadIngest");
+  const quoteData = await quoteSchema.safeParseAsync(formValues);
 
-  if (useLegacy) {
-    const res = await submitLegacyLead(quoteData);
-
-    if (!res.ok) {
-      throw new Error("Failed to create quote");
-    }
+  if (!quoteData.success) {
+    return {
+      status: "error" as const,
+      message: "The form contianed invalid data",
+    };
   }
 
-  const { token, ...data } = quoteData;
-  if (!token) throw new Error("Missing token");
+  const { token, ...data } = quoteData.data;
+  if (!token)
+    return {
+      status: "error" as const,
+      message: "Missing token",
+    };
 
-  // We can skip the verification step if we're using the legacy
-  // lead ingest endpoint because the legacy endpoint
-  // already verifies the token.
-  if (!useLegacy && !(await verify(token))) {
-    throw new Error("Invalid token");
-  }
+  const validToken = await verify(token);
+
+  if (!validToken)
+    return {
+      status: "error" as const,
+      message: "Invalid token",
+    };
 
   // Because Zen ingests leads from multiple sources, we need to
   // normalize the JSON data into a FormData object.
@@ -60,9 +42,11 @@ export async function createQuote(formValues: QuoteData) {
     body: formData,
   });
 
-  if (publishLead.length > 0) {
-    return { status: "ok" };
-  }
+  if (publishLead.length < 1)
+    return {
+      status: "error" as const,
+      message: "Failed to publish lead",
+    };
 
-  throw new Error("Failed to create quote");
+  return { status: "ok" as const };
 }
