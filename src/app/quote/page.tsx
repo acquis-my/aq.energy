@@ -1,12 +1,10 @@
-import Header from "~/components/Header";
-import Container from "~/components/Container";
-import SupplierLogos from "~/components/SupplierLogos";
-import QuoteForm from "./Quote/QuoteForm";
-import { ButtonVariant2 } from "~/components/Button";
+import type { Metadata } from "next";
 import { WHATSAPP_LINK } from "~/links";
-import { type Metadata } from "next";
-
-export const runtime = "edge";
+import { ButtonVariant2 } from "~/components/Button";
+import SupplierLogos from "~/components/SupplierLogos";
+import Container from "~/components/Container";
+import QuoteForm from "./Quote/QuoteForm";
+import Header from "~/components/Header";
 
 export const metadata: Metadata = {
   title: "Begin your journey of clean solar energy here",
