@@ -5,6 +5,8 @@ import PostCard from "./_components/PostCard";
 import Container from "~/components/Container";
 import { getPosts } from "~/lib/data";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "The AQ Energy Blog",
   description: "The AQ Energy Blog",

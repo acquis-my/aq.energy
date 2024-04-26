@@ -1,12 +1,22 @@
-import Image from "next/image";
-import PostImage from "./PostImage";
+import type { Metadata } from "next";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
-import { getPostBySlug } from "~/lib/data";
-import { type Metadata } from "next";
+import Image from "next/image";
+
+import { getPostBySlug, getPosts } from "~/lib/data";
+import PostImage from "./PostImage";
 
 interface PostPageProps {
   params: { slug: string };
+}
+
+export const revalidate = 3600;
+
+// Pre-generate static paths for all posts
+export async function generateStaticParams() {
+  const posts = await getPosts();
+
+  return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
 export async function generateMetadata({

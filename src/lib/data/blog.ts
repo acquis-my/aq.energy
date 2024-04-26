@@ -30,7 +30,7 @@ export async function getPosts() {
         ${postFields}
     }`,
     config: {
-      next: { revalidate: 300 },
+      next: { revalidate: 3600 },
     },
   });
 
@@ -52,7 +52,7 @@ export async function getPostBySlug(slug: string) {
     config:
       env.NODE_ENV === "production"
         ? {
-            next: { revalidate: 1800 },
+            next: { revalidate: 3600 },
           }
         : {
             next: {
