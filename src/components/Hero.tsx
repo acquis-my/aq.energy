@@ -1,7 +1,6 @@
-import { type StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 import AnimatedImage from "./AnimatedImage";
 import Container from "./Container";
-import Nav from "./Nav";
 
 type Header = {
   bgImage?: string | StaticImageData;
@@ -16,16 +15,15 @@ const Hero: React.FC<Header> = ({ bgImage, children }) => {
           <AnimatedImage
             src={bgImage}
             alt=""
-            loading="eager"
             className="object-cover"
+            priority
             fill
           />
         )}
       </figure>
-      <div className="relative bg-gradient-to-r from-black/70 to-black/30 md:via-black/25 lg:via-black/25">
-        <Nav />
+      <div className="relative bg-gradient-to-r from-black/70 to-black/30 pt-20 md:via-black/25 lg:via-black/25">
         {children ? (
-          <Container className={`relative z-0 py-10 animate-fade-in-up `}>
+          <Container className={`relative z-0 animate-fade-in-up py-10 `}>
             {children}
           </Container>
         ) : null}

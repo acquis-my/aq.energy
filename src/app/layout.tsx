@@ -1,9 +1,11 @@
-import "../app/globals.css";
-import Analytics from "~/components/Analytics";
-import Footer from "../components/Footer";
-import { Suspense } from "react";
+import type { Metadata } from "next";
 import { Albert_Sans } from "next/font/google";
-import { type Metadata } from "next";
+import { Suspense } from "react";
+
+import "../app/globals.css";
+import MainNavigation from "~/components/MainNavigation";
+import Analytics from "~/components/Analytics";
+import Footer from "~/components/Footer";
 
 const albertSans = Albert_Sans({
   display: "swap",
@@ -16,8 +18,6 @@ export const metadata: Metadata = {
     images: ["https://i.imgur.com/3tv9GTA.png"],
   },
 };
-
-export const revalidate = 60 * 30;
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -35,8 +35,9 @@ export default function RootLayout({
         <Suspense>
           <Analytics />
         </Suspense>
-        <div className="flex min-h-screen flex-col">
-          <main className="flex-grow">{children}</main>
+        <div className="relative flex min-h-screen flex-col">
+          <MainNavigation />
+          <main className="relative z-0 flex-grow">{children}</main>
           <Footer />
         </div>
       </body>

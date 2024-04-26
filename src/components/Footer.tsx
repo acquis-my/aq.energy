@@ -1,14 +1,14 @@
 import { socialLinks } from "~/links";
+import { LogoSecondary } from "./Logo";
 import Container from "./Container";
 import FooterNavItem from "./FooterNavItem";
 import FooterSocialIcon from "./FooterSocialIcon";
-import { LogoSecondary } from "./Logo";
 
 const Footer = () => {
   const thisYear = new Date(Date.now()).getFullYear();
 
   return (
-    <footer className="bg-indigo-dye text-sm text-gray-200">
+    <footer className="relative bg-indigo-dye text-sm text-gray-200">
       <Container className="flex flex-col gap-2 divide-y divide-slate-500">
         <section className="flex flex-col justify-between gap-12 pb-4 pt-8 sm:flex-row">
           <div className="flex max-w-sm flex-col gap-2">

@@ -1,7 +1,5 @@
-import React from "react";
-import Container from "./Container";
-import Nav from "./Nav";
 import { SunPattern } from "./Pattern";
+import Container from "./Container";
 
 type Header = {
   title: string;
@@ -12,23 +10,17 @@ type Header = {
 const Header: React.FC<Header> = ({ title, subtitle, children }) => {
   return (
     <header className="relative bg-indigo-dye">
-      <figure className="absolute inset-0">
-        <SunPattern
-          className="object-cover mx-auto h-full w-full"
-          alt=""
-          fill
-        />
+      <figure className="absolute inset-0 h-full w-full">
+        <SunPattern className="object-cover" alt="" fill />
       </figure>
-      <div className="relative">
-        <Nav />
-        <Container className="py-6">
-          <div className="max-w-prose py-8 mx-auto text-white text-center">
-            <h1 className="text-4xl lg:text-5xl font-semibold">{title}</h1>
-            <p className="mt-8 text-lg text-gray-300">{subtitle}</p>
-          </div>
-          {children}
-        </Container>
-      </div>
+
+      <Container className="pb-6 pt-24">
+        <div className="mx-auto max-w-prose py-8 text-center text-white">
+          <h1 className="text-4xl font-semibold lg:text-5xl">{title}</h1>
+          <p className="mt-8 text-lg text-gray-300">{subtitle}</p>
+        </div>
+        {children}
+      </Container>
     </header>
   );
 };
