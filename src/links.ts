@@ -17,3 +17,7 @@ export const socialLinks = {
 } satisfies Record<string, string>;
 
 export const WHATSAPP_LINK = "https://wa.me/60102933575";
+
+export function getTopLevelPath(path: string) {
+  return ["/", path.split("/").filter(Boolean)[0]].join("");
+}

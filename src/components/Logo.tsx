@@ -1,10 +1,10 @@
 import Link from "next/link";
-import AnimatedImage from "./AnimatedImage";
 
 import PrimaryLogo from "../../public/images/aq-logo-primary.png";
 import SecondaryLogo from "../../public/images/aq-logo-secondary.png";
+import AnimatedImage from "./AnimatedImage";
 
-const Logo = () => {
+export default function Logo() {
   return (
     <figure className="h-10 w-10">
       <Link href="/">
@@ -18,9 +18,9 @@ const Logo = () => {
       </Link>
     </figure>
   );
-};
+}
 
-export const LogoSecondary = () => {
+export function LogoSecondary() {
   return (
     <figure className="w-40">
       <Link href="/">
@@ -34,6 +34,4 @@ export const LogoSecondary = () => {
       </Link>
     </figure>
   );
-};
-
-export default Logo;
+}

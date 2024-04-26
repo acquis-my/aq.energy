@@ -3,7 +3,7 @@ import { Albert_Sans } from "next/font/google";
 import { Suspense } from "react";
 
 import "../app/globals.css";
-import MainNavigation from "~/components/MainNavigation";
+import MainNavigation from "~/components/Navigation/MainNavigation";
 import Analytics from "~/components/Analytics";
 import Footer from "~/components/Footer";
 
