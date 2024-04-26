@@ -74,26 +74,16 @@ const QuoteForm = () => {
   ];
 
   return (
-    <div className="boder-slate-100 relative z-10 mx-auto -mt-28 flex w-full max-w-3xl flex-col gap-10 overflow-auto rounded-lg border bg-white px-6 py-8 shadow-lg md:px-8 lg:px-14 lg:py-12">
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-2xl font-bold md:text-3xl">Solar Lagi Jimat!</h1>
-          <p className="pt-2 text-sm text-gray-600 md:text-base">
-            We just need some information and will get back to you with your
-            personalised quote.
-          </p>
-        </div>
+    <>
+      {error && (
+        <ErrorList
+          title="Unable to create your quote request"
+          errors={[error]}
+        />
+      )}
 
-        {error && (
-          <ErrorList
-            title="Unable to create your quote request"
-            errors={[error]}
-          />
-        )}
-
-        {isSubmitted ? <Submitted /> : renderSteps[currentStep]}
-      </div>
-    </div>
+      {isSubmitted ? <Submitted /> : renderSteps[currentStep]}
+    </>
   );
 };
 
