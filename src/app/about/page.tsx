@@ -148,7 +148,7 @@ const AboutPage = () => {
       <section className="bg-indigo-dye">
         <Container className="flex flex-col py-24">
           <div className="mx-auto mb-16 max-w-xl text-center text-2xl text-white">
-            Trusted by 400+ of homeowners and businesses throughout Malaysia
+            Trusted by 700+ of homeowners and businesses throughout Malaysia
           </div>
           <div className="mx-auto w-full max-w-3xl text-center">
             <SupplierLogos />
