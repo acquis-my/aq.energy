@@ -1,23 +1,22 @@
-import Container from "~/components/Container";
-import Hero from "~/components/Hero";
-import { Icon } from "~/components/Icon";
+import type { Metadata } from "next";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
-import { ButtonVariant2 } from "~/components/Button";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
-import { type Metadata } from "next";
 
 // import Portrait from "../components/Portrait";
 // import JobPost from "../components/JobPost";
 import NoJobs from "~/components/NoJobs";
 
-import Image from "next/image";
-import AboutHeroImage from "~/../public/images/about/about-hero.png";
-import MaxbellImage from "~/../public/images/about/mb.jpeg";
-import SectionHeader from "~/components/SectionHeader";
-import SupplierLogos from "~/components/SupplierLogos";
-import { Pattern } from "~/components/Pattern";
+import { Icon } from "~/components/Icon";
+import { ButtonVariant2 } from "~/components/Button";
 import { WHATSAPP_LINK } from "~/links";
 import { Statistic } from "~/components/Statistic";
+import { Pattern } from "~/components/Pattern";
+import AboutHeroImage from "~/../public/images/about/about-hero.png";
+import Container from "~/components/Container";
+import Hero from "~/components/Hero";
+import SectionHeader from "~/components/SectionHeader";
+import SupplierLogos from "~/components/SupplierLogos";
+import OurStory from "./OurStory";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -82,36 +81,7 @@ const AboutPage = () => {
         </section>
       </Hero>
 
-      <Container className="flex flex-col justify-between gap-8 py-20 md:flex-row">
-        <div className="my-auto flex w-full max-w-prose flex-col gap-6 text-center text-gray-600 md:text-left lg:w-3/5">
-          <h2 className="text-4xl font-bold text-gray-800">Our Story</h2>
-          <p>
-            <strong>Building Sustainability, One Panel at a Time.</strong>
-          </p>
-          <p>
-            Max Bell Sdn. Bhd. was established in 2013 to play a positive role
-            in developing solar PV infrastructure across Malaysia. Starting with
-            the installations of residential Feed-in-Tariff (FiT) customers, Max
-            Bell began catering to commercial clients in 2016 against a backdrop
-            of climate change and greater focus on Environmental and Social
-            Governance (ESG) policies.
-          </p>
-          <p>
-            Our rebranding to AQ Energy took place in 2022 to reflect the
-            involvement of a greater headcount and greater visionaries. It is
-            with a mixed talent pool, that we aim to make solar energy more
-            affordable for everyone.
-          </p>
-        </div>
-        <figure className="relative my-auto h-96 w-full lg:w-2/5">
-          <Image
-            src={MaxbellImage}
-            alt="Acquis Logo"
-            className="rounded-xl object-cover"
-            fill
-          />
-        </figure>
-      </Container>
+      <OurStory />
 
       <section id="careers" className="relative bg-slate-200">
         <Container className="flex flex-col py-24">
