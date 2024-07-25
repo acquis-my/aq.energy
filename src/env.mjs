@@ -22,6 +22,8 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_GA_ID: z.string().nonempty(),
     NEXT_PUBLIC_TURNSTILE_SITEKEY: z.string().nonempty(),
+    NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1),
+    NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -37,5 +39,9 @@ export const env = createEnv({
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     NEXT_PUBLIC_TURNSTILE_SITEKEY: process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY,
     TURNSTILE_SECRET: process.env.TURNSTILE_SECRET,
+
+    //POSTHOG
+    NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
+    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   },
 });
