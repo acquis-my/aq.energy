@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { usePostHog } from "posthog-js/react";
 
 import type { QuoteData } from "./schema";
 import { useCalculatorStore } from "~/stores/calculatorStore";
@@ -14,6 +15,8 @@ const QuoteForm = () => {
   const params = useSearchParams();
   const calculatorBill = useCalculatorStore((state) => state.bill);
   const referrer = params.get("ref") ?? undefined;
+
+  const posthog = usePostHog();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,6 +41,12 @@ const QuoteForm = () => {
       .then((r) => {
         if (r.status === "error") return void setError(r.message);
         setIsSubmitted(true);
+        posthog.identify(
+          data.phone,
+          { state: data.state, bill: data.bill, type: data.type },
+          { name: data.name, referrerId: data.referrer }
+        );
+        posthog.capture("quote_request", data);
       })
       .catch((err) => {
         console.log(err);

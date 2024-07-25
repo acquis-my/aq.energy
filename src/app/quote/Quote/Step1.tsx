@@ -1,12 +1,16 @@
 "use client";
-import states from "~/lib/states";
-import fmtString from "~/lib/fmt_string";
-import FieldError from "./FieldError";
+import type { SubmitHandler } from "react-hook-form";
+import type { z } from "zod";
+import { useForm } from "react-hook-form";
 import { NumericFormat } from "react-number-format";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type SubmitHandler, useForm } from "react-hook-form";
-import { quoteSchema, type QuoteData } from "./schema";
-import { type z } from "zod";
+import { useFeatureFlagVariantKey } from "posthog-js/react";
+
+import type { QuoteData } from "./schema";
+import { quoteSchema } from "./schema";
+import fmtString from "~/lib/fmt_string";
+import states from "~/lib/states";
+import FieldError from "./FieldError";
 
 const formSchema = quoteSchema.pick({
   type: true,
@@ -39,6 +43,9 @@ const Step1 = ({ data, next }: StepProps) => {
 
   const leadType = watch("type");
 
+  const isControl =
+    useFeatureFlagVariantKey("installation-type-labels") === "control";
+
   return (
     <form className="grid grid-cols-6 gap-6" onSubmit={handleSubmit(onSubmit)}>
       <div className="col-span-6 flex flex-col">
@@ -61,7 +68,7 @@ const Step1 = ({ data, next }: StepProps) => {
               type="radio"
               value={"RESIDENTIAL"}
             />
-            Residential
+            {isControl ? "Residential" : "For Home"}
           </label>
           <label
             htmlFor="commercial_radio"
@@ -77,7 +84,7 @@ const Step1 = ({ data, next }: StepProps) => {
               type="radio"
               value={"COMMERCIAL"}
             />
-            Commercial
+            {isControl ? "Commercial" : "For Business"}
           </label>
         </div>
       </div>
