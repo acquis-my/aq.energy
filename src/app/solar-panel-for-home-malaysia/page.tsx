@@ -21,9 +21,9 @@ import WhatsAppButton from "~/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title:
-    "Malaysia Solar Panel Solutions: Empowering Your Home with Renewable Energy | AQ Energy",
+    "Solar Panel for Home Malaysia | Affordable & Sustainable Energy Solutions",
   description:
-    "Power up your home with solar panels in Malaysia. Our affordable and sustainable solutions bring renewable energy for your home. Save on bills, embrace a greener future. Get a quote now!",
+    "Upgrade to solar panels for your Malaysian home and enjoy savings with government incentives up to RM 4k. Go green and power sustainably!",
 };
 
 const HomeownersPage: NextPage = () => {

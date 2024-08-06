@@ -21,7 +21,12 @@ const nextConfig = {
       },
       {
         source: "/homeowners",
-        destination: "/solar-panel-for-home",
+        destination: "/solar-panel-for-home-malaysia",
+        permanent: true,
+      },
+      {
+        source: "/solar-panel-for-home",
+        destination: "/solar-panel-for-home-malaysia",
         permanent: true,
       },
       {
