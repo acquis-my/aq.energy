@@ -60,6 +60,7 @@ const Footer = () => {
                 <FooterNavItem href="/blog">Blog</FooterNavItem>
                 <FooterNavItem href="/about#contact">Contact</FooterNavItem>
                 <FooterNavItem href="/portfolio">Case Studies</FooterNavItem>
+                <FooterNavItem href="/careers">Careers</FooterNavItem>
               </div>
             </div>
           </div>

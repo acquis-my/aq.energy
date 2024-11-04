@@ -4,7 +4,7 @@ import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 
 // import Portrait from "../components/Portrait";
 // import JobPost from "../components/JobPost";
-import NoJobs from "~/components/NoJobs";
+// import NoJobs from "~/components/NoJobs";
 
 import { Icon } from "~/components/Icon";
 import { ButtonVariant2 } from "~/components/Button";
@@ -92,7 +92,7 @@ const AboutPage = () => {
           />
 
           <div className="flex flex-col items-center gap-4 overflow-hidden">
-            <NoJobs />
+            <ButtonVariant2 href="/careers">Join us</ButtonVariant2>
 
             {/* <JobPost />
             <JobPost />
