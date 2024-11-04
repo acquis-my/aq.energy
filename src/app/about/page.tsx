@@ -17,6 +17,7 @@ import Hero from "~/components/Hero";
 import SectionHeader from "~/components/SectionHeader";
 import SupplierLogos from "~/components/SupplierLogos";
 import OurStory from "./OurStory";
+import { addresses } from "~/_content/addresses";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
@@ -205,16 +206,27 @@ const AboutPage = () => {
                 </Icon>
                 hello@aq.energy
               </a>
-              <a
-                href="https://goo.gl/maps/6cN1wHW1SR6MivpD8"
-                className="flex items-start gap-3 py-5 sm:px-4 md:py-0 lg:px-6 xl:items-center"
-              >
-                <Icon>
-                  <MapPinIcon className="h-6 w-6" />
-                </Icon>
-                10, Jalan Delta U6/19, Sunway Subang Business Park, 40150 Shah
-                Alam, Selangor
-              </a>
+            </div>
+            <h2 className="mb-6 mt-6 text-left font-semibold text-gray-800 sm:mt-10 sm:text-center">
+              Find us at these locations
+            </h2>
+            {/* Addresses */}
+            <div className="mx-auto grid w-full grid-cols-1 gap-4 text-sm  sm:grid-cols-2 lg:w-[40rem]">
+              {addresses.map((location) => (
+                <a
+                  key={location.name}
+                  href={location.mapLink}
+                  className="items-left flex flex-col gap-2 rounded-md border p-4 text-black-coral hover:bg-indigo-dye hover:text-white"
+                >
+                  <div className="flex items-center gap-3">
+                    <Icon>
+                      <MapPinIcon className="h-6 w-6" />
+                    </Icon>
+                    <span className="font-semibold">{location.name}</span>
+                  </div>
+                  <span>{location.address}</span>
+                </a>
+              ))}
             </div>
           </div>
         </Container>
