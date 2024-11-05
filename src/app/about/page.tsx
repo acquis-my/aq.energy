@@ -11,13 +11,13 @@ import { ButtonVariant2 } from "~/components/Button";
 import { WHATSAPP_LINK } from "~/links";
 import { Statistic } from "~/components/Statistic";
 import { Pattern } from "~/components/Pattern";
+import { addresses } from "~/_content/addresses";
 import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
 import SectionHeader from "~/components/SectionHeader";
 import SupplierLogos from "~/components/SupplierLogos";
 import OurStory from "./OurStory";
-import { addresses } from "~/_content/addresses";
 
 export const metadata: Metadata = {
   title: "About AQ Energy",
