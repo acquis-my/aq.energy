@@ -13,11 +13,11 @@ export const AddressButton = ({
   return (
     <a
       href={mapLink}
-      className="items-left flex flex-col gap-2 rounded-md border p-4 text-black-coral hover:bg-indigo-dye hover:text-white"
+      className="items-left group flex flex-col gap-2 rounded-md border p-4 text-black-coral transition ease-in-out hover:bg-indigo-dye hover:text-white"
     >
       <div className="flex items-center gap-3">
-        <Icon>
-          <MapPinIcon className="h-6 w-6" />
+        <Icon className="transition group-hover:bg-indigo-dye">
+          <MapPinIcon className="h-6 w-6 transition group-hover:fill-cyber-yellow" />
         </Icon>
         <span className="font-semibold">{name}</span>
       </div>
