@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { EnvelopeIcon } from "@heroicons/react/20/solid";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 
 // import Portrait from "../components/Portrait";
@@ -12,6 +12,7 @@ import { WHATSAPP_LINK } from "~/links";
 import { Statistic } from "~/components/Statistic";
 import { Pattern } from "~/components/Pattern";
 import { addresses } from "~/_content/addresses";
+import { AddressButton } from "~/components/AddressButton";
 import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
@@ -211,21 +212,14 @@ const AboutPage = () => {
               Find us at these locations
             </h2>
             {/* Addresses */}
-            <div className="mx-auto grid w-full grid-cols-1 gap-4 text-sm  sm:grid-cols-2 lg:w-[40rem]">
+            <div className="mx-auto grid w-full grid-cols-1 gap-4 text-sm sm:grid-cols-2 lg:w-[40rem]">
               {addresses.map((location) => (
-                <a
+                <AddressButton
                   key={location.name}
-                  href={location.mapLink}
-                  className="items-left flex flex-col gap-2 rounded-md border p-4 text-black-coral hover:bg-indigo-dye hover:text-white"
-                >
-                  <div className="flex items-center gap-3">
-                    <Icon>
-                      <MapPinIcon className="h-6 w-6" />
-                    </Icon>
-                    <span className="font-semibold">{location.name}</span>
-                  </div>
-                  <span>{location.address}</span>
-                </a>
+                  name={location.name}
+                  mapLink={location.mapLink}
+                  address={location.address}
+                />
               ))}
             </div>
           </div>
