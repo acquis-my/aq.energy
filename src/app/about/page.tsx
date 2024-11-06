@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { EnvelopeIcon } from "@heroicons/react/20/solid";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 
 // import Portrait from "../components/Portrait";
@@ -11,6 +11,8 @@ import { ButtonVariant2 } from "~/components/Button";
 import { WHATSAPP_LINK } from "~/links";
 import { Statistic } from "~/components/Statistic";
 import { Pattern } from "~/components/Pattern";
+import { addresses } from "~/_content/addresses";
+import { AddressButton } from "~/components/AddressButton";
 import AboutHeroImage from "~/../public/images/about/about-hero.png";
 import Container from "~/components/Container";
 import Hero from "~/components/Hero";
@@ -205,16 +207,20 @@ const AboutPage = () => {
                 </Icon>
                 hello@aq.energy
               </a>
-              <a
-                href="https://goo.gl/maps/6cN1wHW1SR6MivpD8"
-                className="flex items-start gap-3 py-5 sm:px-4 md:py-0 lg:px-6 xl:items-center"
-              >
-                <Icon>
-                  <MapPinIcon className="h-6 w-6" />
-                </Icon>
-                10, Jalan Delta U6/19, Sunway Subang Business Park, 40150 Shah
-                Alam, Selangor
-              </a>
+            </div>
+            <h2 className="mb-6 mt-6 text-left font-semibold text-gray-800 sm:mt-10 sm:text-center">
+              Find us at these locations
+            </h2>
+            {/* Addresses */}
+            <div className="mx-auto grid w-full grid-cols-1 gap-4 text-sm sm:grid-cols-2 lg:w-[40rem]">
+              {addresses.map((location) => (
+                <AddressButton
+                  key={location.name}
+                  name={location.name}
+                  mapLink={location.mapLink}
+                  address={location.address}
+                />
+              ))}
             </div>
           </div>
         </Container>
