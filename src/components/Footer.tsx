@@ -74,7 +74,9 @@ const Footer = () => {
               {/* Not needed for now */}
               {/* <FooterNavItem href="/faq">FAQ</FooterNavItem>
               <FooterNavItem href="/terms">Terms</FooterNavItem> */}
-              <FooterNavItem href="/privacy">Privacy Policy</FooterNavItem>
+              <FooterNavItem href="/privacy-policy">
+                Privacy Policy
+              </FooterNavItem>
             </ul>
           </div>
         </section>
