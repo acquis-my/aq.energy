@@ -49,6 +49,11 @@ export default async function Sitemap(): Promise<Sitemap> {
       lastModified: new Date(),
       priority: 0.64,
     },
+    {
+      url: withDomain`/privacy-policy`,
+      lastModified: new Date(),
+      priority: 0.64,
+    },
     ...mainPages,
     ...blogPosts,
   ].sort((a, b) => b.priority - a.priority) satisfies Sitemap;
