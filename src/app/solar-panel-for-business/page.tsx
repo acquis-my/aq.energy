@@ -74,7 +74,7 @@ export default async function BusinessesPage() {
         <BusinessSectionRow
           reversed={false}
           badgeText={"System Inclusive"}
-          imgURL={"/images/for-work/monitoring.jpg"}
+          imgURL={"/images/for-work/monitoring_new.jpg"}
         >
           <h3 className="text-3xl font-bold md:text-4xl">
             Post-Installation Monitoring and Service
