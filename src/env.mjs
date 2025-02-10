@@ -10,9 +10,9 @@ export const env = createEnv({
   server: {
     SANITY_PROJECT_ID: z.string().min(1),
     SANITY_DATASET: z.string(),
-    ZEN_QSTASH_TOKEN: z.string().nonempty(),
-    ZEN_QSTASH_TOPIC: z.string().nonempty(),
-    TURNSTILE_SECRET: z.string().nonempty(),
+    ZEN_QSTASH_TOKEN: z.string().min(1),
+    ZEN_QSTASH_TOPIC: z.string().min(1),
+    TURNSTILE_SECRET: z.string().min(1),
   },
   /*
    * Environment variables available on the client (and server).
@@ -20,8 +20,9 @@ export const env = createEnv({
    * 💡 You'll get type errors if these are not prefixed with NEXT_PUBLIC_.
    */
   client: {
-    NEXT_PUBLIC_GA_ID: z.string().nonempty(),
-    NEXT_PUBLIC_TURNSTILE_SITEKEY: z.string().nonempty(),
+    NEXT_PUBLIC_GA_ID: z.string().min(1),
+    NEXT_PUBLIC_GTM_ID: z.string().min(1),
+    NEXT_PUBLIC_TURNSTILE_SITEKEY: z.string().min(1),
     NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1),
     NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1),
   },
@@ -36,7 +37,10 @@ export const env = createEnv({
     SANITY_DATASET: process.env.SANITY_DATASET ?? "production",
     ZEN_QSTASH_TOKEN: process.env.ZEN_QSTASH_TOKEN,
     ZEN_QSTASH_TOPIC: process.env.ZEN_QSTASH_TOPIC,
+
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
+
     NEXT_PUBLIC_TURNSTILE_SITEKEY: process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY,
     TURNSTILE_SECRET: process.env.TURNSTILE_SECRET,
 

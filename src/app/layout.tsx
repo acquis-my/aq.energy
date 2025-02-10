@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Albert_Sans } from "next/font/google";
 import { Suspense } from "react";
 
 import { CSPostHogProvider } from "./providers";
+import { env } from "~/env.mjs";
 import MainNavigation from "~/components/Navigation/MainNavigation";
 import Analytics from "~/components/Analytics";
 import Footer from "~/components/Footer";
@@ -20,18 +22,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" className={albertSans.className}>
       <head>
         <link rel="icon" type="image/png" href="/images/aq-logo-primary.png" />
       </head>
+      <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       <CSPostHogProvider>
         <body className="overflow-y-scroll">
           <Suspense>
@@ -39,7 +36,7 @@ export default function RootLayout({
           </Suspense>
           <div className="relative flex min-h-screen flex-col">
             <MainNavigation />
-            <main className="relative z-0 flex-grow">{children}</main>
+            <main className="relative z-0 flex-grow">{props.children}</main>
             <Footer />
           </div>
         </body>
