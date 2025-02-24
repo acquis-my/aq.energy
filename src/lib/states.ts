@@ -12,8 +12,8 @@ const states = [
   "perlis",
   "penang",
   "sabah",
-  "sarawak",
-  "selangor",
+  // "sarawak",
+  // "selangor",
   "terengganu",
 ].sort((a, b) => a.localeCompare(b));
 
