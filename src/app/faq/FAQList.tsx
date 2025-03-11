@@ -1,7 +1,8 @@
 "use client";
 
+import { FAQ } from "~/hooks/useFAQ";
 import Container from "~/components/Container";
-import useFAQ, { FAQ } from "~/hooks/useFAQ";
+import useFAQ from "~/hooks/useFAQ";
 import FAQItem from "./FAQItem";
 
 export default function FAQList({ faqs }: { faqs: FAQ[] }) {
