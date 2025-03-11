@@ -1,39 +1,25 @@
 "use client";
-import { useState } from "react";
+
 import Container from "~/components/Container";
+import useFAQ, { FAQ } from "~/hooks/useFAQ";
 import FAQItem from "./FAQItem";
 
-type FAQ = {
-  question: string;
-  answer: string;
-};
-
 export default function FAQList({ faqs }: { faqs: FAQ[] }) {
-  const [list, setList] = useState(faqs);
-
-  const handleSearch = async (query: string) => {
-    const Fuse = (await import("fuse.js")).default;
-    const fuse = new Fuse(faqs, { keys: ["question", "answer"] });
-
-    if (!query || query === "") return setList(faqs);
-    const searchResult = fuse.search(query).map((res) => res.item);
-
-    setList(searchResult);
-  };
+  const { data: list, handleSearch } = useFAQ({ data: faqs });
 
   return (
     <Container className="py-14">
-      <div className="flex flex-col gap-3 mx-auto text-sm">
-        <div className="flex flex-row justify-between items-baseline gap-4 w-full max-w-xl mx-auto">
+      <div className="mx-auto flex flex-col gap-3 text-sm">
+        <div className="mx-auto flex w-full max-w-xl flex-row items-baseline justify-between gap-4">
           <label className="whitespace-nowrap">Filter: </label>
           <input
             type={"text"}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search questions"
-            className="w-full text-sm
-                    px-0.5
-                    border-0 border-b-2 border-gray-200
-                    focus:ring-0 focus:border-black"
+            className="w-full border-0
+                    border-b-2
+                    border-gray-200 px-0.5 text-sm
+                    focus:border-black focus:ring-0"
           />
         </div>
         {list.length === 0 && <p>Nope</p>}
